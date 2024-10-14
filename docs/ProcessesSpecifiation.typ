@@ -23,7 +23,7 @@ Właściciel ośrodka oczekuje, że *zyski z sezonu narciarskiego rosnąć będ�
 - *ilość zjazdów w ciągu miesiąca*.
 W takim razie, aby osiągnąć cel, oczekuje się, aby *w każdym miesiącu sezonu narciarskiego każda z tych metryk rosła o co najmniej 3% w stosunku do odpowiedniego miesiąca poprzedniego sezonu*.
 
-Właściciel ośrodka chciałby przeanalizować wpływ dni wolnych i weekendów na ilość sprzedanych karnetów. Co więcej, chce wiedzieć karnety upoważniające do jakiej ilości zjazdów są najbardziej opłacalne dla resortu. Interesuje go także, jak zakup karnetów online wpływa na zachowanie klientów. Właściciel ośrodka chciałby także wiedzieć, jakie są najczęściej wypożyczane przedmioty w wypożyczalni sprzętu oraz których najczęściej brakuje.
+Właściciel ośrodka chciałby przeanalizować wpływ dni wolnych i weekendów na ilość sprzedanych karnetów. Co więcej, chce wiedzieć, karnety upoważniające do jakiej ilości zjazdów są najbardziej opłacalne dla resortu. Interesuje go także, jak zakup karnetów online wpływa na zachowanie klientów. Właściciel ośrodka chciałby także wiedzieć, jakie są najczęściej wypożyczane przedmioty w wypożyczalni sprzętu oraz których najczęściej brakuje.
 
 
 = Procesy biznesowe
@@ -32,7 +32,7 @@ Właściciel ośrodka chciałby przeanalizować wpływ dni wolnych i weekendów 
 
 a. *Ogólny opis procesu biznesowego*
 
-Proces rozpoczyna się od zakupu karnetu przez klienta. Karnet może być zakupiony online lub w punkcie sprzedaży. W przypadku zakupu internetowego, użytkownik musi podać swoje dane, które są zapisywane w bazie danych. Po zakupie pierwszego karnetu, klient otrzymuje kod kreskowy, który pozwala na odbicie karnetu na bramce. W przypadku zakupu w punkcie sprzedaży, klient podaje swoje dane, po czym otrzymuje fizyczną kartę, którą także można odbić w bramce. Jeśli już posiada taką kartę, może ją doładować. Karta przypisana jest do użytkownika i jest zamienna z kodem kreskowym. Rachunki za zakup karnetów są przechowywane w bazie danych, wspólnej dla zakupów online i offline. Dodatkowo, w tej bazie przechowywane są informacje o pozostałej ilości zjazdów na każdym z karnetów oraz przypisaniu karnetu do danej karty/kodu. Po zakończeniu sezonu, karnety tracą ważność. W przypadku, gdy klient nie wykorzystał wszystkich zjazdów, nie ma możliwości ich przeniesienia na kolejny sezon. Karty oraz kody kreskowe nie ulegają dezaktywacji po zakończeniu sezonu.
+Proces rozpoczyna się od zakupu karnetu przez klienta. Karnet może być zakupiony online lub w punkcie sprzedaży. W przypadku zakupu internetowego, użytkownik musi podać swoje dane, które są zapisywane w bazie danych. Po zakupie pierwszego karnetu, klient otrzymuje kod kreskowy, który pozwala na odbicie karnetu na bramce. W przypadku zakupu w punkcie sprzedaży, klient podaje swoje dane, po czym otrzymuje fizyczną kartę, którą także można odbić w bramce. Jeśli już posiada taką kartę, może ją doładować. Karta przypisana jest do użytkownika i jest zamienna z kodem kreskowym. Rachunki za zakup karnetów są przechowywane w bazie danych, wspólnej dla zakupów online i offline. Narciarze, przed każdym zjazdem, odbijają kartę lub kod na specjalnej bramce znajdującej się przed każdym stokiem, która rejestruje ich przejazd. W przypadku, gdy karnet został już wykorzystany, bramka nie pozwala na kolejne odbicie. Jeśli do karty podpięte jest więcej niż jeden aktywny karnet, wybierany jest ten z najkrótszą datą ważności. Informacje o pozostałej ilości zjazdów na każdym z karnetów oraz przypisaniu karnetu do danej karty/kodu znajdują się w bazie danych. Po zakończeniu sezonu, karnety tracą ważność. W przypadku, gdy klient nie wykorzystał wszystkich zjazdów, nie ma możliwości ich przeniesienia na kolejny sezon. Karty oraz kody kreskowe nie ulegają dezaktywacji po zakończeniu sezonu.
 
 b. *Typowe zapytania*
 
@@ -68,4 +68,4 @@ b. *Typowe zapytania*
 
 c. *Dane*
 
-Dane o wypożyczeniach, przedmiotach i klientach przechowywane są w relacyjnej bazie danych.
+Dane o wypożyczeniach, przedmiotach i klientach przechowywane są w relacyjnej bazie danych. Lista klientów, którzy nie zwrócili sprzętu w terminie, przechowywana jest w pliku Excel.
