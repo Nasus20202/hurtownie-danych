@@ -122,7 +122,7 @@ Odpowiedni plik csv generowany jest przez każdą z bramek na stoku.
 - Ile zjazdów średnio wykonuje się w ciągu miesiąca korzystając z karnetów o różnej cenie?
 - Jak długo trwa korzystanie z karnetu w zależności od jego ceny?
 - Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
-- Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ceny?
+- Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od jego ceny?
 - Jak zmienia się ilość wykupionych zjazdów w zależności od doświadczenia klienta (ilości kupionych wcześniej karnetów)?
 - Czy ceny w konkurencyjnych ośrodkach wpływają na podejmowane przez klientów decyzje? #text(size: 7pt)[(Wymagane niedostępne dane)]
 
@@ -157,8 +157,8 @@ Odpowiedni plik csv generowany jest przez każdą z bramek na stoku.
   - pierwsze i ostatnie użycie karnetu - logi z bramek, pola _ID karnetu_, _data i godzina odbicia karty_
 - Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
   - transakcje online i offline - baza danych, tabele Transactions, Passes, kolumna _Type_, _PassID_, _TotalRides_, _UsedRides_
-- Ile średnio zjazdów pozostaje niewykorzystanych na karnetach?
-  - karnety - baza danych, tabela Passes, kolumny _PassID_, _TotalRides_, _UsedRides_, _ValidUntil_
+- Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od jego ceny?
+  - karnety - baza danych, tabela Passes, kolumny _PassID_, _TotalRides_, _UsedRides_, _ValidUntil_, _Price_
 - Jak zmienia się ilość wykupionych zjazdów w zależności od doświadczenia klienta (ilości kupionych wcześniej karnetów)?
   - ilość zakupionych karnetów - baza danych, tabele Transactions, Passes, kolumny _ClientID_, _PassID_
   - ilość zjazdów na karnetach - baza danych, tabela Passes, kolumny _PassID_, _TotalRides_
