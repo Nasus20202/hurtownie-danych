@@ -24,6 +24,7 @@ class Generator:
         pass_count: int,
         ride_count: int,
         pass_types: list[tuple[int, float]],
+        slope_count: int,
     ):
         if card_count < client_count:
             raise ValueError("Card count must be greater than client count")
@@ -51,6 +52,10 @@ class Generator:
         for _ in range(pass_count - transaction_count):
             transaction = random.choice(self.manager.transactions)
             self.create_pass(start_date, end_date, transaction, pass_types)
+
+        for _ in range(ride_count):
+            card = random.choice(self.manager.cards)
+            self.create_ride(start_date, end_date, card, slope_count)
 
     def create_client(self, start_date: datetime, end_date: datetime):
         name = self.fake.first_name()
@@ -105,6 +110,29 @@ class Generator:
 
         self.manager.add_pass(transaction, card, price, total_rides, valid_until)
 
+    def create_ride(
+        self, _: datetime, end_time: datetime, cards: Card, slope_count: int
+    ):
+        time = self.get_random_date_in_season(cards.registered, end_time)
+        slope = random.randint(1, slope_count)
+
+        available_passes = [
+            skipass
+            for skipass in cards.passes
+            if skipass.valid_until >= time
+            and get_season(skipass.valid_until) == get_season(time)
+            and skipass.used_rides < skipass.total_rides
+            and skipass.transaction.date <= time
+        ]
+
+        if not available_passes:
+            return self.manager.add_invalid_ride(slope, time)
+
+        available_passes.sort(key=lambda x: x.transaction.date)
+        skipass = available_passes[0]
+
+        self.manager.add_ride(skipass, slope, time)
+
     def get_random_date_in_season(
         self, start_date: datetime, end_date: datetime
     ) -> datetime:
@@ -112,6 +140,6 @@ class Generator:
         get_season(end_date)
 
         date = self.fake.date_time_between_dates(start_date, end_date)
-        while date.month in range(4, 10):
+        while date.month in range(4, 10) or date.hour not in range(6, 22):
             date = self.fake.date_time_between_dates(start_date, end_date)
         return date

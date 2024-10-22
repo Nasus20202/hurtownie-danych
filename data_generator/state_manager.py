@@ -81,14 +81,25 @@ class StateManager:
         return skipass
 
     def add_ride(self, skipass: Pass, slope: int, data: datetime) -> Ride:
-        if skipass.used_rides < skipass.total_rides:
-            ride = Ride(skipass, slope, data, True)
+        if skipass.used_rides > skipass.total_rides:
+            raise ValueError("Skipass is already used")
 
-            skipass.rides.append(ride)
-            skipass.used_rides += 1
+        if data < skipass.transaction.date:
+            raise ValueError("Ride date cannot be earlier than transaction date")
 
-        else:
-            ride = Ride(None, slope, data, False)
+        if get_season(data) != get_season(skipass.valid_until):
+            raise ValueError(
+                "Ride date must be in the same season as pass valid_until date"
+            )
 
+        ride = Ride(skipass, slope, data, True)
+        skipass.rides.append(ride)
+        skipass.used_rides += 1
+
+        self.rides.append(ride)
+        return ride
+
+    def add_invalid_ride(self, slope: int, data: datetime) -> Ride:
+        ride = Ride(None, slope, data, False)
         self.rides.append(ride)
         return ride
