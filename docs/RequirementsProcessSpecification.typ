@@ -63,8 +63,8 @@ Baza danych przechowuje informacje o klientach, karnetach, transakcjach oraz kar
     text("Opis")
   ),
   [Clients], [ClientID], [int], [ID klienta - klucz główny],
-  [], [Imie], [String], [Imię klienta],
-  [], [Nazwisko], [String], [Nazwisko klienta],
+  [], [Name], [String], [Imię klienta],
+  [], [Surname], [String], [Nazwisko klienta],
   [], [Email], [String], [Adres email klienta],
   [], [Phone], [String], [Numer telefonu klienta],
   [], [Registered], [Date], [Data rejestracji klienta],
