@@ -29,9 +29,7 @@ class Client:
     cards: list[Card]
     transactions: list[Transaction]
 
-
-class ClientEntity(Client):
-    client_id: int
+    client_id: int = 0
 
 
 @dataclass
@@ -42,10 +40,8 @@ class Card:
 
     passes: list[Pass]
 
-
-class CardEntity(Card):
-    card_id: int
-    client_id: int
+    card_id: int = 0
+    client_id: int = 0
 
 
 @dataclass
@@ -58,10 +54,8 @@ class Transaction:
 
     passes: list[Pass]
 
-
-class TransactionEntity(Transaction):
-    transaction_id: int
-    client_id: int
+    transaction_id: int = 0
+    client_id: int = 0
 
 
 @dataclass
@@ -76,11 +70,9 @@ class Pass:
 
     rides: list[Ride]
 
-
-class PassEntity(Pass):
-    pass_id: int
-    transaction_id: int
-    card_id: int
+    pass_id: int = 0
+    transaction_id: int = 0
+    card_id: int = 0
 
 
 @dataclass
@@ -90,6 +82,4 @@ class Ride:
     date: datetime
     success: bool
 
-
-class RideEntity(Ride):
-    pass_id: int
+    pass_id: int = 0

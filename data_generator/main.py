@@ -22,7 +22,7 @@ available_passes = [
 
 def main():
     generator = Generator(0)
-    generator.generate(
+    state = generator.generate(
         t0,
         t1,
         client_count,
