@@ -61,9 +61,9 @@ class StateManager:
                 "Pass valid_until date cannot be earlier than transaction date"
             )
 
-        if transaction.date > card.registered:
+        if transaction.date < card.registered:
             raise ValueError(
-                "Pass valid_until date cannot be earlier than card registration date"
+                "Transaction date cannot be earlier than card registration date"
             )
 
         if get_season(valid_until) != get_season(transaction.date):

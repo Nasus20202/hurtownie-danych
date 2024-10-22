@@ -1,5 +1,6 @@
 from state_manager import StateManager
 from models import *
+from utils import *
 import faker
 from datetime import datetime
 import random
@@ -22,17 +23,34 @@ class Generator:
         transaction_count: int,
         pass_count: int,
         ride_count: int,
+        pass_types: list[tuple[int, float]],
     ):
+        if card_count < client_count:
+            raise ValueError("Card count must be greater than client count")
+
+        if pass_count < transaction_count:
+            raise ValueError("Pass count must be greater than transaction count")
+
         for _ in range(client_count):
             self.create_client(start_date, end_date)
 
-        for _ in range(card_count):
+        for client in self.manager.clients:
+            self.create_card(start_date, end_date, client)
+
+        for _ in range(card_count - client_count):
             client = random.choice(self.manager.clients)
             self.create_card(start_date, end_date, client)
 
         for _ in range(transaction_count):
             user = random.choice(self.manager.clients)
             self.create_transaction(start_date, end_date, user)
+
+        for transaction in self.manager.transactions:
+            self.create_pass(start_date, end_date, transaction, pass_types)
+
+        for _ in range(pass_count - transaction_count):
+            transaction = random.choice(self.manager.transactions)
+            self.create_pass(start_date, end_date, transaction, pass_types)
 
     def create_client(self, start_date: datetime, end_date: datetime):
         name = self.fake.first_name()
@@ -43,21 +61,57 @@ class Generator:
             surname,
             f"{name.lower()}.{surname.lower()}@{self.fake.free_email_domain()}",
             self.fake.phone_number(),
-            self.fake.date_time_between_dates(start_date, end_date),
+            self.get_random_date_in_season(start_date, end_date),
         )
 
     def create_card(self, start_date: datetime, end_date: datetime, client: Client):
         self.manager.add_card(
             client,
             self.fake.uuid4(),
-            self.fake.date_time_between_dates(client.registered, end_date),
+            self.get_random_date_in_season(client.registered, end_date),
         )
 
     def create_transaction(self, _: datetime, end_date: datetime, client: Client):
         if not client.cards:
-            self.create_card(_, end_date, client)
+            raise ValueError("Client must have a card to make a transaction")
+
+        first_card_registered = min(card.registered for card in client.cards)
+
         self.manager.add_transaction(
             client,
             random.choice(["online", "offline"]),
-            self.fake.date_time_between_dates(client.registered, end_date),
+            self.get_random_date_in_season(first_card_registered, end_date),
         )
+
+    def create_pass(
+        self,
+        _: datetime,
+        __: datetime,
+        transaction: Transaction,
+        passes: list[tuple[int, float]],
+    ):
+        valid_until = get_season_end_from_date(transaction.date)
+        price, total_rides = random.choice(passes)
+
+        possible_cards = [
+            card
+            for card in transaction.client.cards
+            if card.registered <= transaction.date
+        ]
+        if not possible_cards:
+            raise ValueError("No card available")
+
+        card = random.choice(possible_cards)
+
+        self.manager.add_pass(transaction, card, price, total_rides, valid_until)
+
+    def get_random_date_in_season(
+        self, start_date: datetime, end_date: datetime
+    ) -> datetime:
+        get_season(start_date)
+        get_season(end_date)
+
+        date = self.fake.date_time_between_dates(start_date, end_date)
+        while date.month in range(4, 10):
+            date = self.fake.date_time_between_dates(start_date, end_date)
+        return date
