@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
+from dataclasses import field
 
 
 class Card:
@@ -26,8 +27,8 @@ class Client:
     phone: str
     registered: datetime
 
-    cards: list[Card]
-    transactions: list[Transaction]
+    cards: list[Card] = field(default_factory=list)
+    transactions: list[Transaction] = field(default_factory=list)
 
     client_id: int = 0
 
@@ -38,7 +39,7 @@ class Card:
     card_code: str
     registered: datetime
 
-    passes: list[Pass]
+    passes: list[Pass] = field(default_factory=list)
 
     card_id: int = 0
     client_id: int = 0
@@ -52,7 +53,7 @@ class Transaction:
     type: str
     date: datetime
 
-    passes: list[Pass]
+    passes: list[Pass] = field(default_factory=list)
 
     transaction_id: int = 0
     client_id: int = 0
@@ -68,7 +69,7 @@ class Pass:
     used_rides: int
     valid_until: datetime
 
-    rides: list[Ride]
+    rides: list[Ride] = field(default_factory=list)
 
     pass_id: int = 0
     transaction_id: int = 0

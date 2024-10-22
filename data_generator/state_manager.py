@@ -13,7 +13,7 @@ class StateManager:
     def add_client(
         self, name: str, surname: str, email: str, phone: str, registered: datetime
     ) -> Client:
-        client = Client(name, surname, email, phone, registered, [], [])
+        client = Client(name, surname, email, phone, registered)
 
         self.clients.append(client)
 
@@ -25,7 +25,7 @@ class StateManager:
                 "Card registration date cannot be earlier than client registration date"
             )
 
-        card = Card(client, card_code, registered, [])
+        card = Card(client, card_code, registered)
 
         self.cards.append(card)
         client.cards.append(card)
@@ -41,7 +41,7 @@ class StateManager:
         if client.cards == []:
             raise ValueError("Client must have a card to make a transaction")
 
-        transaction = Transaction(client, 0, type, date, [])
+        transaction = Transaction(client, 0, type, date)
         self.transactions.append(transaction)
 
         client.transactions.append(transaction)
@@ -71,7 +71,7 @@ class StateManager:
                 "Pass valid_until date must be in the same season as transaction date"
             )
 
-        skipass = Pass(transaction, card, price, total_rides, 0, valid_until, [])
+        skipass = Pass(transaction, card, price, total_rides, 0, valid_until)
         self.passes.append(skipass)
 
         transaction.passes.append(skipass)
