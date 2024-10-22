@@ -42,7 +42,9 @@ class Generator:
             raise ValueError("Pass count must be greater than transaction count")
 
         # Clients
-        for _ in range(client_count):
+        for i in range(client_count):
+            if i % 1000 == 0:
+                print(f"Generating client {i}/{client_count}")
             self.create_client(start_date, end_date)
 
         self.manager.clients.sort(key=lambda x: x.registered)
@@ -51,14 +53,18 @@ class Generator:
         for client in filter(lambda x: x.cards == [], self.manager.clients):
             self.create_card(start_date, end_date, client)
 
-        for _ in range(card_count - client_count):
+        for i in range(card_count - client_count):
+            if i + 1 % 1000 == 0:
+                print(f"Generating card {i}/{card_count}")
             client = random.choice(self.manager.clients)
             self.create_card(start_date, end_date, client)
 
         self.manager.cards.sort(key=lambda x: x.registered)
 
         # Transactions
-        for _ in range(transaction_count):
+        for i in range(transaction_count):
+            if i % 1000 == 0:
+                print(f"Generating transaction {i}/{transaction_count}")
             user = random.choice(self.manager.clients)
             self.create_transaction(start_date, end_date, user)
 
@@ -68,7 +74,9 @@ class Generator:
         for transaction in filter(lambda x: x.passes == [], self.manager.transactions):
             self.create_pass(start_date, end_date, transaction, pass_types)
 
-        for _ in range(pass_count - transaction_count):
+        for i in range(pass_count - transaction_count):
+            if i % 1000 == 0:
+                print(f"Generating pass {i}/{pass_count}")
             transaction = random.choice(self.manager.transactions)
             while transaction.date < start_date:
                 transaction = random.choice(self.manager.transactions)
@@ -78,7 +86,9 @@ class Generator:
         self.manager.passes.sort(key=lambda x: x.transaction.date)
 
         # Rides
-        for _ in range(ride_count):
+        for i in range(ride_count):
+            if i % 1000 == 0:
+                print(f"Generating ride {i}/{ride_count}")
             card = random.choice(self.manager.cards)
             self.create_ride(start_date, end_date, card, slope_count)
 
@@ -86,6 +96,7 @@ class Generator:
 
         self.set_ids()
 
+        print("Generation completed")
         return self.get_state()
 
     def get_state(self) -> State:
