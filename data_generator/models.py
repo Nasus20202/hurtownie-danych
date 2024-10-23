@@ -96,3 +96,5 @@ class Ride:
     success: bool
 
     pass_id: int = 0
+    def to_bulk(self) -> str:
+        return f"{self.pass_id};{self.slope};{self.date.strftime('%Y-%m-%d %H:%M:%S')};{self.success}"

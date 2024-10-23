@@ -40,6 +40,8 @@ def export_to_bulk(state, suffix="t1"):
         f.write("\r\n".join(record.to_bulk() for record in state.transactions))
     with open(f"output/passes_{suffix}.csv", "w", encoding="utf-16") as f:
         f.write("\r\n".join(record.to_bulk() for record in state.passes))
+    with open(f"output/rides_{suffix}.csv", "w", encoding="utf-16") as f:
+        f.write("\r\n".join(record.to_bulk() for record in state.rides))
 
 
 def main():
