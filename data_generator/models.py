@@ -32,6 +32,9 @@ class Client:
 
     client_id: int = 0
 
+    def to_bulk(self) -> str:
+        return f"{self.client_id}|{self.name}|{self.surname}|{self.email}|{self.phone}|{self.registered.strftime('%Y-%m-%d %H:%M:%S')}"
+
 
 @dataclass
 class Card:
@@ -43,6 +46,9 @@ class Card:
 
     card_id: int = 0
     client_id: int = 0
+
+    def to_bulk(self) -> str:
+        return f"{self.card_id}|{self.card_code}|{self.registered.strftime('%Y-%m-%d %H:%M:%S')}|{self.client_id}"
 
 
 @dataclass
@@ -57,6 +63,9 @@ class Transaction:
 
     transaction_id: int = 0
     client_id: int = 0
+
+    def to_bulk(self) -> str:
+        return f"{self.transaction_id}|{self.total_price}|{self.type}|{self.date.strftime('%Y-%m-%d %H:%M:%S')}|{self.client_id}"
 
 
 @dataclass
@@ -74,6 +83,9 @@ class Pass:
     pass_id: int = 0
     transaction_id: int = 0
     card_id: int = 0
+
+    def to_bulk(self) -> str:
+        return f"{self.pass_id}|{self.price}|{self.total_rides}|{self.used_rides}|{self.valid_until.strftime('%Y-%m-%d %H:%M:%S')}|{self.transaction_id}|{self.card_id}"
 
 
 @dataclass

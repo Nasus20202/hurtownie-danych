@@ -4,11 +4,11 @@ from datetime import datetime
 t0 = datetime.strptime("2020-11-29", "%Y-%m-%d")
 t1 = datetime.strptime("2024-01-10", "%Y-%m-%d")
 t2 = datetime.strptime("2025-02-11", "%Y-%m-%d")
-client_count = [40000, 10000]
-card_count = [80000, 20000]
-transaction_count = [160000, 40000]
-pass_count = [320000, 80000]
-ride_count = [640000, 160000]
+client_count = [40, 10]
+card_count = [80, 20]
+transaction_count = [160, 40]
+pass_count = [320, 80]
+ride_count = [640, 160]
 slope_count = [5, 6]
 
 available_passes = [
@@ -29,6 +29,17 @@ available_passes = [
 ]
 
 
+def export_to_bulk(state, suffix="t1"):
+    with open(f"output/clients_{suffix}.bulk", "w", encoding="utf-16") as f:
+        f.write("\n".join(record.to_bulk() for record in state.clients))
+    with open(f"output/cards_{suffix}.bulk", "w") as f:
+        f.write("\n".join(record.to_bulk() for record in state.cards))
+    with open(f"output/transactions_{suffix}.bulk", "w") as f:
+        f.write("\n".join(record.to_bulk() for record in state.transactions))
+    with open(f"output/passes_{suffix}.bulk", "w") as f:
+        f.write("\n".join(record.to_bulk() for record in state.passes))
+
+
 def main():
     generator = Generator(0)
     state = generator.generate(
@@ -42,6 +53,7 @@ def main():
         available_passes[0],
         slope_count[0],
     )
+    export_to_bulk(state, "t1")
 
     state = generator.generate(
         t1,
@@ -54,6 +66,7 @@ def main():
         available_passes[1],
         slope_count[1],
     )
+    export_to_bulk(state, "t2")
 
 
 if __name__ == "__main__":
