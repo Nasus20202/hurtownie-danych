@@ -122,7 +122,8 @@ class Generator:
 
         for i, skipass in enumerate(self.manager.passes, start_id):
             skipass.pass_id = i
-            skipass.transaction
+            skipass.transaction_id = skipass.transaction.transaction_id
+            skipass.card_id = skipass.card.card_id
 
     def create_client(self, start_date: datetime, end_date: datetime):
         name = self.fake.first_name()
