@@ -9,7 +9,7 @@ client_count = [40, 10]
 card_count = [80, 20]
 transaction_count = [160, 40]
 pass_count = [320, 80]
-ride_count = [640, 160]
+ride_count = [3200, 800]
 slope_count = [5, 6]
 
 available_passes = [

@@ -50,11 +50,13 @@ class Generator:
         self.manager.clients.sort(key=lambda x: x.registered)
 
         # Cards
+        created_cards = 0
         for client in filter(lambda x: x.cards == [], self.manager.clients):
             self.create_card(start_date, end_date, client)
+            created_cards += 1
 
-        for i in range(card_count - client_count):
-            if i + 1 % 1000 == 0:
+        for i in range(card_count - created_cards):
+            if i % 1000 == 0:
                 print(f"Generating card {i}/{card_count}")
             client = random.choice(self.manager.clients)
             self.create_card(start_date, end_date, client)
@@ -62,7 +64,26 @@ class Generator:
         self.manager.cards.sort(key=lambda x: x.registered)
 
         # Transactions
-        for i in range(transaction_count):
+        created_transactions = 0
+        for user in filter(lambda x: x.transactions == [], self.manager.clients):
+            self.create_transaction(start_date, end_date, user)
+            created_transactions += 1
+
+        for user in self.manager.clients:
+            for card in user.cards:
+                transactions_after = [
+                    transaction
+                    for transaction in user.transactions
+                    if transaction.date > card.registered
+                    and transaction.date > start_date
+                ]
+                if not transactions_after:
+                    self.create_transaction(
+                        max(start_date, card.registered), end_date, user
+                    )
+                    created_transactions += 1
+
+        for i in range(transaction_count - created_transactions):
             if i % 1000 == 0:
                 print(f"Generating transaction {i}/{transaction_count}")
             user = random.choice(self.manager.clients)
@@ -71,10 +92,30 @@ class Generator:
         self.manager.transactions.sort(key=lambda x: x.date)
 
         # Passes
+        created_passes = 0
         for transaction in filter(lambda x: x.passes == [], self.manager.transactions):
             self.create_pass(start_date, end_date, transaction, pass_types)
+            created_passes += 1
 
-        for i in range(pass_count - transaction_count):
+        for user in self.manager.clients:
+            for card in user.cards:
+                transactions_after = [
+                    transaction
+                    for transaction in user.transactions
+                    if transaction.date > card.registered
+                    and transaction.date > start_date
+                ]
+                if not transactions_after:
+                    raise ValueError("No transactions after card registration")
+                self.create_pass(
+                    max(start_date, card.registered),
+                    end_date,
+                    transactions_after[0],
+                    pass_types,
+                )
+                created_passes += 1
+
+        for i in range(pass_count - created_passes):
             if i % 1000 == 0:
                 print(f"Generating pass {i}/{pass_count}")
             transaction = random.choice(self.manager.transactions)
@@ -127,7 +168,7 @@ class Generator:
 
         for i, ride in enumerate(self.manager.rides, start_id):
             ride.ride_id = i
-            ride.pass_id = ride.skipass.pass_id
+            ride.pass_id = ride.skipass.pass_id if ride.skipass else 0
 
     def create_client(self, start_date: datetime, end_date: datetime):
         name = self.fake.first_name()
@@ -145,8 +186,12 @@ class Generator:
         self.manager.add_card(
             client,
             self.fake.uuid4(),
-            self.get_random_date_in_season(
-                max(client.registered, start_date), end_date
+            (
+                self.get_random_date_in_season(
+                    max(client.registered, start_date), end_date
+                )
+                if client.cards
+                else client.registered
             ),
         )
 
@@ -158,11 +203,19 @@ class Generator:
 
         first_card_registered = min(card.registered for card in client.cards)
 
+        empty_cards = [card for card in client.cards if not card.passes]
+        if empty_cards:
+            first_card_registered = min(card.registered for card in empty_cards)
+
         self.manager.add_transaction(
             client,
             random.choice(["online", "offline"]),
-            self.get_random_date_in_season(
-                max(first_card_registered, start_date), end_date
+            (
+                self.get_random_date_in_season(
+                    max(first_card_registered, start_date), end_date
+                )
+                if client.transactions
+                else client.registered
             ),
         )
 
@@ -184,6 +237,10 @@ class Generator:
             for card in transaction.client.cards
             if card.registered <= transaction.date
         ]
+        empty_cards = [card for card in possible_cards if not card.passes]
+        if empty_cards:
+            possible_cards = empty_cards
+
         if not possible_cards:
             raise ValueError("No card available")
 
@@ -192,27 +249,33 @@ class Generator:
         self.manager.add_pass(transaction, card, price, total_rides, valid_until)
 
     def create_ride(
-        self, start_time: datetime, end_time: datetime, cards: Card, slope_count: int
+        self, start_time: datetime, end_time: datetime, card: Card, slope_count: int
     ):
-        time = self.get_random_date_in_season(
-            max(cards.registered, start_time), end_time
-        )
         slope = random.randint(1, slope_count)
 
         available_passes = [
             skipass
-            for skipass in cards.passes
-            if skipass.valid_until >= time
-            and get_season(skipass.valid_until) == get_season(time)
+            for skipass in card.passes
+            if skipass.valid_until >= start_time
+            and skipass.transaction.date <= end_time
             and skipass.used_rides < skipass.total_rides
-            and skipass.transaction.date <= time
         ]
 
         if not available_passes:
-            return self.manager.add_invalid_ride(slope, time)
+            return self.manager.add_invalid_ride(
+                slope,
+                self.get_random_date_in_season(
+                    max(start_time, card.registered), end_time
+                ),
+            )
 
         available_passes.sort(key=lambda x: x.transaction.date)
         skipass = available_passes[0]
+
+        time = self.fake.date_time_between_dates(
+            max(start_time, skipass.transaction.date),
+            min(end_time, skipass.valid_until),
+        )
 
         self.manager.add_ride(skipass, slope, time)
 
