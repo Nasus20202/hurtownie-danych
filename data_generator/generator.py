@@ -70,6 +70,7 @@ class Generator:
             created_transactions += 1
 
         for user in self.manager.clients:
+            # Make sure that there is at least one transaction after card registration
             for card in user.cards:
                 transactions_after = [
                     transaction
@@ -130,8 +131,7 @@ class Generator:
         for i in range(ride_count):
             if i % 1000 == 0:
                 print(f"Generating ride {i}/{ride_count}")
-            card = random.choice(self.manager.cards)
-            self.create_ride(start_date, end_date, card, slope_count)
+            self.create_ride(start_date, end_date, slope_count)
 
         self.manager.rides.sort(key=lambda x: x.date)
 
@@ -203,6 +203,7 @@ class Generator:
 
         first_card_registered = min(card.registered for card in client.cards)
 
+        # Prioritize cards with no transactions
         empty_cards = [card for card in client.cards if not card.passes]
         if empty_cards:
             first_card_registered = min(card.registered for card in empty_cards)
@@ -237,6 +238,8 @@ class Generator:
             for card in transaction.client.cards
             if card.registered <= transaction.date
         ]
+
+        # Prioritize cards with no passes
         empty_cards = [card for card in possible_cards if not card.passes]
         if empty_cards:
             possible_cards = empty_cards
@@ -248,29 +251,24 @@ class Generator:
 
         self.manager.add_pass(transaction, card, price, total_rides, valid_until)
 
-    def create_ride(
-        self, start_time: datetime, end_time: datetime, card: Card, slope_count: int
-    ):
+    def create_ride(self, start_time: datetime, end_time: datetime, slope_count: int):
         slope = random.randint(1, slope_count)
 
-        available_passes = [
+        active_passes = [
             skipass
-            for skipass in card.passes
+            for skipass in self.manager.passes
             if skipass.valid_until >= start_time
             and skipass.transaction.date <= end_time
             and skipass.used_rides < skipass.total_rides
         ]
 
-        if not available_passes:
-            return self.manager.add_invalid_ride(
-                slope,
-                self.get_random_date_in_season(
-                    max(start_time, card.registered), end_time
-                ),
+        if not active_passes:
+            self.manager.add_invalid_ride(
+                slope, self.get_random_date_in_season(start_time, end_time)
             )
+            return
 
-        available_passes.sort(key=lambda x: x.transaction.date)
-        skipass = available_passes[0]
+        skipass = random.choice(active_passes)
 
         time = self.fake.date_time_between_dates(
             max(start_time, skipass.transaction.date),

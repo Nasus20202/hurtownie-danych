@@ -5,11 +5,11 @@ import os
 t0 = datetime.strptime("2020-11-29", "%Y-%m-%d")
 t1 = datetime.strptime("2024-01-10", "%Y-%m-%d")
 t2 = datetime.strptime("2025-02-11", "%Y-%m-%d")
-client_count = [40, 10]
-card_count = [80, 20]
-transaction_count = [160, 40]
-pass_count = [320, 80]
-ride_count = [3200, 800]
+client_count = [400, 100]
+card_count = [800, 200]
+transaction_count = [1600, 400]
+pass_count = [3200, 800]
+ride_count = [128000, 32000]
 slope_count = [5, 6]
 
 available_passes = [
