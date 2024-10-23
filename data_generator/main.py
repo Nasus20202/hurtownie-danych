@@ -1,5 +1,6 @@
 from generator import Generator
 from datetime import datetime
+import os
 
 t0 = datetime.strptime("2020-11-29", "%Y-%m-%d")
 t1 = datetime.strptime("2024-01-10", "%Y-%m-%d")
@@ -30,14 +31,15 @@ available_passes = [
 
 
 def export_to_bulk(state, suffix="t1"):
-    with open(f"output/clients_{suffix}.bulk", "w", encoding="utf-16") as f:
-        f.write("\n".join(record.to_bulk() for record in state.clients))
-    with open(f"output/cards_{suffix}.bulk", "w") as f:
-        f.write("\n".join(record.to_bulk() for record in state.cards))
-    with open(f"output/transactions_{suffix}.bulk", "w") as f:
-        f.write("\n".join(record.to_bulk() for record in state.transactions))
-    with open(f"output/passes_{suffix}.bulk", "w") as f:
-        f.write("\n".join(record.to_bulk() for record in state.passes))
+    os.makedirs("output", exist_ok=True)
+    with open(f"output/clients_{suffix}.csv", "w", encoding="utf-16") as f:
+        f.write("\r\n".join(record.to_bulk() for record in state.clients))
+    with open(f"output/cards_{suffix}.csv", "w", encoding="utf-16") as f:
+        f.write("\r\n".join(record.to_bulk() for record in state.cards))
+    with open(f"output/transactions_{suffix}.csv", "w", encoding="utf-16") as f:
+        f.write("\r\n".join(record.to_bulk() for record in state.transactions))
+    with open(f"output/passes_{suffix}.csv", "w", encoding="utf-16") as f:
+        f.write("\r\n".join(record.to_bulk() for record in state.passes))
 
 
 def main():
