@@ -72,6 +72,8 @@ class Generator:
         for user in self.manager.clients:
             # Make sure that there is at least one transaction after card registration
             for card in user.cards:
+                if card.passes:
+                    continue
                 transactions_after = [
                     transaction
                     for transaction in user.transactions
@@ -98,23 +100,24 @@ class Generator:
             self.create_pass(start_date, end_date, transaction, pass_types)
             created_passes += 1
 
-        for user in self.manager.clients:
-            for card in user.cards:
-                transactions_after = [
-                    transaction
-                    for transaction in user.transactions
-                    if transaction.date > card.registered
-                    and transaction.date > start_date
-                ]
-                if not transactions_after:
-                    raise ValueError("No transactions after card registration")
-                self.create_pass(
-                    max(start_date, card.registered),
-                    end_date,
-                    transactions_after[0],
-                    pass_types,
-                )
-                created_passes += 1
+        for card in self.manager.cards:
+            if card.passes:
+                continue
+            transactions_after = [
+                transaction
+                for transaction in card.client.transactions
+                if transaction.date > card.registered
+                and transaction.date > start_date
+            ]
+            if not transactions_after:
+                raise ValueError("No transactions after card registration")
+            self.create_pass(
+                max(start_date, card.registered),
+                end_date,
+                transactions_after[0],
+                pass_types,
+            )
+            created_passes += 1
 
         for i in range(pass_count - created_passes):
             if i % 1000 == 0:
