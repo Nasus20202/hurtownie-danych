@@ -254,9 +254,11 @@ class Generator:
     def create_ride(self, start_time: datetime, end_time: datetime, slope_count: int):
         slope = random.randint(1, slope_count)
 
+        selected_skipasses = random.sample(self.manager.passes, min(100, len(self.manager.passes)))
+
         active_passes = [
             skipass
-            for skipass in self.manager.passes
+            for skipass in selected_skipasses
             if skipass.valid_until >= start_time
             and skipass.transaction.date <= end_time
             and skipass.used_rides < skipass.total_rides
@@ -286,4 +288,4 @@ class Generator:
         date = self.fake.date_time_between_dates(start_date, end_date)
         while date.month in range(4, 10) or date.hour not in range(6, 22):
             date = self.fake.date_time_between_dates(start_date, end_date)
-        return date
+        return date.replace(microsecond=0)
