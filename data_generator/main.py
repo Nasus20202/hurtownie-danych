@@ -30,7 +30,7 @@ available_passes = [
 ]
 
 
-def export_to_bulk(state, suffix="t1"):
+def export_to_bulk(state, suffix="t1", split_slopes=False):
     os.makedirs("output", exist_ok=True)
     with open(f"output/clients_{suffix}.csv", "w", encoding="utf-16") as f:
         f.write("\r\n".join(record.to_bulk() for record in state.clients))
@@ -42,6 +42,20 @@ def export_to_bulk(state, suffix="t1"):
         f.write("\r\n".join(record.to_bulk() for record in state.passes))
     with open(f"output/rides_{suffix}.csv", "w", encoding="utf-16") as f:
         f.write("\r\n".join(record.to_bulk() for record in state.rides))
+
+    # alternatively, we can split the rides by slope:
+    if split_slopes:
+        for slope in range(1, 6):
+            with open(
+                f"output/rides_{slope}_{suffix}.csv", "w", encoding="utf-16"
+            ) as f:
+                f.write(
+                    "\r\n".join(
+                        record.to_bulk()
+                        for record in state.rides
+                        if record.slope == slope
+                    )
+                )
 
 
 def main():
