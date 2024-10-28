@@ -1,0 +1,74 @@
+erDiagram
+    Date |o--o{ Ride : ""
+    Ride |o--o{ Pass : ""
+    Ride |o--o{ Slope : ""
+    Ride |o--o{ Card : ""
+    Date |o--o{ PassSale : ""
+    Card |o--o{ PassSale : ""
+    Client |o--o{ PassSale : ""
+    Date |o--o{ Pass : ""
+    Pass |o--o{ PassSale : ""
+    PassSale }o--o| Junk : ""
+
+Client {
+    int ClientID PK
+    string Email
+    string Experience
+    bool IsCurrent
+}
+
+Card {
+    int CardID PK
+    string CardCode
+}
+
+Date {
+    int DateID PK
+    date Date
+    int Year
+    string Season
+    string Month
+    int MonthNumber
+    int Day
+    string DayOfWeek
+    int DayOfWeekNumber
+}
+
+Junk {
+    int JunkID PK
+    string PaymentMethod
+}
+
+Pass {
+    int PassID PK
+    int ValidUntilDateID FK
+    money Price
+    int TotalRides
+    int LeftRides
+    int UsedRides
+    string UsedState
+}
+
+PassSale {
+    int PassSaleDateID FK
+    int CardID FK
+    int ClientID FK
+    int PassID FK
+    int JunkID FK
+    money Price
+    money TotalTransactionPrice
+    int BoughtRides
+    int TransactionNumber
+}
+
+Ride {
+    int RideDateID FK
+    int SlopeID FK
+    int CardID FK
+    int PassID FK
+}
+
+Slope {
+    int SlopeID PK
+    string SlopeName
+}
