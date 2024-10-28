@@ -1,8 +1,13 @@
 #set text(
   font: "New Computer Modern",
-  size: 12pt
+  size: 12pt,
 )
-#set page(paper: "a4", margin: (x: 1cm, y: 2cm), numbering: "1", header: [Hurtownie Danych - Schemat hurtowni danych dla ośrodka narciarskiego #line(length: 100%)])
+#set page(
+  paper: "a4",
+  margin: (x: 1cm, y: 2cm),
+  numbering: "1",
+  header: [Hurtownie Danych - Schemat hurtowni danych dla ośrodka narciarskiego #line(length: 100%)],
+)
 #set heading(numbering: "1.")
 
 #align(center)[
@@ -10,7 +15,7 @@
     v(12pt),
     text(size: 20pt)[Schemat hurtowni danych dla ośrodka narciarskiego],
     v(12pt),
-    text(size: 15pt)[Krzysztof Nasuta 193328, Filip Dawidowski 193433]
+    text(size: 15pt)[Krzysztof Nasuta 193328, Filip Dawidowski 193433],
   )
 ]
 
@@ -30,15 +35,17 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
 == Opis tabel
 #table(
   stroke: none,
-  fill: (x, y) =>
-    if y == 0 { gray }
-    else if calc.rem(y, 2) == 0 { silver },
+  fill: (x, y) => if y == 0 {
+    gray
+  } else if calc.rem(y, 2) == 0 {
+    silver
+  },
   columns: (1fr, 1fr, 1fr, 1fr),
   table.header(
     text("Tabela"),
     text("Atrybut"),
     text("Typ atrybutu"),
-    text("Opis")
+    text("Opis"),
   ),
 
   [*PassSale (Fact table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt sprzedaży karnetu.*],
@@ -52,16 +59,16 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [BoughtRider], [Numeric], [Ilość zjazdów sprzedanych w karnecie.],
   [], [TransactionNumber], [Numeric], [Numer transakcji.],
   table.cell(colspan: 4)[#line(length: 100%)],
-  
-  
+
+
   [*Ride (Fact table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt zjazdu ze stoku narciarskiego.*],
   [], [RideDateID], [Numeric], [FK Date #linebreak() Data zjazdu.],
   [], [SlopeID], [Numeric], [FK Slope #linebreak() Stok, na którym nastąpił zjazd.],
   [], [CardID], [Numeric], [FK Card #linebreak() Karta, która została wykorzystana do zjazdu.],
   [], [PassID], [Numeric], [FK Pass #linebreak() Karnet, z którego pobrano zjazd.],
   table.cell(colspan: 4)[#line(length: 100%)],
-  
-  
+
+
   [*Client (Dimension table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczego klienta ośrodka narciarskiego.*],
   [], [ClientID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [Email], [nvarchar(64)], [Email klienta],
@@ -82,7 +89,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [Year], [Numeric], [Rok.],
   [], [Season], [nvarchar(20)], [Sezon narciarski. Dopuszczalne wartości: "Season XXXX", gdzie XXXX to rok rozpoczęcia sezonu.],
   [], [Month], [nvarchar(20)], [Nazwa miesiąca. Dopuszczalne wartości: Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień],
-  [], [MonthNumber],  [Numeric], [Numer miesiąca. (1-12)],
+  [], [MonthNumber], [Numeric], [Numer miesiąca. (1-12)],
   [], [Day], [Numeric], [Numer dnia. (1-31)],
   [], [DayOfWeek], [nvarchar(20)], [Dzień tygodnia. Dopuszczalne wartości: Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota, Niedziela],
   [], [DayOfWeekNumber], [Numeric], [Numer dnia tygodnia. (1-7)],
