@@ -3,12 +3,12 @@ erDiagram
     Ride |o--o{ Pass : ""
     Ride |o--o{ Slope : ""
     Ride |o--o{ Card : ""
-    Date |o--o{ PassSale : ""
-    Card |o--o{ PassSale : ""
-    Client |o--o{ PassSale : ""
+    Date |o--o{ PassPurchase : ""
+    Card |o--o{ PassPurchase : ""
+    Client |o--o{ PassPurchase : ""
     Date |o--o{ Pass : ""
-    Pass |o--o{ PassSale : ""
-    PassSale }o--o| Junk : ""
+    Pass |o--o{ PassPurchase : ""
+    PassPurchase }o--o| Junk : ""
 
 Client {
     int ClientID PK
@@ -49,8 +49,8 @@ Pass {
     string UsedState
 }
 
-PassSale {
-    int PassSaleDateID FK
+PassPurchase {
+    int PassPurchaseDateID FK
     int CardID FK
     int ClientID FK
     int PassID FK

@@ -51,20 +51,20 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
     text("Opis"),
   ),
 
-  [*PassSale (Fact table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt sprzedaży karnetu.*],
-  [], [PassSaleDateID], [Numeric], [FK Pass #linebreak() Data sprzedaży.],
-  [], [CardID], [Numeric], [FK Card #linebreak() Karta, na którą został sprzedany karnet.],
+  [*PassPurchase (Tabela faktu)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt wykupienia karnetu przez klienta.*],
+  [], [PassPurchaseDateID], [Numeric], [FK Pass #linebreak() Data transakcji.],
+  [], [CardID], [Numeric], [FK Card #linebreak() Karta, na którą został zakupiony karnet.],
   [], [ClientID], [Numeric], [FK Pass #linebreak() Klient, który zakupił karnet.],
-  [], [PassID], [Numeric], [FK Pass #linebreak() Sprzedany karnet.],
-  [], [JunkID], [Numeric], [FK Junk #linebreak() Śmieciowe atrybuty.],
+  [], [PassID], [Numeric], [FK Pass #linebreak() Kupiony karnet.],
+  [], [JunkID], [Numeric], [FK Junk #linebreak() Dodatkowe atrybuty.],
   [], [Price], [Money], [Cena karnetu.],
   [], [TotalTransactionPrice], [Money], [Całkowita kwota transakcji, której częścią jest ta sprzedaż.],
-  [], [BoughtRides], [Numeric], [Ilość zjazdów sprzedanych w karnecie.],
+  [], [BoughtRides], [Numeric], [Ilość zjazdów wykupionych w karnecie.],
   [], [TransactionNumber], [Numeric], [Numer transakcji.],
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
-  [*Ride (Fact table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt zjazdu ze stoku narciarskiego.*],
+  [*Ride (Tabela faktu)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt zjazdu ze stoku narciarskiego.*],
   [], [RideDateID], [Numeric], [FK Date #linebreak() Data zjazdu.],
   [], [SlopeID], [Numeric], [FK Slope #linebreak() Stok, na którym nastąpił zjazd.],
   [], [CardID], [Numeric], [FK Card #linebreak() Karta, która została wykorzystana do zjazdu.],
@@ -72,7 +72,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
-  [*Client (Dimension table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczego klienta ośrodka narciarskiego.*],
+  [*Client (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczego klienta ośrodka narciarskiego.*],
   [], [ClientID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [Email], [nvarchar(64)], [Email klienta],
   [], [Experience], [nvarchar(20)], [Doświadczenie klienta na podstawie liczby wykupionych wcześniej karnetów. #linebreak() Dopuszczalne wartości: "1-3", "4-10", ">10"],
@@ -80,17 +80,17 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
-  [*Card (Dimension table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczą kartę zjazdową.*],
+  [*Card (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczą kartę zjazdową.*],
   [], [CardID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [CardCode], [nvarchar(64)], [Kod karty zjazdowej.],
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
-  [*Date (Dimension table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczy dzień.*],
+  [*Date (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczy dzień.*],
   [], [DateID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [Date], [Date], [Data.],
   [], [Year], [Numeric], [Rok.],
-  [], [Season], [nvarchar(20)], [Sezon narciarski. Dopuszczalne wartości: "Season XXXX", gdzie XXXX to rok rozpoczęcia sezonu.],
+  [], [Season], [nvarchar(20)], [Sezon narciarski. Dopuszczalne wartości: "Sezon XXXX", gdzie XXXX to rok rozpoczęcia sezonu.],
   [], [Month], [nvarchar(20)], [Nazwa miesiąca. Dopuszczalne wartości: Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień],
   [], [MonthNumber], [Numeric], [Numer miesiąca. (1-12)],
   [], [Day], [Numeric], [Numer dnia. (1-31)],
@@ -99,122 +99,71 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
-  [*Junk (Dimension table)*], table.cell(colspan: 3)[*Encje reprezentują wszystkie możliwe metody płatności.*],
+  [*Junk (Tabela wymiaru)*], table.cell(colspan: 3)[*Encje reprezentują dodatkowe atrybuty.*],
   [], [JunkID], [Numeric], [PK #linebreak() (klucz zastępczy)],
-  [], [PaymentMethod], [nvarchar(10)], [Typ płatności. Dopuszczalne wartości: "online", "offline"],
+  [], [TransactionType], [nvarchar(10)], [Typ transakcji. Dopuszczalne wartości: "online", "offline"],
 
 
-  [*Pass (Dimension table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden karnet.*],
+  [*Pass (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden karnet.*],
   [], [PassID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [ValidUntilDateID], [Numeric], [FK Date #linebreak() Data ważności karnetu.],
   [], [Price], [Money], [Cena karnetu.],
   [], [TotalRides], [Numeric], [Ilość zjazdów możliwych do wykonania na karnecie.],
   [], [LeftRides], [Numeric], [Ilość pozostałych zjazdów na karnecie.],
   [], [UsedRides], [Numeric], [Ilość zjazdów wykonanych na karnecie.],
-  [], [UsedState], [nvarchar(20)], [Stan karnetu. Dopuszczalne wartości: "zużyty", "aktywny", "wygasły"],
+  [], [UsedState], [nvarchar(20)], [Stan karnetu. Dopuszczalne wartości: "wykorzystany", "aktywny", "wygasły"],
 
-  [*Slope (Dimension table)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden stok narciarski.*],
+  [*Slope (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden stok narciarski.*],
   [], [SlopeID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [SlopeName], [nvarchar(20)], [Nazwa stoku narciarskiego.],
   [], [Country], [nvarchar(20)], [Kraj stoku narciarskiego.],
   [], [Region], [nvarchar(20)], [Region, w którym znajduje się stok.],
   [], [MountainPeak], [nvarchar(20)], [Szczyt górski, na którym znajduje się stok.],
 )
-= Dimensional model
+= Model wymiarowy
 
-== Facts definitions
+== Definicje faktów
 
-=== Fact 1 - Pass sale fact
-
-Sprzedaż karnetu narciarskiego, dokonana w danym dniu. Zakupu dokonuje jeden klient o danym poziomie doświadczenia, w ramach jednej transakcji, dokonanej offline lub online.
-
-Tabela faktu: *PassSale*
-
-Ziarnistość:
-- określony dzień sprzedaży,
-- określony klient, który zakupił karnet,
-- określona karta, do której przypisano karnet,
-- określony karnet, wraz z jego ceną i ilością zjazdów,
-- określona transakcja, wraz z wybranym rodzajem płatności (offline/online).
-
-Miary i funkcje agregujące:
-- Ilość sprzedanych karnetów - `COUNT(1)`
-- Łączna kwota transakcji - `SUM(Price)`
-- Ilość zjazdów sprzedanych w karnetach - `SUM(BoughtRides)`
-- Liczba transakcji -` DISTINCT COUNT(TransactionNumber)`
-- Profit - `SUM(Price) / 1.23`
-
-=== Fact 2 - Ride fact
+=== Fakt 1 - Zjazd ze stoku
 
 Zjazd ze stoku narciarskiego, dokonany w danym dniu, na danym stoku, przy użyciu jednej karty, na której znajduje się karnet umożliwiający zjazd.
 
 Tabela faktu: *Ride*
 
 Ziarnistość:
-- określony dzień,
-- określony stok,
-- określona karta,
-- określony karnet.
+- określony dzień, w którym odbył się zjazd,
+- określony stok, na którym odbył się zjazd,
+- określona karta, z której skorzystano,
+- określony karnet, z którego pobrano zjazd.
 
 Miary:
 - Ilość zjazdów - `COUNT(1)`
+
+==== Fakt 2 - Wykupienie karnetu przez klienta
+
+Zakup karnetu narciarskiego, dokonana w danym dniu. Zakupu dokonuje jeden klient o danym poziomie doświadczenia, w ramach jednej transakcji, dokonanej offline lub online. Kupiony karnet ma określoną cenę oraz liczbę zjazdów, do których uprawnia. Jest on przypisany do jednej karty.
+
+Tabela faktu: *PassPurchase*
+
+Ziarnistość:
+- określony dzień transakcji,
+- określony klient, który zakupił karnet,
+- określona karta, do której przypisano karnet,
+- określony karnet, wraz z jego ceną i ilością zjazdów,
+- określona transakcja, wraz z wybranym rodzajem transakcji (offline/online).
+
+Miary i funkcje agregujące:
+- Ilość sprzedanych karnetów - `COUNT(1)`
+- Łączna kwota - `SUM(Price)`
+- Ilość zjazdów wykupionych w karnetach - `SUM(BoughtRides)`
+- Liczba transakcji -` DISTINCT COUNT(TransactionNumber)`
+- Przychód - `SUM(Price) / 1.23`
 
 #pagebreak()
 
 == Definicje wymiarów
 
-=== Wymiary dla faktu 1 - Sprzedaż karnetu
-
-#table(
-  columns: (1fr, 1fr, 1fr),
-  table.header(
-    text("Wymiar/atrybut wymiaru"),
-    text("Tabela/column"),
-    text("Typ"),
-  ),
-
-  [Numer transakcji], [PassSale.TransactionNumber], [Wymiar zdegenerowany],
-  [Hierarchia daty sprzedaży],
-  [#sym.circle.filled.tiny Date.Year \
-    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Month \
-    #sym.circle.filled.tiny #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Day],
-  [Wymiar hierarchiczny],
-
-  [Data sprzedaży], [Date], [Wymiar],
-  [Rok sprzedaży], [Date.Year], [Atrybut wymiaru],
-  [Sezon sprzedaży], [Date.Season], [Atrybut wymiaru],
-  [Miesiąc sprzedaży], [Date.Month], [Atrybut wymiaru],
-  [Dzień sprzedaży], [Date.Day], [Atrybut wymiaru],
-  [Dzień tygodnia sprzedaży], [Date.DayOfWeek], [Atrybut wymiaru],
-  [Karnet], [Pass], [Wymiar],
-  [Cena], [Pass.Price], [Atrybut wymiaru],
-  [Łączna ilość zjazdów], [Pass.TotalRides], [Atrybut wymiaru],
-  [Pozostała ilość zjazdów], [Pass.LeftRides], [Atrybut wymiaru],
-  [Wykorzystana ilość zjazdów], [Pass.UsedRides], [Atrybut wymiaru],
-  [Stan karnetu], [Pass.UsedState], [Atrybut wymiaru],
-  [Hierarchia dany ważności karnetu],
-  [#sym.circle.filled.tiny Date.Year \
-    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Season \
-    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Month \
-    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Day],
-  [Data ważności karnetu],
-
-  [Pass.ValidUntilDateID], [Wymiar], [Rok ważności karnetu],
-  [Date.Year], [Atrybut wymiaru], [Sezon ważności karnetu],
-  [Date.Season], [Atrybut wymiaru], [Miesiąc ważności karnetu],
-  [Date.Month], [Atrybut wymiaru], [Dzień ważności karnetu],
-  [Date.Day], [Atrybut wymiaru], [Dzień tygodnia ważności karnetu],
-  [Date.DayOfWeek], [Atrybut wymiaru], [Karta],
-  [Card], [Wymiar], [Kod karty],
-  [Card.CardCode], [Atrybut wymiaru], [Klient],
-  [Client], [Wymiar], [Email],
-  [Client.Email], [Atrybut wymiaru], [Doświadczenie],
-  [Client.Experience], [Atrybut wymiaru], [Junk],
-  [Junk], [Wymiar], [Typ płatności],
-  [Junk.PaymentMethod], [Atrybut wymiaru],
-)
-
-=== Wymiary dla faktu 2 - Zjazd ze stoku
+=== Wymiary dla faktu 1 - Zjazd ze stoku
 
 #table(
   columns: (1fr, 1fr, 1fr),
@@ -227,7 +176,7 @@ Miary:
   [Hierarchia daty zjazdu],
   [#sym.circle.filled.tiny Date.Year \
     #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Month \
-    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Day],
+    #sym.circle.filled.tiny #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Day],
   [Wymiar hierarchiczny],
 
   [Data zjazdu], [Date], [Wymiar],
@@ -257,6 +206,56 @@ Miary:
   [Stan karnetu], [Pass.UsedState], [Atrybut wymiaru],
 )
 
+=== Wymiary dla faktu 2 - Wykupienie karnetu przez klienta
+
+#table(
+  columns: (1fr, 1fr, 1fr),
+  table.header(
+    text("Wymiar/atrybut wymiaru"),
+    text("Tabela/column"),
+    text("Typ"),
+  ),
+
+  [Numer transakcji], [PassPurchase.TransactionNumber], [Wymiar zdegenerowany],
+  [Hierarchia daty zakupu],
+  [#sym.circle.filled.tiny Date.Year \
+    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Month \
+    #sym.circle.filled.tiny #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Day],
+  [Wymiar hierarchiczny],
+
+  [Data zakupu], [Date], [Wymiar],
+  [Rok zakupu], [Date.Year], [Atrybut wymiaru],
+  [Sezon zakupu], [Date.Season], [Atrybut wymiaru],
+  [Miesiąc zakupu], [Date.Month], [Atrybut wymiaru],
+  [Dzień zakupu], [Date.Day], [Atrybut wymiaru],
+  [Dzień tygodnia zakupu], [Date.DayOfWeek], [Atrybut wymiaru],
+  [Karnet], [Pass], [Wymiar],
+  [Cena], [Pass.Price], [Atrybut wymiaru],
+  [Łączna ilość zjazdów], [Pass.TotalRides], [Atrybut wymiaru],
+  [Pozostała ilość zjazdów], [Pass.LeftRides], [Atrybut wymiaru],
+  [Wykorzystana ilość zjazdów], [Pass.UsedRides], [Atrybut wymiaru],
+  [Stan karnetu], [Pass.UsedState], [Atrybut wymiaru],
+  [Hierarchia daty ważności karnetu],
+  [#sym.circle.filled.tiny Date.Year \
+    #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Month \
+    #sym.circle.filled.tiny #sym.circle.filled.tiny #sym.circle.filled.tiny Date.Day],
+  [Wymiar hierarchiczny],
+
+  [Data ważności karnetu], [Date], [Wymiar],
+  [Rok ważności karnetu], [Date.Year], [Atrybut wymiaru],
+  [Sezon ważności karnetu], [Date.Season], [Atrybut wymiaru],
+  [Miesiąc ważności karnetu], [Date.Month], [Atrybut wymiaru],
+  [Dzień ważności karnetu], [Date.Day], [Atrybut wymiaru],
+  [Dzień tygodnia ważności karnetu], [Date.DayOfWeek], [Atrybut wymiaru],
+  [Karta], [Card], [Wymiar],
+  [Kod karty], [Card.CardCode], [Atrybut wymiaru],
+  [Klient], [Client], [Wymiar],
+  [Email], [Client.Email], [Atrybut wymiaru],
+  [Doświadczenie], [Client.Experience], [Atrybut wymiaru],
+  [Junk], [Junk], [Wymiar],
+  [Typ transakcji], [Junk.TransactionType], [Atrybut wymiaru],
+)
+
 #pagebreak()
 
 #set table(
@@ -275,14 +274,14 @@ Miary:
   [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
   [*Wymiar*], [Stok], [*Atrybuty wymiaru*], [Nazwa stoku],
   [*Wymiar*], [Karta], [*Atrybuty wymiaru*], [Kod karty],
-  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Dzień tygodnia],
+  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Dzień tygodnia zjazdu],
 )
 
 == Ile średnio zjazdów wykonuje jedna osoba w ciągu dnia?
 
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
-  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Data],
+  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Rok zjazdu, Miesiąc zjazdu, Dzień zjazdu],
   [*Wymiar*], [Karta], [*Atrybuty wymiaru*], [Kod karty],
 )
 
@@ -290,15 +289,15 @@ Miary:
 
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość sprzedanych karnetów],
-  [*Wymiar*], [Data sprzedaży], [*Atrybuty wymiaru*], [Miesiąc],
+  [*Wymiar*], [Data zakupu], [*Atrybuty wymiaru*], [Miesiąc zakupu],
 )
 
 == Porównaj ilość karnetów zakupionych online i offline względem poprzedniego sezonu.
 
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość sprzedanych karnetów],
-  [*Wymiar*], [Data sprzedaży], [*Atrybuty wymiaru*], [Sezon],
-  [*Wymiar*], [Junk], [*Atrybuty wymiaru*], [Typ płatności],
+  [*Wymiar*], [Data zakupu], [*Atrybuty wymiaru*], [Sezon zakupu],
+  [*Wymiar*], [Junk], [*Atrybuty wymiaru*], [Typ transakcji],
 )
 
 == Porównaj popularność karnetów upoważniających do różnej ilości zjazdów.
@@ -313,7 +312,7 @@ Miary:
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
   [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena],
-  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Miesiąc],
+  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Miesiąc zjazdu],
 )
 
 #text(red)[
@@ -323,18 +322,15 @@ Miary:
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
   [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena],
-  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Data],
+  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Rok zjazdu, Miesiąc zjazdu, Dzień zjazdu],
 )
 
-#text(red)[
-  == Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
-]
+== Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
 
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość sprzedanych karnetów],
-  [*Wymiar*], [Junk], [*Atrybuty wymiaru*], [Typ płatności],
-  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Łączna ilość zjazdów],
-  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Pozostała ilość zjazdów],
+  [*Wymiar*], [Junk], [*Atrybuty wymiaru*], [Typ transakcji],
+  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Łączna ilość zjazdów, Pozostała ilość zjazdów],
 )
 
 #text(red)[
@@ -343,14 +339,14 @@ Miary:
 
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
-  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena],
-  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Pozostała ilość zjazdów],
+  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena, Łączna liczba zjazdów, Pozostała liczba zjazdów],
 )
 
 == Jak zmienia się ilość wykupionych zjazdów w zależności od doświadczenia klienta (ilości kupionych wcześniej karnetów)?
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[Ilość zjazdów sprzedanych w karnetach],
+  [*Miara*], table.cell(colspan: 3)[Ilość sprzedanych karnetów],
+  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Łączna ilość zjazdów],
   [*Wymiar*], [Klient], [*Atrybuty wymiaru*], [Doświadczenie],
 )
 
