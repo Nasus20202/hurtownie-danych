@@ -58,7 +58,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [PassID], [Numeric], [FK Pass #linebreak() Kupiony karnet.],
   [], [JunkID], [Numeric], [FK Junk #linebreak() Dodatkowe atrybuty.],
   [], [Price], [Money], [Cena karnetu.],
-  [], [TotalTransactionPrice], [Money], [Całkowita kwota transakcji, której częścią jest ta sprzedaż.],
+  [], [TotalTransactionPrice], [Money], [Całkowita kwota transakcji, której częścią jest to kupno.],
   [], [BoughtRides], [Numeric], [Ilość zjazdów wykupionych w karnecie.],
   [], [TransactionNumber], [Numeric], [Numer transakcji.],
   table.cell(colspan: 4)[#line(length: 100%)],
@@ -141,7 +141,7 @@ Miary:
 
 ==== Fakt 2 - Wykupienie karnetu przez klienta
 
-Zakup karnetu narciarskiego, dokonana w danym dniu. Zakupu dokonuje jeden klient o danym poziomie doświadczenia, w ramach jednej transakcji, dokonanej offline lub online. Kupiony karnet ma określoną cenę oraz liczbę zjazdów, do których uprawnia. Jest on przypisany do jednej karty.
+Zakup karnetu narciarskiego, dokonany w danym dniu. Zakupu dokonuje jeden klient o danym poziomie doświadczenia, w ramach jednej transakcji, dokonanej offline lub online. Kupiony karnet ma określoną cenę oraz liczbę zjazdów, do których uprawnia. Jest on przypisany do jednej karty.
 
 Tabela faktu: *PassPurchase*
 
@@ -334,7 +334,7 @@ Miary i funkcje agregujące:
 )
 
 #text(red)[
-  == Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od jego ceny?
+  == Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ich ceny?
 ]
 
 #table(
