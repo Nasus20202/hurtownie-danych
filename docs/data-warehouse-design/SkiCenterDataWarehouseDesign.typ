@@ -265,8 +265,6 @@ Miary i funkcje agregujące:
   [Typ transakcji], [Junk.TransactionType], [Atrybut wymiaru],
 )
 
-#pagebreak()
-
 #set table(
   stroke: 0.5pt + silver,
   columns: (1fr, 2fr, 2fr, 2fr),
@@ -337,9 +335,7 @@ Miary i funkcje agregujące:
   [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Stan karnetu],
 )
 
-#text(red)[
-  == Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ich ceny?
-]
+== Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ich ceny?
 
 #table(
   [*Miara*], table.cell(colspan: 3)[Średnia pozostała ilość zjazdów na karnecie, z którego pobrano zjazd],
