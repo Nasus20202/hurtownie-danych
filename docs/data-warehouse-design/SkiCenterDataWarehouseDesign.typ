@@ -36,7 +36,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
 = Schemat relacyjnej bazy danych
 
 #align(center)[
-  #box(width: 80%)[
+  #box(height: 76%)[
     #text(font: "FreeSans")[#image("schema.svg")]
   ]
 ]
@@ -69,6 +69,9 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [SlopeID], [Numeric], [FK Slope #linebreak() Stok, na którym nastąpił zjazd.],
   [], [CardID], [Numeric], [FK Card #linebreak() Karta, która została wykorzystana do zjazdu.],
   [], [PassID], [Numeric], [FK Pass #linebreak() Karnet, z którego pobrano zjazd.],
+  [], [TotalPassRides], [Numeric], [Łączna ilość zjazdów możliwych do wykonania na karnecie, z którego pobrano zjazd.],
+  [], [UsedPassRides], [Numeric], [Ilość zjazdów wykonanych na karnecie, z którego pobrano zjazd (wliczając dany zjazd).],
+  [], [TimeSincePassPurchase], [Numeric], [Czas od zakupu karnetu do zjazdu (wyrażony w sekundach).],
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
@@ -106,6 +109,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
 
   [*Pass (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden karnet.*],
   [], [PassID], [Numeric], [PK #linebreak() (klucz zastępczy)],
+  [], [PassCode], [nvarchar(32)], [Kod karnetu w formacie "Karnet XXXX", gdzie XXXX to numer karnetu.],
   [], [ValidUntilDateID], [Numeric], [FK Date #linebreak() Data ważności karnetu.],
   [], [Price], [Money], [Cena karnetu.],
   [], [TotalRides], [Numeric], [Ilość zjazdów możliwych do wykonania na karnecie.],
@@ -137,7 +141,11 @@ Ziarnistość:
 - określony karnet, z którego pobrano zjazd.
 
 Miary:
-- Ilość zjazdów - `COUNT(1)`
+- Ilość zjazdów - `COUNT(*)`
+- Średnia liczba zjazdów na osobę - `COUNT(*) / COUNT(DISTINCT CardID)`
+- Czas korzystania z karnetu, z którego pobrano zjazd - `MAX(TimeSincePassPurchase)`
+- Pozostała ilość zjazdów na karnecie, z którego pobrano zjazd - `TotalPassRides - UsedPassRides`
+- Średnia pozostała ilość zjazdów na karnecie, z którego pobrano zjazd - `SUM(TotalPassRides - UsedPassRides) / COUNT(DISTINCT PassID)`
 
 ==== Fakt 2 - Wykupienie karnetu przez klienta
 
@@ -153,13 +161,12 @@ Ziarnistość:
 - określona transakcja, wraz z wybranym rodzajem transakcji (offline/online).
 
 Miary i funkcje agregujące:
-- Ilość sprzedanych karnetów - `COUNT(1)`
+- Ilość sprzedanych karnetów - `COUNT(*)`
 - Łączna kwota - `SUM(Price)`
-- Ilość zjazdów wykupionych w karnetach - `SUM(BoughtRides)`
-- Liczba transakcji -` DISTINCT COUNT(TransactionNumber)`
+- Średnia ilość zjazdów wykupionych w karnetach - `SUM(BoughtRides) / COUNT(*)`
+- Liczba transakcji -` COUNT(DISTINCT TransactionNumber)`
+- Średnia liczba transakcji na osobę - `COUNT(DISTINCT TransactionNumber) / COUNT(DISTINCT ClientID)`
 - Przychód - `SUM(Price) / 1.23`
-
-#pagebreak()
 
 == Definicje wymiarów
 
@@ -199,6 +206,7 @@ Miary i funkcje agregujące:
   [Karta], [Card], [Wymiar],
   [Kod karty], [Card.CardCode], [Atrybut wymiaru],
   [Karnet], [Pass], [Wymiar],
+  [Kod karnetu], [Pass.PassCode], [Atrybut wymiaru],
   [Cena], [Pass.Price], [Atrybut wymiaru],
   [Łączna ilość zjazdów], [Pass.TotalRides], [Atrybut wymiaru],
   [Pozostała ilość zjazdów], [Pass.LeftRides], [Atrybut wymiaru],
@@ -231,6 +239,7 @@ Miary i funkcje agregujące:
   [Dzień tygodnia zakupu], [Date.DayOfWeek], [Atrybut wymiaru],
   [Karnet], [Pass], [Wymiar],
   [Cena], [Pass.Price], [Atrybut wymiaru],
+  [Kod karnetu], [Pass.PassCode], [Atrybut wymiaru],
   [Łączna ilość zjazdów], [Pass.TotalRides], [Atrybut wymiaru],
   [Pozostała ilość zjazdów], [Pass.LeftRides], [Atrybut wymiaru],
   [Wykorzystana ilość zjazdów], [Pass.UsedRides], [Atrybut wymiaru],
@@ -271,18 +280,16 @@ Miary i funkcje agregujące:
 == Oblicz średnią ilość zjazdów jednej osoby na każdym ze stoków w zależności od dnia tygodnia.
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
+  [*Miara*], table.cell(colspan: 3)[Średnia liczba zjazdów na osobę],
   [*Wymiar*], [Stok], [*Atrybuty wymiaru*], [Nazwa stoku],
-  [*Wymiar*], [Karta], [*Atrybuty wymiaru*], [Kod karty],
   [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Dzień tygodnia zjazdu],
 )
 
 == Ile średnio zjazdów wykonuje jedna osoba w ciągu dnia?
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
+  [*Miara*], table.cell(colspan: 3)[Średnia liczba zjazdów na osobę],
   [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Rok zjazdu, Miesiąc zjazdu, Dzień zjazdu],
-  [*Wymiar*], [Karta], [*Atrybuty wymiaru*], [Kod karty],
 )
 
 == Porównanie ilości sprzedanych karnetów w zależności od miesiąca.
@@ -315,14 +322,11 @@ Miary i funkcje agregujące:
   [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Miesiąc zjazdu],
 )
 
-#text(red)[
-  == Jak długo trwa korzystanie z karnetu w zależności od jego ceny?
-]
+== Jak długo trwa korzystanie z karnetu w zależności od jego ceny?
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
+  [*Miara*], table.cell(colspan: 3)[Czas korzystania z karnetu, z którego pobrano zjazd],
   [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena],
-  [*Wymiar*], [Data zjazdu], [*Atrybuty wymiaru*], [Rok zjazdu, Miesiąc zjazdu, Dzień zjazdu],
 )
 
 == Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
@@ -330,7 +334,7 @@ Miary i funkcje agregujące:
 #table(
   [*Miara*], table.cell(colspan: 3)[Ilość sprzedanych karnetów],
   [*Wymiar*], [Junk], [*Atrybuty wymiaru*], [Typ transakcji],
-  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Łączna ilość zjazdów, Pozostała ilość zjazdów],
+  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Stan karnetu],
 )
 
 #text(red)[
@@ -338,8 +342,8 @@ Miary i funkcje agregujące:
 ]
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[Ilość zjazdów],
-  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena, Łączna liczba zjazdów, Pozostała liczba zjazdów],
+  [*Miara*], table.cell(colspan: 3)[Średnia pozostała ilość zjazdów na karnecie, z którego pobrano zjazd],
+  [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena],
 )
 
 == Jak zmienia się ilość wykupionych zjazdów w zależności od doświadczenia klienta (ilości kupionych wcześniej karnetów)?

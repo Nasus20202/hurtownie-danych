@@ -11,20 +11,20 @@ erDiagram
     PassPurchase }o--o| Junk : ""
 
 Client {
-    int ClientID PK
-    string Email
+    int ClientID "PK"
+    string Email "BK"
     string Experience
     bool IsCurrent
 }
 
 Card {
-    int CardID PK
-    string CardCode
+    int CardID "PK"
+    string CardCode "BK"
 }
 
 Date {
-    int DateID PK
-    date Date
+    int DateID "PK"
+    date Date "BK"
     int Year
     string Season
     string Month
@@ -35,13 +35,14 @@ Date {
 }
 
 Junk {
-    int JunkID PK
+    int JunkID "PK"
     string PaymentMethod
 }
 
 Pass {
-    int PassID PK
-    int ValidUntilDateID FK
+    int PassID "PK"
+    string PassCode "BK"
+    int ValidUntilDateID "FK"
     money Price
     int TotalRides
     int LeftRides
@@ -50,11 +51,11 @@ Pass {
 }
 
 PassPurchase {
-    int PassPurchaseDateID FK
-    int CardID FK
-    int ClientID FK
-    int PassID FK
-    int JunkID FK
+    int PassPurchaseDateID "FK"
+    int CardID "FK"
+    int ClientID "FK"
+    int PassID "FK"
+    int JunkID "FK"
     money Price
     money TotalTransactionPrice
     int BoughtRides
@@ -62,15 +63,18 @@ PassPurchase {
 }
 
 Ride {
-    int RideDateID FK
-    int SlopeID FK
-    int CardID FK
-    int PassID FK
+    int RideDateID "FK"
+    int SlopeID "FK"
+    int CardID "FK"
+    int PassID "FK"
+    int TotalPassRides
+    int UsedPassRides
+    int TimeSincePassPurchase
 }
 
 Slope {
-    int SlopeID PK
-    string SlopeName
+    int SlopeID "PK"
+    string SlopeName "BK"
     string Country
     string Region
     string MountainPeak
