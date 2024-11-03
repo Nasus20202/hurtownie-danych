@@ -71,7 +71,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [PassID], [Numeric], [FK Pass #linebreak() Karnet, z którego pobrano zjazd.],
   [], [TotalPassRides], [Numeric], [Łączna ilość zjazdów możliwych do wykonania na karnecie, z którego pobrano zjazd.],
   [], [UsedPassRides], [Numeric], [Ilość zjazdów wykonanych na karnecie, z którego pobrano zjazd (wliczając dany zjazd).],
-  [], [TimeSincePassPurchase], [Numeric], [Czas od zakupu karnetu do zjazdu (wyrażony w sekundach).],
+  [], [DaysSincePassPurchase], [Numeric], [Czas od zakupu karnetu do zjazdu (wyrażony w dniach).],
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
@@ -143,7 +143,7 @@ Ziarnistość:
 Miary:
 - Ilość zjazdów - `COUNT(*)`
 - Średnia liczba zjazdów na osobę - `COUNT(*) / COUNT(DISTINCT CardID)`
-- Czas korzystania z karnetu, z którego pobrano zjazd - `MAX(TimeSincePassPurchase)`
+- Czas korzystania z karnetu, z którego pobrano zjazd - `MAX(DaysSincePassPurchase)`
 - Pozostała ilość zjazdów na karnecie, z którego pobrano zjazd - `TotalPassRides - UsedPassRides`
 - Średnia pozostała ilość zjazdów na karnecie, z którego pobrano zjazd - `SUM(TotalPassRides - UsedPassRides) / COUNT(DISTINCT PassID)`
 
