@@ -1,8 +1,8 @@
 erDiagram
     Date |o--o{ Ride : ""
-    Ride |o--o{ Pass : ""
-    Ride |o--o{ Slope : ""
-    Ride |o--o{ Card : ""
+    Ride }o--o| Pass : ""
+    Ride }o--o| Slope : ""
+    Ride }o--o| Card : ""
     Date |o--o{ PassPurchase : ""
     Card |o--o{ PassPurchase : ""
     Client |o--o{ PassPurchase : ""
@@ -43,10 +43,7 @@ Pass {
     int PassID "PK"
     string PassCode "BK"
     int ValidUntilDateID "FK"
-    money Price
-    int TotalRides
-    int LeftRides
-    int UsedRides
+    string Price
     string UsedState
 }
 
@@ -67,8 +64,7 @@ Ride {
     int SlopeID "FK"
     int CardID "FK"
     int PassID "FK"
-    int TotalPassRides
-    int UsedPassRides
+    int LeftPassRides
     int DaysSincePassPurchase
 }
 
