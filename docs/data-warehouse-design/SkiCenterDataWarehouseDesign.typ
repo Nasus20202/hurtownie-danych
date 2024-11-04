@@ -62,6 +62,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [Price], [Money], [Cena karnetu.],
   [], [TotalTransactionPrice], [Money], [Całkowita kwota transakcji, której częścią jest to kupno.],
   [], [BoughtRides], [Numeric], [Ilość zjazdów wykupionych w karnecie.],
+  [], [LeftPassRides], [Numeric], [Pozostała ilość zjazdów możliwych do wykonania na zakupionym karnecie.],
   [], [TransactionNumber], [Numeric], [Numer transakcji.],
   table.cell(colspan: 4)[#line(length: 100%)],
 
@@ -71,7 +72,6 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [SlopeID], [Numeric], [FK Slope #linebreak() Stok, na którym nastąpił zjazd.],
   [], [CardID], [Numeric], [FK Card #linebreak() Karta, która została wykorzystana do zjazdu.],
   [], [PassID], [Numeric], [FK Pass #linebreak() Karnet, z którego pobrano zjazd.],
-  [], [LeftPassRides], [Numeric], [Pozostała ilość zjazdów możliwych do wykonania na karnecie, z którego pobrano zjazd, po pobraniu zjazdu.],
   [], [DaysSincePassPurchase], [Numeric], [Liczba dni od zakupu karnetu do daty zjazdu.],
   table.cell(colspan: 4)[#line(length: 100%)],
 
@@ -146,7 +146,6 @@ Miary:
 - Ilość zjazdów - `COUNT(*)` <ilosc_zjazdow>
 - Średnia liczba zjazdów na osobę - `COUNT(*) / COUNT(DISTINCT CardID)` <srednia_liczba_zjazdow_na_osobe>
 - Maksymalna liczba dni od zakupu karnetu do zjazdu - `MAX(DaysSincePassPurchase)` <maksymalna_liczba_dni_od_zakupu_karnetu_do_zjazdu>
-- Średnia pozostała ilość zjazdów na karnetach - `SUM(LeftPassRides) / COUNT(*)` <srednia_pozostala_ilosc_zjazdow_na_karnetach>
 
 === Fakt 2 - Wykupienie karnetu przez klienta
 
@@ -168,6 +167,7 @@ Miary i funkcje agregujące:
 - Średnia liczba transakcji na osobę - `Liczba transakcji / COUNT(DISTINCT ClientID)` <srednia_liczba_transakcji_na_osobe>
 - Łączna kwota - `SUM(Price)` <laczna_kwota>
 - Przychód - `Łączna kwota / 1.23` <przychod>
+- Średnia pozostała ilość zjazdów na karnetach - `SUM(LeftPassRides) / COUNT(*)` <srednia_pozostala_ilosc_zjazdow_na_karnetach>
 
 == Definicje wymiarów
 
@@ -325,7 +325,7 @@ Miary i funkcje agregujące:
 == Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[Ilość sprzedanych karnetów],
+  [*Miara*], table.cell(colspan: 3)[#link(<ilosc_sprzedanych_karnetow>)[Ilość sprzedanych karnetów]],
   [*Wymiar*], [Junk], [*Atrybuty wymiaru*], [Typ transakcji],
   [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Stan karnetu],
 )
@@ -373,6 +373,7 @@ Miary i funkcje agregujące:
   [], [Price], [Cena zakupu karnetu. Bazuje na polu `Price` z tabeli `Passes` z bazy danych],
   [], [TotalTransactionPrice], [Kwota całej transakcji, której częścią jest zakup tego karnetu. Bazuje na polu `TotalPrice` z tabeli `Transactions` z bazy danych.],
   [], [BoughtRides], [Ilość zakupionych zjazdów w karnecie. Bazuje na polu `TotalRides` z tabeli `Passes` z bazy danych.],
+  [], [LeftPassRides], [Pozostała ilość zjazdów możliwych do wykonania na zakupionym karnecie. Bazuje na różnicy pól `TotalRides` i `UsedRides` z tabeli `Passes`.],
   [], [TransactionNumber], [Numer transakcji. Wymiar zdegenerowany. Bazuje na polu `TransactionID` z tabeli `Transactions` z bazy danych.],
   table.cell(colspan: 3)[#line(length: 100%)],
 
@@ -382,7 +383,6 @@ Miary i funkcje agregujące:
   [], [SlopeID], [ID stoku, na którym odbył się zjazd. Klucz obcy z tabeli wymiaru. Bazuje na polu `numer bramki` z logów bramek w formacie csv.],
   [], [CardID], [ID karty, którą odbito w bramce. Klucz obcy z tabeli wymiaru. Bazuje kluczu biznesowym `CardCode` z tabeli `Cards` oraz pola `ID karnetu` z logów bramek w formacie csv.],
   [], [PassID], [ID karnetu, z którego pobrano zjazd. Klucz obcy z tabeli wymiaru. Bazuje na polu `ID karnetu` z logów bramek w formacie csv.],
-  [], [LeftPassRides], [Pozostała ilość zjazdów na karnecie, z którego pobrano zjazd. Bazuje na różnicy pól `TotalRides` i `UsedRides` z tabeli `Passes`.],
   [], [DaysSincePassPurchase], [Liczba dni od zakupu karnetu do daty zjazdu. Bazuje na różnicy pól `data i godzina odbicia kart` z logów bramek w formacie csv i `Date` z tabeli `Transactions`.],
   table.cell(colspan: 3)[#line(length: 100%)],
 
