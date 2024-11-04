@@ -43,6 +43,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
 ]
 
 == Opis tabel
+
 #table(
   columns: (1fr, 1fr, 1fr, 1fr),
   table.header(
@@ -71,13 +72,13 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [CardID], [Numeric], [FK Card #linebreak() Karta, która została wykorzystana do zjazdu.],
   [], [PassID], [Numeric], [FK Pass #linebreak() Karnet, z którego pobrano zjazd.],
   [], [LeftPassRides], [Numeric], [Pozostała ilość zjazdów możliwych do wykonania na karnecie, z którego pobrano zjazd, po pobraniu zjazdu.],
-  [], [DaysSincePassPurchase], [Numeric], [Czas od zakupu karnetu do zjazdu (wyrażony w dniach).],
+  [], [DaysSincePassPurchase], [Numeric], [Liczba dni od zakupu karnetu do daty zjazdu.],
   table.cell(colspan: 4)[#line(length: 100%)],
 
 
   [*Client (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje pojedynczego klienta ośrodka narciarskiego.*],
   [], [ClientID], [Numeric], [PK #linebreak() (klucz zastępczy)],
-  [], [Email], [nvarchar(64)], [Email klienta],
+  [], [Email], [nvarchar(64)], [Adres email klienta],
   [], [Experience], [nvarchar(20)], [Doświadczenie klienta na podstawie liczby wykupionych wcześniej karnetów. #linebreak() Dopuszczalne wartości: "1-3", "4-10", ">10"],
   [], [IsCurrent], [Boolean], [1 jeśli informacja jest aktualna, 0 w przeciwnym wypadku. (implementacja SCD2)],
   table.cell(colspan: 4)[#line(length: 100%)],
@@ -105,6 +106,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [*Junk (Tabela wymiaru)*], table.cell(colspan: 3)[*Encje reprezentują dodatkowe atrybuty.*],
   [], [JunkID], [Numeric], [PK #linebreak() (klucz zastępczy)],
   [], [TransactionType], [nvarchar(10)], [Typ transakcji. Dopuszczalne wartości: "online", "offline"],
+  table.cell(colspan: 4)[#line(length: 100%)],
 
 
   [*Pass (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden karnet.*],
@@ -113,6 +115,8 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [ValidUntilDateID], [Numeric], [FK Date #linebreak() Data ważności karnetu.],
   [], [Price], [nvarchar(20)], [Cena karnetu. Dopuszczalne wartości: "0-25€", "25-50€", "50-100€", "100-200€", "200+€"],
   [], [UsedState], [nvarchar(20)], [Stan karnetu. Dopuszczalne wartości: "wykorzystany", "aktywny", "wygasły"],
+  table.cell(colspan: 4)[#line(length: 100%)],
+
 
   [*Slope (Tabela wymiaru)*], table.cell(colspan: 3)[*Jedna encja reprezentuje jeden stok narciarski.*],
   [], [SlopeID], [Numeric], [PK #linebreak() (klucz zastępczy)],
@@ -121,6 +125,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [], [Region], [nvarchar(20)], [Region, w którym znajduje się stok.],
   [], [MountainPeak], [nvarchar(20)], [Szczyt górski, na którym znajduje się stok.],
 )
+
 = Model wymiarowy
 
 == Definicje faktów
@@ -350,3 +355,75 @@ Miary i funkcje agregujące:
 )
 
 = Weryfikacja dostępności wymaganych danych w źródłach
+
+#table(
+  columns: (2fr, 3fr, 7fr),
+  table.header(
+    text("Tabela"),
+    text("Kolumna"),
+    text("Źródło danych"),
+  ),
+
+  [*PassPurchase*], table.cell(colspan: 2)[*Jedna encja reprezentuje fakt wykupienia karnetu przez klienta.*],
+  [], [PassPurchaseDateID], [ID daty zakupu karnetu. Klucz obcy z tabeli wymiaru. Bazuje na polu `Date` z tabeli `Transactions` z bazy danych.],
+  [], [CardID], [ID karty, na którą zakupiono karnet. Klucz obcy z tabeli wymiaru. Bazuje na polu `CardCode` z tabeli `Cards` z bazy danych.],
+  [], [ClientID], [ID klienta, który dokonał transakcji. Klucz obcy z tabeli wymiaru. Bazuje na polu `Email` z tabeli `Clients` z bazy danych.],
+  [], [PassID], [ID karnetu, który został zakupiony. Klucz obcy z tabeli wymiaru. Tworzony na podstawie klucza głównego `PassID` z tabeli `Passes` z bazy danych.],
+  [], [JunkID], [ID dodatkowych atrybutów. Klucz obcy z tabeli wymiaru. Bazuje na polu `Type` z tabeli `Transactions` z bazy danych.],
+  [], [Price], [Cena zakupu karnetu. Bazuje na polu `Price` z tabeli `Passes` z bazy danych],
+  [], [TotalTransactionPrice], [Kwota całej transakcji, której częścią jest zakup tego karnetu. Bazuje na polu `TotalPrice` z tabeli `Transactions` z bazy danych.],
+  [], [BoughtRides], [Ilość zakupionych zjazdów w karnecie. Bazuje na polu `TotalRides` z tabeli `Passes` z bazy danych.],
+  [], [TransactionNumber], [Numer transakcji. Wymiar zdegenerowany. Bazuje na polu `TransactionID` z tabeli `Transactions` z bazy danych.],
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Ride*], table.cell(colspan: 2)[*Jedna encja reprezentuje fakt zjazdu ze stoku narciarskiego.*],
+  [], [RideDateID], [ID daty zjazdu. Klucz obcy z tabeli wymiaru. Bazuje na polu `data i godzina odbicia karty` z logów bramek w formacie csv.],
+  [], [SlopeID], [ID stoku, na którym odbył się zjazd. Klucz obcy z tabeli wymiaru. Bazuje na polu `numer bramki` z logów bramek w formacie csv.],
+  [], [CardID], [ID karty, którą odbito w bramce. Klucz obcy z tabeli wymiaru. Bazuje kluczu biznesowym `CardCode` z tabeli `Cards` oraz pola `ID karnetu` z logów bramek w formacie csv.],
+  [], [PassID], [ID karnetu, z którego pobrano zjazd. Klucz obcy z tabeli wymiaru. Bazuje na polu `ID karnetu` z logów bramek w formacie csv.],
+  [], [LeftPassRides], [Pozostała ilość zjazdów na karnecie, z którego pobrano zjazd. Bazuje na różnicy pól `TotalRides` i `UsedRides` z tabeli `Passes`.],
+  [], [DaysSincePassPurchase], [Liczba dni od zakupu karnetu do daty zjazdu. Bazuje na różnicy pól `data i godzina odbicia kart` z logów bramek w formacie csv i `Date` z tabeli `Transactions`.],
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Client*], table.cell(colspan: 2)[*Jedna encja reprezentuje pojedynczego klienta ośrodka narciarskiego. (Implementacja SCD2)*],
+  [], [ClientID], [ID klienta ośrodka narciarskiego. Klucz główny sztuczny - nadawany automatycznie.],
+  [], [Email], [Adres email klienta. Klucz biznesowy pobrany z pola `Email` z tabeli `Clients` z bazy danych.],
+  [], [Experience], [Doświadczenie klienta na podstawie liczby wykupionych wcześniej karnetów. Dopuszczalne wartości: "1-3", "4-10", ">10". Wartości mogą zostać policzone na podstawie tabel `Transactions` i `Passes` z bazy danych.],
+  [], [IsCurrent], ["1" jeśli informacja jest aktualna, "0" w przeciwnym wypadku. (implementacja SCD2).],
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Card*], table.cell(colspan: 2)[*Jedna encja reprezentuje pojedynczą kartę zjazdową.*],
+  [], [CardID], [ID karty. Klucz główny sztuczny - nadawany automatycznie.],
+  [], [CardCode], [Kod kreskowy karty. Klucz biznesowy pobrany z pola `CardCode` z tabeli `Cards` z bazy danych.],
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Date*], table.cell(colspan: 2)[*Jedna encja reprezentuje pojedynczy dzień.*],
+  [], [DateID], [ID daty. Klucz główny sztuczny - nadawany automatycznie.],
+  [], table.cell(colspan: 2)[Wszystkie dane wymagane dla tej tabeli mogą zostać wygenerowane na podstawie dowolnego kalendarza przed procesem ETL.],
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Junk*], table.cell(colspan: 2)[*Encje reprezentują dodatkowe atrybuty.*],
+  [], [JunkID], [ID dodatkowych atrybutów. Klucz główny sztuczny - nadawany automatycznie.],
+  [], table.cell(colspan: 2)[Wszystkie encje odpowiadają wszystkim możliwym wartościom `Type` z tabeli `Transactions`, wygenerowane będą przed procesem ETL.],
+
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Pass*], table.cell(colspan: 2)[*Jedna encja reprezentuje jeden karnet.*],
+  [], [PassID], [ID karnetu. Klucz główny sztuczny - nadawany automatycznie.],
+  [], [PassCode], [Numer karnetu. Klucz biznesowy, utworzony na podstawie pola `PassID` z tabeli `Passes`.],
+  [], [ValidUntilDateID], [ID daty ważności karnetu. Klucz obcy z tabeli wymiaru. Bazuje na polu `ValidUntil` z tabeli `Passes` z bazy danych.],
+  [], [Price], [Cena karnetu. Bazuje na polu `Price` z tabeli `Passes` z bazy danych.],
+  [], [UsedState], [Stan wykorzystana karnetu. Dopuszczalne wartości "wykorzystany", "aktywny", "wygasły". Wartości mogą zostać policzone na podstawie tabeli `Passes` z bazy danych.],
+  table.cell(colspan: 3)[#line(length: 100%)],
+
+
+  [*Slope*], table.cell(colspan: 2)[*Jedna encja reprezentuje jeden stok narciarski.*],
+  [], [SlopeID], [ID stoku. Klucz główny sztuczny - nadawany automatycznie.],
+  [], table.cell(colspan: 2)[Dane o stokach nie ulegają zmianom, więc mogą zostać wprowadzone ręcznie przed procesem ETL.],
+)
