@@ -56,7 +56,7 @@ Hurtownia danych została zaprojektowana dla ośrodka narciarskiego. Opisywanym 
   [*PassPurchase (Tabela faktu)*], table.cell(colspan: 3)[*Jedna encja reprezentuje fakt wykupienia karnetu przez klienta.*],
   [], [PassPurchaseDateID], [Numeric], [FK Pass #linebreak() Data transakcji.],
   [], [CardID], [Numeric], [FK Card #linebreak() Karta, na którą został zakupiony karnet.],
-  [], [ClientID], [Numeric], [FK Pass #linebreak() Klient, który zakupił karnet.],
+  [], [ClientID], [Numeric], [FK Client #linebreak() Klient, który zakupił karnet.],
   [], [PassID], [Numeric], [FK Pass #linebreak() Kupiony karnet.],
   [], [JunkID], [Numeric], [FK Junk #linebreak() Dodatkowe atrybuty.],
   [], [Price], [Money], [Cena karnetu.],
@@ -333,7 +333,7 @@ Miary i funkcje agregujące:
 == Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ich ceny?
 
 #table(
-  [*Miara*], table.cell(colspan: 3)[#link(<srednia_pozostala_ilosc_zjazdow_na_karnetach>)[Średnia pozostała ilość zjazdów na karnecie, z którego pobrano zjazd]],
+  [*Miara*], table.cell(colspan: 3)[#link(<srednia_pozostala_ilosc_zjazdow_na_karnetach>)[Średnia pozostała ilość zjazdów na karnetach]],
   [*Wymiar*], [Karnet], [*Atrybuty wymiaru*], [Cena],
 )
 
