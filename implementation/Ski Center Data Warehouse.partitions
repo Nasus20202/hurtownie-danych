@@ -41,5 +41,45 @@
         </Partition>
       </Partitions>
     </MeasureGroup>
+    <MeasureGroup>
+      <ID>Card</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e7bf6b6b-e44b-450d-8812-ee640b568004">
+          <ID>Card</ID>
+          <Name>Card</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="041f1aea-4c2c-4f04-9176-3b75ab0d2141">
+            <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
+            <TableID>dbo_Card</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Client</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8d5ede96-868f-4f3d-a652-6f4c650b35cc">
+          <ID>Client</ID>
+          <Name>Client</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8e79d6b7-7dab-43f9-a36b-eaf95f46a808">
+            <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
+            <TableID>dbo_Client</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
   </MeasureGroups>
 </Cube>
