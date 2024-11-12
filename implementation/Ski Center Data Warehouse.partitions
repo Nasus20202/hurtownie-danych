@@ -1,17 +1,37 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="162fbb26-2e45-48f3-ba23-de2255198da2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="58d88d2d-3fd3-4591-9950-9e42d0cb9898" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Ski Center Data Warehouse</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Pass Purchase</ID>
       <Partitions>
-        <Partition dwd:design-time-name="f5dcd697-d160-47e4-a538-833923ab1e51">
+        <Partition dwd:design-time-name="2308decb-4bb7-4402-842e-92b4448d14c0">
           <ID>Pass Purchase</ID>
           <Name>Pass Purchase</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="50b3e917-21c7-42ba-9739-9ac07d7d7e0b">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="25567e0e-dbd5-4d88-8e04-d2f5feee538f">
+            <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
+            <TableID>dbo_PassPurchase</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Pass Purchase 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e802f652-d325-486a-ad33-6f0f63a6cc4d">
+          <ID>Pass Purchase</ID>
+          <Name>Pass Purchase</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7d606763-bc0d-4d1b-910f-d4a3d59643ba">
             <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
             <TableID>dbo_PassPurchase</TableID>
           </Source>
@@ -24,14 +44,14 @@
     <MeasureGroup>
       <ID>Ride</ID>
       <Partitions>
-        <Partition dwd:design-time-name="ac0fa4d6-9db7-4f67-ad8b-1d05cdbd6cf0">
+        <Partition dwd:design-time-name="d0c96bb6-8a62-481c-9c51-cd413cb4ffc2">
           <ID>Ride</ID>
           <Name>Ride</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="68849fd9-e4ab-4231-94a9-45fd0569984a">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="bc3784cd-7786-42cc-8996-8225e55ce47f">
             <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
             <TableID>dbo_Ride</TableID>
           </Source>
@@ -42,18 +62,18 @@
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
-      <ID>Card</ID>
+      <ID>Ride 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="e7bf6b6b-e44b-450d-8812-ee640b568004">
-          <ID>Card</ID>
-          <Name>Card</Name>
+        <Partition dwd:design-time-name="295578a7-efed-4968-9ca5-430a2adad084">
+          <ID>Ride</ID>
+          <Name>Ride</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="041f1aea-4c2c-4f04-9176-3b75ab0d2141">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="11341636-abaa-4bf5-a4a0-5c948373ae99">
             <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
-            <TableID>dbo_Card</TableID>
+            <TableID>dbo_Ride</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
@@ -62,18 +82,18 @@
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
-      <ID>Client</ID>
+      <ID>Pass Purchase 2</ID>
       <Partitions>
-        <Partition dwd:design-time-name="8d5ede96-868f-4f3d-a652-6f4c650b35cc">
-          <ID>Client</ID>
-          <Name>Client</Name>
+        <Partition dwd:design-time-name="98fa862d-2b3a-4fde-bbf5-b23a1d014fbb">
+          <ID>Pass Purchase</ID>
+          <Name>Pass Purchase</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8e79d6b7-7dab-43f9-a36b-eaf95f46a808">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="29b9877b-bc0c-409a-bec2-0c9ff0c34559">
             <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
-            <TableID>dbo_Client</TableID>
+            <TableID>dbo_PassPurchase</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>

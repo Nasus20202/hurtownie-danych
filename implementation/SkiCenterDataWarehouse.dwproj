@@ -51,6 +51,10 @@
       <Name>Transaction.dim</Name>
       <FullPath>Transaction.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>ClientEmail.dim</Name>
+      <FullPath>ClientEmail.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
