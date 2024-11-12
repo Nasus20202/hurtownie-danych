@@ -47,6 +47,10 @@
       <Name>Slope.dim</Name>
       <FullPath>Slope.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Transaction.dim</Name>
+      <FullPath>Transaction.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
