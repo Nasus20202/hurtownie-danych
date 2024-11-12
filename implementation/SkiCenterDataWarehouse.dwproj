@@ -6,10 +6,79 @@
     <Name>SkiCenterDataWarehouse.database</Name>
     <FullPath>SkiCenterDataWarehouse.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Ski Center Data Warehouse.cube</Name>
+      <FullPath>Ski Center Data Warehouse.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Ski Center Data Warehouse.partitions</Name>
+          <FullPath>Ski Center Data Warehouse.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Pass.dim</Name>
+      <FullPath>Pass.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Junk.dim</Name>
+      <FullPath>Junk.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Client.dim</Name>
+      <FullPath>Client.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Card.dim</Name>
+      <FullPath>Card.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Date.dim</Name>
+      <FullPath>Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Slope.dim</Name>
+      <FullPath>Slope.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>Ski Center Data Warehouse.ds</Name>
+      <FullPath>Ski Center Data Warehouse.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Ski Center Data Warehouse.dsv</Name>
+      <FullPath>Ski Center Data Warehouse.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Ski Center Data Warehouse</Id>
+            <Name>Ski Center Data Warehouse</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=WIN11;Integrated Security=SSPI;Initial Catalog=SkiCenterDataWarehouse</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Ski Center Data Warehouse</Id>
+            <Name>Ski Center Data Warehouse</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
