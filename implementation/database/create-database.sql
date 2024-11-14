@@ -25,12 +25,12 @@ CREATE TABLE
                                     (N'Styczeń', N'Luty', N'Marzec', N'Kwiecień', N'Maj',
                                      N'Czerwiec', N'Lipiec', N'Sierpień', N'Wrzesień',
                                      N'Październik', N'Listopad', N'Grudzień')),
-        MonthNumber INT NOT NULL,
-        Day INT NOT NULL,
+        MonthNumber INT NOT NULL CHECK (MonthNumber BETWEEN 1 AND 12),
+        Day INT NOT NULL CHECK (Day BETWEEN 1 AND 31),
         DayOfWeek NVARCHAR (20) NOT NULL CHECK (DayOfWeek IN
                                     (N'Poniedziałek', N'Wtorek', N'Środa', 
                                      N'Czwartek', N'Piątek', N'Sobota', N'Niedziela')),
-        DayOfWeekNumber INT NOT NULL,
+        DayOfWeekNumber INT NOT NULL CHECK (DayOfWeekNumber BETWEEN 1 AND 7),
     )
 CREATE TABLE
     Junk (
@@ -60,8 +60,8 @@ CREATE TABLE
 CREATE TABLE
     Time (
         TimeID INT IDENTITY (1,1) PRIMARY KEY,
-        Hour INT NOT NULL,
-        Minute INT NOT NULL,
+        Hour INT NOT NULL CHECK (Hour BETWEEN 0 AND 23),
+        Minute INT NOT NULL CHECK (Minute BETWEEN 0 AND 59),
         TimeOfDay NVARCHAR (20) NOT NULL CHECK (TimeOfDay IN 
                                     (N'Rano', N'Popołudnie', N'Wieczór')),
     )
