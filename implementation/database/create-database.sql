@@ -46,6 +46,8 @@ CREATE TABLE
         ValidUntilDateID INT FOREIGN KEY REFERENCES Date (DateID),
         Price NVARCHAR (20) NOT NULL CHECK (Price IN 
                                     (N'0-25€', N'25-50€', N'50-100€', N'100-200€', N'200+€')),
+        TotalRides NVARCHAR (20) NOT NULL CHECK (TotalRides IN 
+                                    (N'0-20', N'20-35', N'35-60', N'60-100', N'100+')),
         UsedState NVARCHAR (20) NOT NULL CHECK (UsedState IN 
                                     (N'wykorzystany', N'aktywny', N'wygasły')),
     )

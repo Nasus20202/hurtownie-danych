@@ -16,17 +16,18 @@ INSERT INTO Date (Date, Year, Season, Month, MonthNumber, Day, DayOfWeek, DayOfW
     (N'2023-10-21', 2023, N'Sezon 2023', N'Październik', 10, 21, N'Poniedziałek', 1),
     (N'2023-12-01', 2023, N'Sezon 2023', N'Grudzień', 12, 1, N'Piątek', 5),
     (N'2024-01-03', 2024, N'Sezon 2023', N'Styczeń', 1, 3, N'Środa', 3),
-    (N'2024-02-21', 2024, N'Sezon 2023', N'Luty', 2, 21, N'Środa', 3);
+    (N'2024-02-21', 2024, N'Sezon 2023', N'Luty', 2, 21, N'Środa', 3),
+    (N'2024-02-22', 2024, N'Sezon 2023', N'Luty', 2, 22, N'Czwartek', 4);
 
 INSERT INTO Junk (TransactionType) VALUES
     (N'online'),
     (N'offline');
 
-INSERT INTO Pass (PassCode, ValidUntilDateID, Price, UsedState) VALUES
-    (N'Karnet 1', 1, N'0-25€', N'wykorzystany'),
-    (N'Karnet 2', 1, N'0-25€', N'wykorzystany'),
-    (N'Karnet 3', 1, N'25-50€', N'aktywny'),
-    (N'Karnet 4', 1, N'50-100€', N'aktywny');
+INSERT INTO Pass (PassCode, ValidUntilDateID, Price, TotalRides, UsedState) VALUES
+    (N'Karnet 1', 1, N'0-25€', N'0-20', N'wykorzystany'),
+    (N'Karnet 2', 1, N'0-25€', N'0-20', N'wykorzystany'),
+    (N'Karnet 3', 1, N'25-50€', N'20-35', N'aktywny'),
+    (N'Karnet 4', 1, N'50-100€', N'35-60', N'aktywny');
 
 INSERT INTO Slope (SlopeName, Country, Region, MountainPeak) VALUES
     (N'Chamonix', N'Francja', N'Haute-Savoie', N'Mont Blanc'),
@@ -79,5 +80,5 @@ INSERT INTO Ride (RideDateID, RideTimeID, SlopeID, CardID, PassID, DaysSincePass
     (5, 1, 1, 4, 4, 0),
     (5, 2, 2, 4, 4, 0),
     (5, 3, 1, 4, 4, 0),
-    (5, 4, 2, 4, 4, 0),
-    (5, 5, 1, 4, 4, 0);
+    (6, 4, 2, 4, 4, 1),
+    (6, 5, 1, 4, 4, 1);
