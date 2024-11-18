@@ -1,0 +1,11 @@
+USE SkiCenterDataWarehouse;
+
+DELETE FROM Ride;
+DELETE FROM PassPurchase;
+DELETE FROM Time;
+DELETE FROM Slope;
+DELETE FROM Pass;
+DELETE FROM Junk;
+DELETE FROM Date;
+DELETE FROM Card;
+DELETE FROM Client;
