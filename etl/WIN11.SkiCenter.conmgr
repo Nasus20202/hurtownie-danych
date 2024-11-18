@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WIN11.SkiCenter"
+  DTS:DTSID="{E14A617A-0B2D-4E11-BF23-3B5F690B1DB0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=WIN11;Initial Catalog=SkiCenter;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-SkiCenterETL-{E14A617A-0B2D-4E11-BF23-3B5F690B1DB0}WIN11.SkiCenter;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

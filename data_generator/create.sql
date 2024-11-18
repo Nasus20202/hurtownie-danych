@@ -13,14 +13,16 @@ CREATE TABLE
 		email NVARCHAR (64),
 		phone NVARCHAR (16),
 		registered datetime,
-	) GO
+	) 
+GO
 CREATE TABLE
 	Cards (
 		card_id INTEGER PRIMARY KEY,
 		card_code NVARCHAR (64),
 		registered datetime,
 		client_id INTEGER FOREIGN KEY REFERENCES Clients,
-	) GO
+	) 
+GO
 CREATE TABLE
 	Transactions (
 		transaction_id INTEGER PRIMARY KEY,
@@ -28,7 +30,8 @@ CREATE TABLE
 		type NVARCHAR (16),
 		date datetime,
 		client_id INTEGER FOREIGN KEY REFERENCES Clients,
-	) GO
+	) 
+GO
 CREATE TABLE
 	Passes (
 		pass_id INTEGER PRIMARY KEY,
@@ -38,4 +41,5 @@ CREATE TABLE
 		valid_until datetime,
 		transaction_id INTEGER FOREIGN KEY REFERENCES Transactions,
 		card_id INTEGER FOREIGN KEY REFERENCES Cards,
-	) GO
+	)
+GO

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2024 7:39:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN11"
+  DTS:CreatorName="WIN11\Krzys"
+  DTS:DTSID="{ECCB8651-3D5E-4EE0-B8A8-EAC323BDF309}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Initial Data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{0E197ACD-EE9F-4121-BF43-518BB7BD8464}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert into Time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B5FC4343-8257-44E3-9D7C-139D91E391AF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into Time"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}"
+          SQLTask:SqlStatementSource="DECLARE @Hour INT = 0;&#xA;DECLARE @Minute INT;&#xA;DECLARE @TimeOfDay NVARCHAR(20);&#xA;&#xA;WHILE @Hour &lt; 24&#xA;BEGIN&#xA;    SET @Minute = 0;&#xA;&#xA;    WHILE @Minute &lt; 60&#xA;    BEGIN&#xA;        -- Determine the TimeOfDay&#xA;        IF @Hour BETWEEN 0 AND 11&#xA;            SET @TimeOfDay = N'Rano';&#xA;        ELSE IF @Hour BETWEEN 12 AND 17&#xA;            SET @TimeOfDay = N'Popołudnie';&#xA;        ELSE&#xA;            SET @TimeOfDay = N'Wieczór';&#xA;&#xA;        -- Insert the record&#xA;        INSERT INTO Time (Hour, Minute, TimeOfDay)&#xA;        VALUES (@Hour, @Minute, @TimeOfDay);&#xA;&#xA;        -- Increment the minute&#xA;        SET @Minute = @Minute + 1;&#xA;    END&#xA;&#xA;    -- Increment the hour&#xA;    SET @Hour = @Hour + 1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Junk"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{83611FD4-3BAC-4D54-B08F-0D117880C794}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Junk"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}"
+          SQLTask:SqlStatementSource="INSERT INTO Junk (TransactionType) VALUES&#xA;  ('online'),&#xA;  ('offline');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Inserting into Junk"
+          TopLeft="51,97" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Insert into Time"
+          TopLeft="256,97" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
