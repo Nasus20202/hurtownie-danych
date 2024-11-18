@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{9787B572-D4FF-4B4F-85B9-E84369509A64}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{C57F913C-759C-4523-819C-7701B596F136}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -471,6 +471,2572 @@ where [refTable].[CardCode] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Client Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2A563BD3-AC55-4EB0-8EC2-55E0BDF45A35}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Client Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate Client Table\Assign client's pass counts to clients"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Assign client's pass counts to clients"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Left Input].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[client_id]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Left Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[email]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Right Input].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output].Columns[client_id]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Right Input].Columns[pass_count]"
+                      cachedDataType="ui8"
+                      cachedName="pass_count"
+                      lineageId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output].Columns[pass_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]"
+                      name="email">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Left Input].Columns[email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]"
+                      dataType="ui8"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]"
+                      name="pass_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Right Input].Columns[pass_count]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Assign experience level"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Assign experience level"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Assign experience level.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign experience level.Inputs[Derived Column Input].Columns[pass_count]"
+                      cachedDataType="ui8"
+                      cachedName="pass_count"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Client Table\Assign experience level.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output].Columns[experience]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output].Columns[experience]"
+                      name="experience"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,20)(#{Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]} &lt;= (DT_UI8)(3) ? "1-3" : #{Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]} &lt;= (DT_UI8)(10) ? "4-10" : "&gt;10")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,20)(pass_count &lt;= (DT_UI8)(3) ? "1-3" : pass_count &lt;= (DT_UI8)(10) ? "4-10" : "&gt;10")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Client Table\Assign experience level.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Assign passes to clients"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Assign passes to clients"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Left Input].Columns[transaction_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[transaction_id]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Left Input].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[client_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Right Input].Columns[transaction_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[transaction_id]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Right Input].Columns[pass_id]"
+                      cachedDataType="i4"
+                      cachedName="pass_id"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[pass_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[client_id]"
+                      name="client_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Left Input].Columns[client_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[pass_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[pass_id]"
+                      name="pass_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Right Input].Columns[pass_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Clients (SkiCenter)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Clients (SkiCenter)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Clients]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\Clients (SkiCenter).Connections[OleDbConnection]"
+                  connectionManagerID="{E14A617A-0B2D-4E11-BF23-3B5F690B1DB0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenter]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[client_id]"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]"
+                      name="client_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[surname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[surname]"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[surname]"
+                      name="surname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      length="16"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[registered]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[registered]"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[registered]"
+                      name="registered"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[client_id]"
+                      dataType="i4"
+                      name="client_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="64"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[surname]"
+                      dataType="wstr"
+                      length="64"
+                      name="surname" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="64"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="16"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[registered]"
+                      dataType="dbTimeStamp"
+                      name="registered" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[client_id]"
+                      name="client_id" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[surname]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[surname]"
+                      name="surname" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[email]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[phone]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[registered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[registered]"
+                      name="registered" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Count clients' passes"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Count clients' passes"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Count clients' passes.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Count clients' passes.Inputs[Aggregate Input 1].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      lineageId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[client_id]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Count clients' passes.Inputs[Aggregate Input 1].Columns[pass_id]"
+                      cachedDataType="i4"
+                      cachedName="pass_id"
+                      lineageId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[pass_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[client_id]"
+                      name="client_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[client_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[pass_count]"
+                      dataType="ui8"
+                      lineageId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[pass_count]"
+                      name="pass_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output].Columns[pass_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Client Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      dataType="bool"
+                      description="IsCurrent"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      name="IsCurrent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)("0")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)("0")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Client Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Client Table\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      dataType="bool"
+                      description="IsCurrent"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      name="IsCurrent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)("1")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)("1")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Client Table\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Client]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].Columns[experience]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="experience"
+                      externalMetadataColumnId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Experience]"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="64"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Experience]"
+                      dataType="wstr"
+                      length="20"
+                      name="Experience" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Client] SET [IsCurrent] = ? WHERE [Email] = ? AND [IsCurrent] = '1'</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Output].Columns[IsCurrent]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="bool"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="64"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Passes (SkiCenter)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Passes (SkiCenter)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Passes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\Passes (SkiCenter).Connections[OleDbConnection]"
+                  connectionManagerID="{E14A617A-0B2D-4E11-BF23-3B5F690B1DB0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenter]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[pass_id]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]"
+                      name="pass_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[total_rides]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]"
+                      name="total_rides"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[used_rides]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]"
+                      name="used_rides"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[valid_until]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]"
+                      name="valid_until"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[card_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[card_id]"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[card_id]"
+                      name="card_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[pass_id]"
+                      dataType="i4"
+                      name="pass_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      dataType="i4"
+                      name="price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[total_rides]"
+                      dataType="i4"
+                      name="total_rides" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[used_rides]"
+                      dataType="i4"
+                      name="used_rides" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[valid_until]"
+                      dataType="dbTimeStamp"
+                      name="valid_until" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[card_id]"
+                      dataType="i4"
+                      name="card_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[pass_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[pass_id]"
+                      name="pass_id" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[price]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[price]"
+                      name="price" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[total_rides]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[total_rides]"
+                      name="total_rides" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[used_rides]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[used_rides]"
+                      name="used_rides" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[valid_until]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[valid_until]"
+                      name="valid_until" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      name="transaction_id" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[card_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[card_id]"
+                      name="card_id" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Email], [Experience],[IsCurrent] FROM [dbo].[Client]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[IsCurrent] = '1'</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Email]"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[experience]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="experience"
+                      externalMetadataColumnId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Experience]"
+                      lineageId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output].Columns[experience]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="64"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Experience]"
+                      dataType="wstr"
+                      length="20"
+                      name="Experience" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Sort client's pass counts"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort client's pass counts"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Sort client's pass counts.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort client's pass counts.Inputs[Sort Input].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      lineageId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[client_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort client's pass counts.Inputs[Sort Input].Columns[pass_count]"
+                      cachedDataType="ui8"
+                      cachedName="pass_count"
+                      lineageId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[pass_count]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output].Columns[client_id]"
+                      name="client_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[client_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output].Columns[pass_count]"
+                      dataType="ui8"
+                      lineageId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output].Columns[pass_count]"
+                      name="pass_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1].Columns[pass_count]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Sort clients"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort clients"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="name"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input].Columns[surname]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="surname"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[surname]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[email]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="phone"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[phone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort clients.Inputs[Sort Input].Columns[registered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="registered"
+                      lineageId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[registered]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[client_id]"
+                      name="client_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[surname]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[surname]"
+                      name="surname">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[surname]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[email]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[email]"
+                      name="email">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[email]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[phone]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[phone]"
+                      name="phone">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[phone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[registered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Client Table\Sort clients.Outputs[Sort Output].Columns[registered]"
+                      name="registered">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output].Columns[registered]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Sort passes"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort passes"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[pass_id]"
+                      cachedDataType="i4"
+                      cachedName="pass_id"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[price]"
+                      cachedDataType="i4"
+                      cachedName="price"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[total_rides]"
+                      cachedDataType="i4"
+                      cachedName="total_rides"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[used_rides]"
+                      cachedDataType="i4"
+                      cachedName="used_rides"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[valid_until]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="valid_until"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[transaction_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_id"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort passes.Inputs[Sort Input].Columns[card_id]"
+                      cachedDataType="i4"
+                      cachedName="card_id"
+                      lineageId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[card_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[pass_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[pass_id]"
+                      name="pass_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[price]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[price]"
+                      name="price">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[total_rides]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[total_rides]"
+                      name="total_rides">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[used_rides]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[used_rides]"
+                      name="used_rides">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[valid_until]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[valid_until]"
+                      name="valid_until">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[card_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort passes.Outputs[Sort Output].Columns[card_id]"
+                      name="card_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[card_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Sort transactions"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort transactions"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input].Columns[transaction_id]"
+                      cachedDataType="i4"
+                      cachedName="transaction_id"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input].Columns[total_price]"
+                      cachedDataType="i4"
+                      cachedName="total_price"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[total_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input].Columns[type]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="type"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input].Columns[date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input].Columns[client_id]"
+                      cachedDataType="i4"
+                      cachedName="client_id"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[total_price]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[total_price]"
+                      name="total_price">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[total_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[type]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[type]"
+                      name="type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[date]"
+                      name="date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output].Columns[client_id]"
+                      name="client_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Transactions (SkiCenter)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Transactions (SkiCenter)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Transactions]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\Transactions (SkiCenter).Connections[OleDbConnection]"
+                  connectionManagerID="{E14A617A-0B2D-4E11-BF23-3B5F690B1DB0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenter]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[total_price]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[total_price]"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[total_price]"
+                      name="total_price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[type]"
+                      length="16"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[client_id]"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].Columns[client_id]"
+                      name="client_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[total_price]"
+                      dataType="i4"
+                      name="total_price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="16"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[client_id]"
+                      dataType="i4"
+                      name="client_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      name="transaction_id" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[total_price]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[total_price]"
+                      name="total_price" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[type]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[type]"
+                      name="type" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[client_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[client_id]"
+                      name="client_id" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Union All.Inputs[Union All Input 1].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Union All.Inputs[Union All Input 1].Columns[pass_count]"
+                      cachedDataType="ui8"
+                      cachedName="pass_count"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[pass_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Union All.Inputs[Union All Input 1].Columns[experience]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="experience"
+                      lineageId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output].Columns[experience]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Populate Client Table\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Union All.Inputs[Union All Input 2].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Union All.Inputs[Union All Input 2].Columns[pass_count]"
+                      cachedDataType="ui8"
+                      cachedName="pass_count"
+                      lineageId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[pass_count]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[pass_count]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Union All.Inputs[Union All Input 2].Columns[experience]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="experience"
+                      lineageId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output].Columns[experience]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Populate Client Table\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[pass_count]"
+                      dataType="ui8"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[pass_count]"
+                      name="pass_count" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]"
+                      name="experience" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate Client Table.Paths[Aggregate Output 1]"
+              endId="Package\Populate Client Table\Sort client's pass counts.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Derived Column Output2]"
+              endId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Derived Column Output1]"
+              endId="Package\Populate Client Table\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Derived Column Output]"
+              endId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Historical Attribute Inserts Output]"
+              endId="Package\Populate Client Table\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Merge Join Output]"
+              endId="Package\Populate Client Table\Count clients' passes.Inputs[Aggregate Input 1]"
+              name="Merge Join Output"
+              startId="Package\Populate Client Table\Assign passes to clients.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Merge Join Output1]"
+              endId="Package\Populate Client Table\Assign experience level.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Populate Client Table\Assign client's pass counts to clients.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[New Output]"
+              endId="Package\Populate Client Table\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\Populate Client Table\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[OLE DB Command Output]"
+              endId="Package\Populate Client Table\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Populate Client Table\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[OLE DB Source Output]"
+              endId="Package\Populate Client Table\Sort passes.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[OLE DB Source Output2]"
+              endId="Package\Populate Client Table\Sort clients.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[OLE DB Source Output1]"
+              endId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Sort Output2]"
+              endId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Populate Client Table\Sort clients.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Sort Output1]"
+              endId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Populate Client Table\Sort passes.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Sort Output]"
+              endId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Sort Output3]"
+              endId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Populate Client Table\Sort client's pass counts.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate Client Table.Paths[Union All Output 1]"
+              endId="Package\Populate Client Table\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Populate Client Table\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -488,6 +3054,10 @@ where [refTable].[CardCode] = ?</property>
           Size="171,42"
           Id="Package\Populate Card table"
           TopLeft="100,118" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Populate Client Table"
+          TopLeft="321,120" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -603,6 +3173,611 @@ where [refTable].[CardCode] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate Client Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Populate Client Table\Clients (SkiCenter)"
+          TopLeft="39.0000000000001,312.5" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Populate Client Table\Transactions (SkiCenter)"
+          TopLeft="96.5,14.5" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Populate Client Table\Passes (SkiCenter)"
+          TopLeft="396.5,20.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Populate Client Table\Sort passes"
+          TopLeft="408.5,116.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Source Output]"
+          TopLeft="477.5,62.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Populate Client Table\Sort transactions"
+          TopLeft="119,117.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Source Output1]"
+          TopLeft="196,56.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Populate Client Table\Assign passes to clients"
+          TopLeft="243,210.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output]"
+          TopLeft="198,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.666666666667,51"
+              Start="0,0"
+              End="109.666666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3444676409186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3444676409186"
+                    Point2="0,30.3444676409186"
+                    Point3="4,30.3444676409186" />
+                  <mssgle:LineSegment
+                    End="105.666666666667,30.3444676409186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.666666666667,30.3444676409186"
+                    Point2="109.666666666667,30.3444676409186"
+                    Point3="109.666666666667,34.3444676409186" />
+                  <mssgle:LineSegment
+                    End="109.666666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output1]"
+          TopLeft="475,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.666666666667,52"
+              Start="0,0"
+              End="-106.666666666667,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9394572025052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9394572025052"
+                    Point2="0,30.9394572025052"
+                    Point3="-4,30.9394572025052" />
+                  <mssgle:LineSegment
+                    End="-102.666666666667,30.9394572025052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.666666666667,30.9394572025052"
+                    Point2="-106.666666666667,30.9394572025052"
+                    Point3="-106.666666666667,34.9394572025052" />
+                  <mssgle:LineSegment
+                    End="-106.666666666667,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Populate Client Table\Count clients' passes"
+          TopLeft="248.5,313.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Merge Join Output]"
+          TopLeft="337.5,252.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Populate Client Table\Sort client's pass counts"
+          TopLeft="239,413.5" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Populate Client Table\Sort clients"
+          TopLeft="57.5000000000001,413.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Aggregate Output 1]"
+          TopLeft="336,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Source Output2]"
+          TopLeft="122.5,354.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Populate Client Table\Assign client's pass counts to clients"
+          TopLeft="143.5,516.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output2]"
+          TopLeft="123,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.833333333333,61"
+              Start="0,0"
+              End="104.833333333333,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.366320830008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.366320830008"
+                    Point2="0,36.366320830008"
+                    Point3="4,36.366320830008" />
+                  <mssgle:LineSegment
+                    End="100.833333333333,36.366320830008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.833333333333,36.366320830008"
+                    Point2="104.833333333333,36.366320830008"
+                    Point3="104.833333333333,40.366320830008" />
+                  <mssgle:LineSegment
+                    End="104.833333333333,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output3]"
+          TopLeft="335,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.8333333333333,61"
+              Start="0,0"
+              End="-26.8333333333333,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.366320830008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.366320830008"
+                    Point2="0,36.366320830008"
+                    Point3="-4,36.366320830008" />
+                  <mssgle:LineSegment
+                    End="-22.8333333333333,36.366320830008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.8333333333333,36.366320830008"
+                    Point2="-26.8333333333333,36.366320830008"
+                    Point3="-26.8333333333333,40.366320830008" />
+                  <mssgle:LineSegment
+                    End="-26.8333333333333,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Populate Client Table\Assign experience level"
+          TopLeft="175,612.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Merge Join Output1]"
+          TopLeft="268.5,558.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Populate Client Table\Slowly Changing Dimension"
+          TopLeft="163.5,712.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Derived Column Output]"
+          TopLeft="268.5,654.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Populate Client Table\Derived Column"
+          TopLeft="61.0000000000001,842.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Historical Attribute Inserts Output]"
+          TopLeft="234.5,754.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.5,88"
+              Start="0,0"
+              End="-96.5,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6011396011396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.6011396011396"
+                    Point2="0,35.6011396011396"
+                    Point3="-4,35.6011396011396" />
+                  <mssgle:LineSegment
+                    End="-92.5,35.6011396011396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.5,35.6011396011396"
+                    Point2="-96.5,35.6011396011396"
+                    Point3="-96.5,39.6011396011396" />
+                  <mssgle:LineSegment
+                    End="-96.5,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.30638671875,40.6011396011396,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Populate Client Table\OLE DB Command"
+          TopLeft="51.0000000000001,950.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Derived Column Output1]"
+          TopLeft="136,884.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Populate Client Table\Union All"
+          TopLeft="216.5,1013.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[New Output]"
+          TopLeft="298.666666666667,754.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,259"
+              Start="0,0"
+              End="0,251.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,251.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,120.033203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Command Output]"
+          TopLeft="217,971.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.1666666666667,42"
+              Start="0,0"
+              End="41.1666666666667,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.1666666666667,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.1666666666667,0"
+                    Point2="41.1666666666667,0"
+                    Point3="41.1666666666667,4" />
+                  <mssgle:LineSegment
+                    End="41.1666666666667,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Populate Client Table\Derived Column 1"
+          TopLeft="193.5,1123.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Union All Output 1]"
+          TopLeft="276,1055.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Populate Client Table\Insert Destination"
+          TopLeft="196.5,1230.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Derived Column Output2]"
+          TopLeft="276.5,1165.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Client Table\Clients (SkiCenter)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Client Table\Transactions (SkiCenter)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Client Table\Passes (SkiCenter)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Client Table\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Client]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Assign client's pass counts to clients.Outputs[Merge Join Output].Columns[email]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Email&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Assign experience level.Outputs[Derived Column Output].Columns[experience]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Experience&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn&gt;IsCurrent&lt;/CurrentIndicatorColumn&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent&gt;1&lt;/ValueCurrent&gt;
+  &lt;ValueExpired&gt;0&lt;/ValueExpired&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
