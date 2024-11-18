@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Initial Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{4AF0F196-56BA-4120-88B5-C1877FBF6A37}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{1C1C9F1F-3F26-47AC-8B5D-C2C0A6D65A1A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -36,47 +36,47 @@
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="32"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{CFC77C78-91B3-4C2F-93FD-3C2A9415B9BB}"
+              DTS:DTSID="{BC840BF8-4B21-455E-B6F9-FBF36636F160}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="32"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SlopeName"
-              DTS:DTSID="{7A27B892-CF3F-4977-A1A5-ED6AF5DF166B}"
+              DTS:DTSID="{A45F93F3-168A-4ACC-B241-A764A5804CEC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="32"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{3B53A03E-F89E-43DF-B3A2-D3615D3ED22A}"
+              DTS:DTSID="{1E4C9F33-C660-423D-B347-B02F38E627A6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="32"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{5BD7A0D9-9E4F-45FD-8A93-D88E06C352F0}"
+              DTS:DTSID="{383D50F2-6A92-4C53-A580-654EB16C8320}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="32"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="MountainPeak"
-              DTS:DTSID="{F35712D0-DB0C-4418-BB38-83DB98724FB0}"
+              DTS:DTSID="{AA5F667C-37EB-43E7-A038-4EA218EE8A7D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -94,7 +94,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert into Date"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -153,7 +153,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SlopeName]"
-                      length="50"
+                      length="32"
                       lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[SlopeName]"
                       name="SlopeName"
                       truncationRowDisposition="FailComponent">
@@ -174,7 +174,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Country]"
-                      length="50"
+                      length="32"
                       lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Country]"
                       name="Country"
                       truncationRowDisposition="FailComponent">
@@ -195,7 +195,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Region]"
-                      length="50"
+                      length="32"
                       lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Region]"
                       name="Region"
                       truncationRowDisposition="FailComponent">
@@ -216,7 +216,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MountainPeak]"
-                      length="50"
+                      length="32"
                       lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[MountainPeak]"
                       name="MountainPeak"
                       truncationRowDisposition="FailComponent">
@@ -237,27 +237,27 @@
                     <externalMetadataColumn
                       refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID]"
                       dataType="wstr"
-                      length="50"
+                      length="32"
                       name="ID" />
                     <externalMetadataColumn
                       refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SlopeName]"
                       dataType="wstr"
-                      length="50"
+                      length="32"
                       name="SlopeName" />
                     <externalMetadataColumn
                       refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Country]"
                       dataType="wstr"
-                      length="50"
+                      length="32"
                       name="Country" />
                     <externalMetadataColumn
                       refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Region]"
                       dataType="wstr"
-                      length="50"
+                      length="32"
                       name="Region" />
                     <externalMetadataColumn
                       refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MountainPeak]"
                       dataType="wstr"
-                      length="50"
+                      length="32"
                       name="MountainPeak" />
                   </externalMetadataColumns>
                 </output>
@@ -289,7 +289,169 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Insert into Slopes\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Slope]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert into Slopes\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SlopeName]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="SlopeName"
+                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SlopeName]"
+                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[SlopeName]" />
+                    <inputColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MountainPeak]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="MountainPeak"
+                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MountainPeak]"
+                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[MountainPeak]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SlopeID]"
+                      dataType="i4"
+                      name="SlopeID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SlopeName]"
+                      dataType="wstr"
+                      length="32"
+                      name="SlopeName" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="32"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="32"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MountainPeak]"
+                      dataType="wstr"
+                      length="32"
+                      name="MountainPeak" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Insert into Slopes.Paths[Flat File Source Output]"
+              endId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -302,7 +464,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert into Time"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -319,7 +481,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Inserting into Junk"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -341,14 +503,6 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="167,42"
-          Id="Package\Inserting into Junk"
-          TopLeft="51,97" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Insert into Time"
-          TopLeft="256,97" />
-        <NodeLayout
           Size="153,42"
           Id="Package\Insert into Date"
           TopLeft="51,171" />
@@ -356,6 +510,14 @@
           Size="162,42"
           Id="Package\Insert into Slopes"
           TopLeft="262,171" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Insert into Time"
+          TopLeft="256,97" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Inserting into Junk"
+          TopLeft="51,97" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -363,13 +525,52 @@
     design-time-name="Package\Insert into Slopes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151,42"
           Id="Package\Insert into Slopes\Flat File Source"
           TopLeft="207,86" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Insert into Slopes\OLE DB Destination"
+          TopLeft="195,217" />
+        <EdgeLayout
+          Id="Package\Insert into Slopes.Paths[Flat File Source Output]"
+          TopLeft="281.5,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert into Slopes\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
