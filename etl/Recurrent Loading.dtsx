@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{C57F913C-759C-4523-819C-7701B596F136}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{0416E88B-8EF1-47C4-A742-498344763F96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,125 +31,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Populate Card table\Card (DW)"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Card (DW)"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Card]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate Card table\Card (DW).Connections[OleDbConnection]"
-                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input].Columns[card_code]"
-                      cachedDataType="wstr"
-                      cachedLength="64"
-                      cachedName="card_code"
-                      externalMetadataColumnId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input].ExternalColumns[CardCode]"
-                      lineageId="Package\Populate Card table\Card (SkiCenter).Outputs[OLE DB Source Output].Columns[card_code]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input].ExternalColumns[CardID]"
-                      dataType="i4"
-                      name="CardID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input].ExternalColumns[CardCode]"
-                      dataType="wstr"
-                      length="64"
-                      name="CardCode" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate Card table\Card (DW).Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate Card table\Card (DW).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate Card table\Card (DW).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate Card table\Card (DW).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate Card table\Card (DW).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Populate Card table\Card (SkiCenter)"
               componentClassID="Microsoft.OLEDBSource"
@@ -314,6 +195,125 @@
               </outputs>
             </component>
             <component
+              refId="Package\Populate Card table\Card (SkiCenterDataWarehouse)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Card (SkiCenterDataWarehouse)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Card]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[card_code]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="card_code"
+                      externalMetadataColumnId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[CardCode]"
+                      lineageId="Package\Populate Card table\Card (SkiCenter).Outputs[OLE DB Source Output].Columns[card_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[CardID]"
+                      dataType="i4"
+                      name="CardID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[CardCode]"
+                      dataType="wstr"
+                      length="64"
+                      name="CardCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Populate Card table\Drop old values"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -459,7 +459,7 @@ where [refTable].[CardCode] = ?</property>
           <paths>
             <path
               refId="Package\Populate Card table.Paths[Lookup No Match Output]"
-              endId="Package\Populate Card table\Card (DW).Inputs[OLE DB Destination Input]"
+              endId="Package\Populate Card table\Card (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Populate Card table\Drop old values.Outputs[Lookup No Match Output]" />
             <path
@@ -767,6 +767,147 @@ where [refTable].[CardCode] = ?</property>
                           name="InputColumnID">#{Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Right Input].Columns[pass_id]}</property>
                       </properties>
                     </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Client (SkiCenterDataWarehouse)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Client]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[experience]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="experience"
+                      externalMetadataColumnId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Experience]"
+                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]" />
+                    <inputColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="64"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Experience]"
+                      dataType="wstr"
+                      length="20"
+                      name="Experience" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1244,147 +1385,6 @@ where [refTable].[CardCode] = ?</property>
                       refId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate Client Table\Insert Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Insert Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Client]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate Client Table\Insert Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].Columns[email]"
-                      cachedDataType="wstr"
-                      cachedLength="64"
-                      cachedName="email"
-                      externalMetadataColumnId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
-                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[email]" />
-                    <inputColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].Columns[experience]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="experience"
-                      externalMetadataColumnId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Experience]"
-                      lineageId="Package\Populate Client Table\Union All.Outputs[Union All Output 1].Columns[experience]" />
-                    <inputColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
-                      cachedDataType="bool"
-                      cachedName="IsCurrent"
-                      externalMetadataColumnId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
-                      lineageId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
-                      dataType="i4"
-                      name="ClientID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
-                      dataType="wstr"
-                      length="64"
-                      name="Email" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Experience]"
-                      dataType="wstr"
-                      length="20"
-                      name="Experience" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
-                      dataType="bool"
-                      name="IsCurrent" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate Client Table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2954,8 +2954,8 @@ where [refTable].[CardCode] = ?</property>
               name="Aggregate Output 1"
               startId="Package\Populate Client Table\Count clients' passes.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\Populate Client Table.Paths[Derived Column Output2]"
-              endId="Package\Populate Client Table\Insert Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Populate Client Table.Paths[Derived Column Output]"
+              endId="Package\Populate Client Table\Client (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Populate Client Table\Derived Column 1.Outputs[Derived Column Output]" />
             <path
@@ -2964,7 +2964,7 @@ where [refTable].[CardCode] = ?</property>
               name="Derived Column Output"
               startId="Package\Populate Client Table\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Populate Client Table.Paths[Derived Column Output]"
+              refId="Package\Populate Client Table.Paths[Derived Column Output2]"
               endId="Package\Populate Client Table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Derived Column Output"
               startId="Package\Populate Client Table\Assign experience level.Outputs[Derived Column Output]" />
@@ -2999,17 +2999,17 @@ where [refTable].[CardCode] = ?</property>
               name="OLE DB Source Output"
               startId="Package\Populate Client Table\Passes (SkiCenter).Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Populate Client Table.Paths[OLE DB Source Output2]"
+              refId="Package\Populate Client Table.Paths[OLE DB Source Output1]"
               endId="Package\Populate Client Table\Sort clients.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Populate Client Table\Clients (SkiCenter).Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Populate Client Table.Paths[OLE DB Source Output1]"
+              refId="Package\Populate Client Table.Paths[OLE DB Source Output2]"
               endId="Package\Populate Client Table\Sort transactions.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Populate Client Table\Transactions (SkiCenter).Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Populate Client Table.Paths[Sort Output2]"
+              refId="Package\Populate Client Table.Paths[Sort Output]"
               endId="Package\Populate Client Table\Assign client's pass counts to clients.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate Client Table\Sort clients.Outputs[Sort Output]" />
@@ -3019,7 +3019,7 @@ where [refTable].[CardCode] = ?</property>
               name="Sort Output"
               startId="Package\Populate Client Table\Sort passes.Outputs[Sort Output]" />
             <path
-              refId="Package\Populate Client Table.Paths[Sort Output]"
+              refId="Package\Populate Client Table.Paths[Sort Output2]"
               endId="Package\Populate Client Table\Assign passes to clients.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate Client Table\Sort transactions.Outputs[Sort Output]" />
@@ -3033,6 +3033,1159 @@ where [refTable].[CardCode] = ?</property>
               endId="Package\Populate Client Table\Derived Column 1.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Populate Client Table\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Pass table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{77AD5F8D-B8B2-4624-98E1-392680CFDAD4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Pass table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate Pass table\Add PassCode"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add PassCode"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Add PassCode.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add PassCode.Inputs[Derived Column Input].Columns[pass_id]"
+                      cachedDataType="i4"
+                      cachedName="pass_id"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Pass table\Add PassCode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]"
+                      name="PassCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,32)("Karnet " + [REPLICATE]("0",12 - [LEN]((DT_WSTR,24)(#{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]}))) + (DT_WSTR,24)(#{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,32)("Karnet " + REPLICATE("0",12 - LEN((DT_WSTR,24)(pass_id))) + (DT_WSTR,24)(pass_id))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Pass table\Add PassCode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Add Price"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Price"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Add Price.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add Price.Inputs[Derived Column Input].Columns[price]"
+                      cachedDataType="i4"
+                      cachedName="price"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Pass table\Add Price.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output].Columns[Price]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output].Columns[Price]"
+                      name="Price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,20)(#{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]} &lt; 25 ? "0-25€" : #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]} &lt; 50 ? "25-50€" : #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]} &lt; 100 ? "50-100€" : #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]} &lt; 200 ? "100-200€" : "200+€")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,20)(price &lt; 25 ? "0-25€" : price &lt; 50 ? "25-50€" : price &lt; 100 ? "50-100€" : price &lt; 200 ? "100-200€" : "200+€")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Add Price.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Pass table\Add Price.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add Price.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add Price.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Add TotalRides"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add TotalRides"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Add TotalRides.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add TotalRides.Inputs[Derived Column Input].Columns[total_rides]"
+                      cachedDataType="i4"
+                      cachedName="total_rides"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Pass table\Add TotalRides.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]"
+                      name="TotalRides"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,20)(#{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]} &lt; 20 ? "0-20" : #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]} &lt; 35 ? "20-35" : #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]} &lt; 60 ? "35-60" : #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]} &lt; 100 ? "60-100" : "100+")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,20)(total_rides &lt; 20 ? "0-20" : total_rides &lt; 35 ? "20-35" : total_rides &lt; 60 ? "35-60" : total_rides &lt; 100 ? "60-100" : "100+")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Pass table\Add TotalRides.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Add UsedState"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add UsedState"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input].Columns[valid_until]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="valid_until"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input].Columns[total_rides]"
+                      cachedDataType="i4"
+                      cachedName="total_rides"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input].Columns[used_rides]"
+                      cachedDataType="i4"
+                      cachedName="used_rides"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]"
+                      name="UsedState"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,20)(#{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]} &lt; [GETDATE]() ? #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]} &lt; #{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]} ? "aktywny" : "wykorzystany" : "wygasły")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,20)(valid_until &lt; GETDATE() ? used_rides &lt; total_rides ? "aktywny" : "wykorzystany" : "wygasły")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Convert valid_until to Date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert valid_until to Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Convert valid_until to Date.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Convert valid_until to Date.Inputs[Derived Column Input].Columns[valid_until]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="valid_until"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate Pass table\Convert valid_until to Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Output].Columns[valid_until_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Output].Columns[valid_until_date]"
+                      name="valid_until_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)#{Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)valid_until</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate Pass table\Convert valid_until to Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Drop old values"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Drop old values"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Pass]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Pass]) [refTable]
+where [refTable].[PassCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PassID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PassCode" dataType="DT_WSTR" length="32" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ValidUntilDateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Price" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalRides" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UsedState" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Pass table\Drop old values.Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Drop old values.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Drop old values.Inputs[Lookup Input].Columns[PassCode]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="PassCode"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PassCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Drop old values.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Populate Pass table\Drop old values.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Drop old values.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Populate Pass table\Drop old values.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Drop old values.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Populate Pass table\Drop old values.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Drop old values.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Drop old values.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Drop old values.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Drop old values.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Pass (SkiCenterDataWarehouse)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Pass]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[PassCode]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="PassCode"
+                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[PassCode]"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[Price]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Price"
+                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[TotalRides]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="TotalRides"
+                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[TotalRides]"
+                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[UsedState]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UsedState"
+                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[UsedState]"
+                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[ValidUntilDateID]"
+                      cachedDataType="i4"
+                      cachedName="ValidUntilDateID"
+                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[ValidUntilDateID]"
+                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[PassID]"
+                      dataType="i4"
+                      name="PassID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[PassCode]"
+                      dataType="wstr"
+                      length="32"
+                      name="PassCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[ValidUntilDateID]"
+                      dataType="i4"
+                      name="ValidUntilDateID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      dataType="wstr"
+                      length="20"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[TotalRides]"
+                      dataType="wstr"
+                      length="20"
+                      name="TotalRides" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[UsedState]"
+                      dataType="wstr"
+                      length="20"
+                      name="UsedState" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Passes (SkiCenter)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Passes (SkiCenter)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Passes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Pass table\Passes (SkiCenter).Connections[OleDbConnection]"
+                  connectionManagerID="{E14A617A-0B2D-4E11-BF23-3B5F690B1DB0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenter]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[pass_id]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[pass_id]"
+                      name="pass_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[total_rides]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[total_rides]"
+                      name="total_rides"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[used_rides]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[used_rides]"
+                      name="used_rides"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[valid_until]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[valid_until]"
+                      name="valid_until"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[card_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[card_id]"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].Columns[card_id]"
+                      name="card_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[pass_id]"
+                      dataType="i4"
+                      name="pass_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      dataType="i4"
+                      name="price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[total_rides]"
+                      dataType="i4"
+                      name="total_rides" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[used_rides]"
+                      dataType="i4"
+                      name="used_rides" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[valid_until]"
+                      dataType="dbTimeStamp"
+                      name="valid_until" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[transaction_id]"
+                      dataType="i4"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output].ExternalColumns[card_id]"
+                      dataType="i4"
+                      name="card_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[pass_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[pass_id]"
+                      name="pass_id" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[price]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[price]"
+                      name="price" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[total_rides]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[total_rides]"
+                      name="total_rides" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[used_rides]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[used_rides]"
+                      name="used_rides" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[valid_until]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[valid_until]"
+                      name="valid_until" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[transaction_id]"
+                      name="transaction_id" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[card_id]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[card_id]"
+                      name="card_id" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Retrieve ValidUntilDateID"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Retrieve ValidUntilDateID"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Date]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Season" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayOfWeek" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayOfWeekNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Output].Columns[valid_until_date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Inputs[Lookup Input].Columns[valid_until_date]"
+                      cachedDataType="dbDate"
+                      cachedName="valid_until_date"
+                      lineageId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Output].Columns[valid_until_date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Populate Pass table\Retrieve ValidUntilDateID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]"
+                      name="ValidUntilDateID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Populate Pass table\Retrieve ValidUntilDateID.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Populate Pass table\Retrieve ValidUntilDateID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate Pass table.Paths[Derived Column Output]"
+              endId="Package\Populate Pass table\Add Price.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[Derived Column Output1]"
+              endId="Package\Populate Pass table\Add TotalRides.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[Derived Column Output2]"
+              endId="Package\Populate Pass table\Add UsedState.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[Derived Column Output3]"
+              endId="Package\Populate Pass table\Convert valid_until to Date.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[Derived Column Output4]"
+              endId="Package\Populate Pass table\Retrieve ValidUntilDateID.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[Lookup Match Output]"
+              endId="Package\Populate Pass table\Drop old values.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[Lookup No Match Output]"
+              endId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Populate Pass table\Drop old values.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Populate Pass table.Paths[OLE DB Source Output]"
+              endId="Package\Populate Pass table\Add PassCode.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate Pass table\Passes (SkiCenter).Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3058,6 +4211,10 @@ where [refTable].[CardCode] = ?</property>
           Size="179,42"
           Id="Package\Populate Client Table"
           TopLeft="321,120" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Populate Pass table"
+          TopLeft="99,192" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3066,6 +4223,10 @@ where [refTable].[CardCode] = ?</property>
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Populate Card table\Card (SkiCenterDataWarehouse)"
+          TopLeft="126,295" />
         <NodeLayout
           Size="157,42"
           Id="Package\Populate Card table\Card (SkiCenter)"
@@ -3093,40 +4254,51 @@ where [refTable].[CardCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-24.8578059895833,23.4658203125,49.7156119791667,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Populate Card table\Card (DW)"
-          TopLeft="174,296" />
         <EdgeLayout
           Id="Package\Populate Card table.Paths[Lookup No Match Output]"
-          TopLeft="239.75,220">
+          TopLeft="241.5,220">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76"
+              EndConnector="0,75"
               Start="0,0"
-              End="0,68.5">
+              End="0,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68.5" />
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,28.4453125,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,27.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Card table\Card (SkiCenterDataWarehouse)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Populate Card table\Card (SkiCenter)">
     <Properties>
@@ -3146,7 +4318,7 @@ where [refTable].[CardCode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3156,23 +4328,10 @@ where [refTable].[CardCode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate Card table\Card (DW)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3182,249 +4341,87 @@ where [refTable].[CardCode] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="166,42"
-          Id="Package\Populate Client Table\Clients (SkiCenter)"
-          TopLeft="39.0000000000001,312.5" />
+          Size="121,42"
+          Id="Package\Populate Client Table\Union All"
+          TopLeft="216.5,1013.5" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\Populate Client Table\Transactions (SkiCenter)"
-          TopLeft="96.5,14.5" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Populate Client Table\Passes (SkiCenter)"
-          TopLeft="396.5,20.5" />
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Populate Client Table\Sort passes"
-          TopLeft="408.5,116.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[OLE DB Source Output]"
-          TopLeft="477.5,62.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54"
-              Start="0,0"
-              End="0,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Populate Client Table\Sort transactions"
-          TopLeft="119,117.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[OLE DB Source Output1]"
-          TopLeft="196,56.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Populate Client Table\Assign passes to clients"
-          TopLeft="243,210.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Sort Output]"
-          TopLeft="198,159.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="109.666666666667,51"
-              Start="0,0"
-              End="109.666666666667,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.3444676409186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.3444676409186"
-                    Point2="0,30.3444676409186"
-                    Point3="4,30.3444676409186" />
-                  <mssgle:LineSegment
-                    End="105.666666666667,30.3444676409186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="105.666666666667,30.3444676409186"
-                    Point2="109.666666666667,30.3444676409186"
-                    Point3="109.666666666667,34.3444676409186" />
-                  <mssgle:LineSegment
-                    End="109.666666666667,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Sort Output1]"
-          TopLeft="475,158.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-106.666666666667,52"
-              Start="0,0"
-              End="-106.666666666667,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.9394572025052" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.9394572025052"
-                    Point2="0,30.9394572025052"
-                    Point3="-4,30.9394572025052" />
-                  <mssgle:LineSegment
-                    End="-102.666666666667,30.9394572025052" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-102.666666666667,30.9394572025052"
-                    Point2="-106.666666666667,30.9394572025052"
-                    Point3="-106.666666666667,34.9394572025052" />
-                  <mssgle:LineSegment
-                    End="-106.666666666667,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Populate Client Table\Count clients' passes"
-          TopLeft="248.5,313.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Merge Join Output]"
-          TopLeft="337.5,252.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="163,42"
+          Id="Package\Populate Client Table\Derived Column 1"
+          TopLeft="193.5,1123.5" />
         <NodeLayout
           Size="192,42"
           Id="Package\Populate Client Table\Sort client's pass counts"
           TopLeft="239,413.5" />
         <NodeLayout
+          Size="166,42"
+          Id="Package\Populate Client Table\OLE DB Command"
+          TopLeft="51.0000000000001,950.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Populate Client Table\Assign passes to clients"
+          TopLeft="243,210.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Populate Client Table\Derived Column"
+          TopLeft="61.0000000000001,842.5" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Populate Client Table\Assign experience level"
+          TopLeft="175,612.5" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Populate Client Table\Transactions (SkiCenter)"
+          TopLeft="96.5,14.5" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Populate Client Table\Sort transactions"
+          TopLeft="119,117.5" />
+        <NodeLayout
           Size="131,42"
           Id="Package\Populate Client Table\Sort clients"
           TopLeft="57.5000000000001,413.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Aggregate Output 1]"
-          TopLeft="336,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58"
-              Start="0,0"
-              End="0,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[OLE DB Source Output2]"
-          TopLeft="122.5,354.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59"
-              Start="0,0"
-              End="0,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Populate Client Table\Passes (SkiCenter)"
+          TopLeft="396.5,20.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Populate Client Table\Slowly Changing Dimension"
+          TopLeft="163.5,712.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Populate Client Table\Clients (SkiCenter)"
+          TopLeft="39.0000000000001,312.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Populate Client Table\Client (SkiCenterDataWarehouse)"
+          TopLeft="153.5,1228.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Populate Client Table\Sort passes"
+          TopLeft="408.5,116.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Populate Client Table\Count clients' passes"
+          TopLeft="248.5,313.5" />
         <NodeLayout
           Size="249,42"
           Id="Package\Populate Client Table\Assign client's pass counts to clients"
           TopLeft="143.5,516.5" />
         <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Sort Output2]"
-          TopLeft="123,455.5">
+          Id="Package\Populate Client Table.Paths[Union All Output 1]"
+          TopLeft="276,1055.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="104.833333333333,61"
+              EndConnector="0,68"
               Start="0,0"
-              End="104.833333333333,53.5">
+              End="0,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.366320830008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.366320830008"
-                    Point2="0,36.366320830008"
-                    Point3="4,36.366320830008" />
-                  <mssgle:LineSegment
-                    End="100.833333333333,36.366320830008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="100.833333333333,36.366320830008"
-                    Point2="104.833333333333,36.366320830008"
-                    Point3="104.833333333333,40.366320830008" />
-                  <mssgle:LineSegment
-                    End="104.833333333333,53.5" />
+                    End="0,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3464,13 +4461,243 @@ where [refTable].[CardCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.2301627604166,41.366320830008,41.6269921875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output2]"
+          TopLeft="198,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.666666666667,51"
+              Start="0,0"
+              End="109.666666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3444676409186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3444676409186"
+                    Point2="0,30.3444676409186"
+                    Point3="4,30.3444676409186" />
+                  <mssgle:LineSegment
+                    End="105.666666666667,30.3444676409186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.666666666667,30.3444676409186"
+                    Point2="109.666666666667,30.3444676409186"
+                    Point3="109.666666666667,34.3444676409186" />
+                  <mssgle:LineSegment
+                    End="109.666666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="29.6898828125002,35.3444676409186,50.2869010416667,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output1]"
+          TopLeft="475,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.666666666667,52"
+              Start="0,0"
+              End="-106.666666666667,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9394572025052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9394572025052"
+                    Point2="0,30.9394572025052"
+                    Point3="-4,30.9394572025052" />
+                  <mssgle:LineSegment
+                    End="-102.666666666667,30.9394572025052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.666666666667,30.9394572025052"
+                    Point2="-106.666666666667,30.9394572025052"
+                    Point3="-106.666666666667,34.9394572025052" />
+                  <mssgle:LineSegment
+                    End="-106.666666666667,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.6452408854168,35.9394572025052,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Sort Output]"
+          TopLeft="123,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.833333333333,61"
+              Start="0,0"
+              End="104.833333333333,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.366320830008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.366320830008"
+                    Point2="0,36.366320830008"
+                    Point3="4,36.366320830008" />
+                  <mssgle:LineSegment
+                    End="100.833333333333,36.366320830008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.833333333333,36.366320830008"
+                    Point2="104.833333333333,36.366320830008"
+                    Point3="104.833333333333,40.366320830008" />
+                  <mssgle:LineSegment
+                    End="104.833333333333,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="31.6031705729165,41.366320830008,41.6269921875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Source Output2]"
+          TopLeft="196,56.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.1434505208333,21.96337890625,50.2869010416667,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Source Output1]"
+          TopLeft="122.5,354.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.81349609375,20.9658203125,41.6269921875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Source Output]"
+          TopLeft="477.5,62.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,18.4658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[OLE DB Command Output]"
+          TopLeft="217,971.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.1666666666667,42"
+              Start="0,0"
+              End="41.1666666666667,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.1666666666667,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.1666666666667,0"
+                    Point2="41.1666666666667,0"
+                    Point3="41.1666666666667,4" />
+                  <mssgle:LineSegment
+                    End="41.1666666666667,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Populate Client Table\Assign experience level"
-          TopLeft="175,612.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[New Output]"
+          TopLeft="298.666666666667,754.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,259"
+              Start="0,0"
+              End="0,251.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,251.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,120.033203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Client Table.Paths[Merge Join Output1]"
           TopLeft="268.5,558.5">
@@ -3490,39 +4717,35 @@ where [refTable].[CardCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-20.81349609375,18.4658203125,41.6269921875,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Populate Client Table\Slowly Changing Dimension"
-          TopLeft="163.5,712.5" />
         <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Derived Column Output]"
-          TopLeft="268.5,654.5">
+          Id="Package\Populate Client Table.Paths[Merge Join Output]"
+          TopLeft="337.5,252.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58"
+              EndConnector="0,61"
               Start="0,0"
-              End="0,50.5">
+              End="0,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,21.9658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Populate Client Table\Derived Column"
-          TopLeft="61.0000000000001,842.5" />
         <EdgeLayout
           Id="Package\Populate Client Table.Paths[Historical Attribute Inserts Output]"
           TopLeft="234.5,754.5">
@@ -3559,10 +4782,30 @@ where [refTable].[CardCode] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Populate Client Table\OLE DB Command"
-          TopLeft="51.0000000000001,950.5" />
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Derived Column Output2]"
+          TopLeft="268.5,654.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.81349609375,20.4658203125,41.6269921875,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Client Table.Paths[Derived Column Output1]"
           TopLeft="136,884.5">
@@ -3585,130 +4828,55 @@ where [refTable].[CardCode] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Populate Client Table\Union All"
-          TopLeft="216.5,1013.5" />
         <EdgeLayout
-          Id="Package\Populate Client Table.Paths[New Output]"
-          TopLeft="298.666666666667,754.5">
+          Id="Package\Populate Client Table.Paths[Derived Column Output]"
+          TopLeft="273.25,1165.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,259"
+              EndConnector="0,63"
               Start="0,0"
-              End="0,251.5">
+              End="0,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,251.5" />
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Client Table.Paths[Aggregate Output 1]"
+          TopLeft="336,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,120.033203125,54.1827734375,11.43359375"
+              BoundingBox="-20.81349609375,20.4658203125,41.6269921875,9.568359375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[OLE DB Command Output]"
-          TopLeft="217,971.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41.1666666666667,42"
-              Start="0,0"
-              End="41.1666666666667,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="37.1666666666667,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.1666666666667,0"
-                    Point2="41.1666666666667,0"
-                    Point3="41.1666666666667,4" />
-                  <mssgle:LineSegment
-                    End="41.1666666666667,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Populate Client Table\Derived Column 1"
-          TopLeft="193.5,1123.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Union All Output 1]"
-          TopLeft="276,1055.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68"
-              Start="0,0"
-              End="0,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Populate Client Table\Insert Destination"
-          TopLeft="196.5,1230.5" />
-        <EdgeLayout
-          Id="Package\Populate Client Table.Paths[Derived Column Output2]"
-          TopLeft="276.5,1165.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate Client Table\Clients (SkiCenter)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Populate Client Table\Transactions (SkiCenter)">
     <Properties>
@@ -3778,6 +4946,327 @@ where [refTable].[CardCode] = ?</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Client Table\Clients (SkiCenter)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate Pass table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Populate Pass table\Passes (SkiCenter)"
+          TopLeft="138,60" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Populate Pass table\Add PassCode"
+          TopLeft="150,162" />
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[OLE DB Source Output]"
+          TopLeft="222,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,21.4658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Populate Pass table\Add Price"
+          TopLeft="157,257" />
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Derived Column Output]"
+          TopLeft="220.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,17.9658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Populate Pass table\Add TotalRides"
+          TopLeft="144,347" />
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Derived Column Output1]"
+          TopLeft="218.5,299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,15.4658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Populate Pass table\Add UsedState"
+          TopLeft="151,440" />
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Derived Column Output2]"
+          TopLeft="221.75,389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,16.9658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Populate Pass table\Retrieve ValidUntilDateID"
+          TopLeft="121,613" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Populate Pass table\Convert valid_until to Date"
+          TopLeft="122,530" />
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Derived Column Output3]"
+          TopLeft="224.75,482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,15.4658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Derived Column Output4]"
+          TopLeft="222.25,572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.3119075520833,11.9658203125,50.6238151041667,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Populate Pass table\Pass (SkiCenterDataWarehouse)"
+          TopLeft="106,794" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Populate Pass table\Drop old values"
+          TopLeft="140,705" />
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Lookup Match Output]"
+          TopLeft="218,655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-77.8150716145833,15.4453125,155.630143229167,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Lookup No Match Output]"
+          TopLeft="218.75,747">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.4300716145833,13.9453125,170.860143229167,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Pass table\Passes (SkiCenter)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Pass table\Retrieve ValidUntilDateID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Pass table\Pass (SkiCenterDataWarehouse)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Pass table\Drop old values">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Pass]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
