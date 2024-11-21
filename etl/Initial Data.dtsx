@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Initial Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{1C1C9F1F-3F26-47AC-8B5D-C2C0A6D65A1A}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{3AED399D-2AFD-4636-880B-F0FDF3A6A333}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -117,184 +117,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Insert into Slopes\Flat File Source"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="1045"
-              name="Flat File Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Insert into Slopes\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[slopes.csv]"
-                  connectionManagerRefId="Package.ConnectionManagers[slopes.csv]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[SlopeName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SlopeName]"
-                      length="32"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[SlopeName]"
-                      name="SlopeName"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Country]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Country]"
-                      length="32"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Country]"
-                      name="Country"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Region]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Region]"
-                      length="32"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Region]"
-                      name="Region"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[MountainPeak]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MountainPeak]"
-                      length="32"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[MountainPeak]"
-                      name="MountainPeak"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID]"
-                      dataType="wstr"
-                      length="32"
-                      name="ID" />
-                    <externalMetadataColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SlopeName]"
-                      dataType="wstr"
-                      length="32"
-                      name="SlopeName" />
-                    <externalMetadataColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Country]"
-                      dataType="wstr"
-                      length="32"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Region]"
-                      dataType="wstr"
-                      length="32"
-                      name="Region" />
-                    <externalMetadataColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MountainPeak]"
-                      dataType="wstr"
-                      length="32"
-                      name="MountainPeak" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      dataType="nText"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Insert into Slopes\OLE DB Destination"
+              refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse)"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="Slopes (SkiCenterDataWarehouse)"
               usesDispositions="true"
               version="4">
               <properties>
@@ -347,7 +174,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Insert into Slopes\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Connections[OleDbConnection]"
                   connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
                   description="The OLE DB runtime connection used to access the database."
@@ -355,64 +182,64 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SlopeName]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[SlopeName]"
                       cachedDataType="wstr"
                       cachedLength="32"
                       cachedName="SlopeName"
-                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SlopeName]"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[SlopeName]" />
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[SlopeName]"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[SlopeName]" />
                     <inputColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[Country]"
                       cachedDataType="wstr"
                       cachedLength="32"
                       cachedName="Country"
-                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Country]" />
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[Country]" />
                     <inputColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Region]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[Region]"
                       cachedDataType="wstr"
                       cachedLength="32"
                       cachedName="Region"
-                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[Region]" />
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[Region]" />
                     <inputColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MountainPeak]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[MountainPeak]"
                       cachedDataType="wstr"
                       cachedLength="32"
                       cachedName="MountainPeak"
-                      externalMetadataColumnId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MountainPeak]"
-                      lineageId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output].Columns[MountainPeak]" />
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[MountainPeak]"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[MountainPeak]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SlopeID]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[SlopeID]"
                       dataType="i4"
                       name="SlopeID" />
                     <externalMetadataColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SlopeName]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[SlopeName]"
                       dataType="wstr"
                       length="32"
                       name="SlopeName" />
                     <externalMetadataColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                       dataType="wstr"
                       length="32"
                       name="Country" />
                     <externalMetadataColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Region]"
                       dataType="wstr"
                       length="32"
                       name="Region" />
                     <externalMetadataColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MountainPeak]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[MountainPeak]"
                       dataType="wstr"
                       length="32"
                       name="MountainPeak" />
@@ -421,22 +248,195 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Insert into Slopes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert into Slopes\Slopes (slopes_csv)"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Slopes (slopes_csv)"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert into Slopes\Slopes (slopes_csv).Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[slopes.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[slopes.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[SlopeName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[SlopeName]"
+                      length="32"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[SlopeName]"
+                      name="SlopeName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="32"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      length="32"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[MountainPeak]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[MountainPeak]"
+                      length="32"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].Columns[MountainPeak]"
+                      name="MountainPeak"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      dataType="wstr"
+                      length="32"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[SlopeName]"
+                      dataType="wstr"
+                      length="32"
+                      name="SlopeName" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="32"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="32"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output].ExternalColumns[MountainPeak]"
+                      dataType="wstr"
+                      length="32"
+                      name="MountainPeak" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="nText"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -448,9 +448,9 @@
           <paths>
             <path
               refId="Package\Insert into Slopes.Paths[Flat File Source Output]"
-              endId="Package\Insert into Slopes\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Insert into Slopes\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Insert into Slopes\Slopes (slopes_csv).Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -527,27 +527,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Insert into Slopes\Flat File Source"
+          Size="171,42"
+          Id="Package\Insert into Slopes\Slopes (slopes_csv)"
           TopLeft="207,86" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Insert into Slopes\OLE DB Destination"
-          TopLeft="195,217" />
+          Size="240,42"
+          Id="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse)"
+          TopLeft="174,218" />
         <EdgeLayout
           Id="Package\Insert into Slopes.Paths[Flat File Source Output]"
-          TopLeft="281.5,128">
+          TopLeft="293.25,128">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89"
+              EndConnector="0,90"
               Start="0,0"
-              End="0,81.5">
+              End="0,82.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.5" />
+                    End="0,82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -560,7 +560,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Insert into Slopes\OLE DB Destination">
+    design-time-name="Package\Insert into Slopes\Slopes (SkiCenterDataWarehouse)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

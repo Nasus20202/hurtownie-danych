@@ -2,7 +2,7 @@ from state_manager import StateManager
 from models import *
 from utils import *
 import faker
-from datetime import datetime
+from datetime import datetime, timedelta
 import random
 
 
@@ -76,8 +76,7 @@ class Generator:
             transactions_after = [
                 transaction
                 for transaction in card.client.transactions
-                if transaction.date > card.registered
-                and transaction.date > start_date
+                if transaction.date > card.registered and transaction.date > start_date
             ]
             if not transactions_after:
                 self.create_transaction(
@@ -106,8 +105,7 @@ class Generator:
             transactions_after = [
                 transaction
                 for transaction in card.client.transactions
-                if transaction.date > card.registered
-                and transaction.date > start_date
+                if transaction.date > card.registered and transaction.date > start_date
             ]
             if not transactions_after:
                 raise ValueError("No transactions after card registration")
@@ -257,7 +255,9 @@ class Generator:
     def create_ride(self, start_time: datetime, end_time: datetime, slope_count: int):
         slope = random.randint(1, slope_count)
 
-        selected_skipasses = random.sample(self.manager.passes, min(100, len(self.manager.passes)))
+        selected_skipasses = random.sample(
+            self.manager.passes, min(100, len(self.manager.passes))
+        )
 
         active_passes = [
             skipass
@@ -279,6 +279,17 @@ class Generator:
             max(start_time, skipass.transaction.date),
             min(end_time, skipass.valid_until),
         )
+
+        # check if there are no rides on the same skipass in the same minute
+        while any(
+            ride
+            for ride in skipass.rides
+            if ride.slope == slope
+            and ride.date - timedelta(minutes=1)
+            <= time
+            <= ride.date + timedelta(minutes=1)
+        ):
+            time += timedelta(minutes=1)
 
         self.manager.add_ride(skipass, slope, time)
 
