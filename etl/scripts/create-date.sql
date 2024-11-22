@@ -2,6 +2,7 @@ DECLARE @StartDate DATE = '2020-01-01';  -- Adjust as needed
 DECLARE @EndDate DATE = '2025-12-31';    -- Adjust as needed
 DECLARE @CurrentDate DATE = @StartDate;
 
+SET DATEFIRST 1; -- Set Monday as the first day of the week
 WHILE @CurrentDate <= @EndDate
 BEGIN
     DECLARE @Year INT = YEAR(@CurrentDate);
@@ -14,13 +15,13 @@ BEGIN
 
     -- Map day of the week
     SET @DayOfWeek = CASE @DayOfWeekNumber
-                        WHEN 1 THEN N'Niedziela'
-                        WHEN 2 THEN N'Poniedziałek'
-                        WHEN 3 THEN N'Wtorek'
-                        WHEN 4 THEN N'Środa'
-                        WHEN 5 THEN N'Czwartek'
-                        WHEN 6 THEN N'Piątek'
-                        WHEN 7 THEN N'Sobota'
+                        WHEN 1 THEN N'Poniedziałek'
+                        WHEN 2 THEN N'Wtorek'
+                        WHEN 3 THEN N'Środa'
+                        WHEN 4 THEN N'Czwartek'
+                        WHEN 5 THEN N'Piątek'
+                        WHEN 6 THEN N'Sobota'
+                        WHEN 7 THEN N'Niedziela'
                      END;
 
     -- Map month

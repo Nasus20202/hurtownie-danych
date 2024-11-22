@@ -7,12 +7,12 @@
   DTS:CreatorName="WIN11\Krzys"
   DTS:DTSID="{ECCB8651-3D5E-4EE0-B8A8-EAC323BDF309}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1045"
   DTS:ObjectName="Initial Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{067A6353-0D6F-44C7-9CCD-CEDCB308186F}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{57941FF2-D825-4B2E-90F6-8DC6DDA9AA0E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="Z:\hurtownie\hurtownie-danych\data_generator\slopes.csv">
+          DTS:ConnectionString="Y:\Studia\hurtownie-danych\data_generator\slopes.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{3F335E5C-C542-4A08-B5DF-17E1AD9B2411}"
+              DTS:DTSID="{7FD465BF-7821-4FE6-8E5B-9714B9AFC8D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SlopeName"
-              DTS:DTSID="{0CA1CB21-8519-4AB5-9F6C-4CFD6DC94295}"
+              DTS:DTSID="{CB59457B-DC0D-4E7B-AF31-600B7C25B88D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{0079D2CA-3D90-404F-A350-6A5A5F4F5CAA}"
+              DTS:DTSID="{B9C71D40-6271-4A0F-A463-87F0530F1E3D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{0B52731D-2A10-4997-9D3C-9FEC72526135}"
+              DTS:DTSID="{679D6908-E409-4825-BB3B-587D18F55900}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="MountainPeak"
-              DTS:DTSID="{70806F59-1B27-41F0-A833-B166746FBE0B}"
+              DTS:DTSID="{48988716-1A1D-43F9-AD15-49C9B4A6715E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert into Date"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}"
-          SQLTask:SqlStatementSource="DECLARE @StartDate DATE = '2020-01-01';  -- Adjust as needed&#xA;DECLARE @EndDate DATE = '2025-12-31';    -- Adjust as needed&#xA;DECLARE @CurrentDate DATE = @StartDate;&#xA;&#xA;WHILE @CurrentDate &lt;= @EndDate&#xA;BEGIN&#xA;    DECLARE @Year INT = YEAR(@CurrentDate);&#xA;    DECLARE @MonthNumber INT = MONTH(@CurrentDate);&#xA;    DECLARE @Day INT = DAY(@CurrentDate);&#xA;    DECLARE @DayOfWeekNumber INT = DATEPART(WEEKDAY, @CurrentDate);&#xA;    DECLARE @DayOfWeek NVARCHAR(20);&#xA;    DECLARE @Month NVARCHAR(20);&#xA;    DECLARE @Season NVARCHAR(20);&#xA;&#xA;    -- Map day of the week&#xA;    SET @DayOfWeek = CASE @DayOfWeekNumber&#xA;                        WHEN 1 THEN N'Niedziela'&#xA;                        WHEN 2 THEN N'Poniedziałek'&#xA;                        WHEN 3 THEN N'Wtorek'&#xA;                        WHEN 4 THEN N'Środa'&#xA;                        WHEN 5 THEN N'Czwartek'&#xA;                        WHEN 6 THEN N'Piątek'&#xA;                        WHEN 7 THEN N'Sobota'&#xA;                     END;&#xA;&#xA;    -- Map month&#xA;    SET @Month = CASE @MonthNumber&#xA;                    WHEN 1 THEN N'Styczeń'&#xA;                    WHEN 2 THEN N'Luty'&#xA;                    WHEN 3 THEN N'Marzec'&#xA;                    WHEN 4 THEN N'Kwiecień'&#xA;                    WHEN 5 THEN N'Maj'&#xA;                    WHEN 6 THEN N'Czerwiec'&#xA;                    WHEN 7 THEN N'Lipiec'&#xA;                    WHEN 8 THEN N'Sierpień'&#xA;                    WHEN 9 THEN N'Wrzesień'&#xA;                    WHEN 10 THEN N'Październik'&#xA;                    WHEN 11 THEN N'Listopad'&#xA;                    WHEN 12 THEN N'Grudzień'&#xA;                 END;&#xA;&#xA;    -- Determine season&#xA;    SET @Season = CASE &#xA;                    WHEN @MonthNumber BETWEEN 1 AND 7 THEN N'Sezon ' + CAST(@Year - 1 AS NVARCHAR(4))&#xA;                    WHEN @MonthNumber BETWEEN 8 AND 12 THEN N'Sezon ' + CAST(@Year AS NVARCHAR(4))&#xA;                  END;&#xA;&#xA;    -- Insert into the Date table&#xA;    INSERT INTO Date (Date, Year, Season, Month, MonthNumber, Day, DayOfWeek, DayOfWeekNumber)&#xA;    VALUES (@CurrentDate, @Year, @Season, @Month, @MonthNumber, @Day, @DayOfWeek, @DayOfWeekNumber);&#xA;&#xA;    -- Increment date&#xA;    SET @CurrentDate = DATEADD(DAY, 1, @CurrentDate);&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DECLARE @StartDate DATE = '2020-01-01';  -- Adjust as needed&#xA;DECLARE @EndDate DATE = '2025-12-31';    -- Adjust as needed&#xA;DECLARE @CurrentDate DATE = @StartDate;&#xA;&#xA;SET DATEFIRST 1; -- Set Monday as the first day of the week&#xA;WHILE @CurrentDate &lt;= @EndDate&#xA;BEGIN&#xA;    DECLARE @Year INT = YEAR(@CurrentDate);&#xA;    DECLARE @MonthNumber INT = MONTH(@CurrentDate);&#xA;    DECLARE @Day INT = DAY(@CurrentDate);&#xA;    DECLARE @DayOfWeekNumber INT = DATEPART(WEEKDAY, @CurrentDate);&#xA;    DECLARE @DayOfWeek NVARCHAR(20);&#xA;    DECLARE @Month NVARCHAR(20);&#xA;    DECLARE @Season NVARCHAR(20);&#xA;&#xA;    -- Map day of the week&#xA;    SET @DayOfWeek = CASE @DayOfWeekNumber&#xA;                        WHEN 1 THEN N'Poniedziałek'&#xA;                        WHEN 2 THEN N'Wtorek'&#xA;                        WHEN 3 THEN N'Środa'&#xA;                        WHEN 4 THEN N'Czwartek'&#xA;                        WHEN 5 THEN N'Piątek'&#xA;                        WHEN 6 THEN N'Sobota'&#xA;                        WHEN 7 THEN N'Niedziela'&#xA;                     END;&#xA;&#xA;    -- Map month&#xA;    SET @Month = CASE @MonthNumber&#xA;                    WHEN 1 THEN N'Styczeń'&#xA;                    WHEN 2 THEN N'Luty'&#xA;                    WHEN 3 THEN N'Marzec'&#xA;                    WHEN 4 THEN N'Kwiecień'&#xA;                    WHEN 5 THEN N'Maj'&#xA;                    WHEN 6 THEN N'Czerwiec'&#xA;                    WHEN 7 THEN N'Lipiec'&#xA;                    WHEN 8 THEN N'Sierpień'&#xA;                    WHEN 9 THEN N'Wrzesień'&#xA;                    WHEN 10 THEN N'Październik'&#xA;                    WHEN 11 THEN N'Listopad'&#xA;                    WHEN 12 THEN N'Grudzień'&#xA;                 END;&#xA;&#xA;    -- Determine season&#xA;    SET @Season = CASE &#xA;                    WHEN @MonthNumber BETWEEN 1 AND 7 THEN N'Sezon ' + CAST(@Year - 1 AS NVARCHAR(4))&#xA;                    WHEN @MonthNumber BETWEEN 8 AND 12 THEN N'Sezon ' + CAST(@Year AS NVARCHAR(4))&#xA;                  END;&#xA;&#xA;    -- Insert into the Date table&#xA;    INSERT INTO Date (Date, Year, Season, Month, MonthNumber, Day, DayOfWeek, DayOfWeekNumber)&#xA;    VALUES (@CurrentDate, @Year, @Season, @Month, @MonthNumber, @Day, @DayOfWeek, @DayOfWeekNumber);&#xA;&#xA;    -- Increment date&#xA;    SET @CurrentDate = DATEADD(DAY, 1, @CurrentDate);&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -481,7 +481,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Inserting into Junk"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

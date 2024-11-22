@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=FIL_WIN11VIRT;Initial Catalog=SkiCenterDataWarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SkiCenterETL-{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}WIN11.SkiCenterDataWarehouse;" />
+      DTS:ConnectionString="Data Source=WIN11;Initial Catalog=SkiCenterDataWarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SkiCenterETL-{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}WIN11.SkiCenterDataWarehouse;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
