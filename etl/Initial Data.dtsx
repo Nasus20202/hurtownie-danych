@@ -7,12 +7,12 @@
   DTS:CreatorName="WIN11\Krzys"
   DTS:DTSID="{ECCB8651-3D5E-4EE0-B8A8-EAC323BDF309}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
   DTS:LocaleID="1045"
   DTS:ObjectName="Initial Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{3AED399D-2AFD-4636-880B-F0FDF3A6A333}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{067A6353-0D6F-44C7-9CCD-CEDCB308186F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="Y:\Studia\hurtownie-danych\data_generator\slopes.csv">
+          DTS:ConnectionString="Z:\hurtownie\hurtownie-danych\data_generator\slopes.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{BC840BF8-4B21-455E-B6F9-FBF36636F160}"
+              DTS:DTSID="{3F335E5C-C542-4A08-B5DF-17E1AD9B2411}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SlopeName"
-              DTS:DTSID="{A45F93F3-168A-4ACC-B241-A764A5804CEC}"
+              DTS:DTSID="{0CA1CB21-8519-4AB5-9F6C-4CFD6DC94295}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{1E4C9F33-C660-423D-B347-B02F38E627A6}"
+              DTS:DTSID="{0079D2CA-3D90-404F-A350-6A5A5F4F5CAA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{383D50F2-6A92-4C53-A580-654EB16C8320}"
+              DTS:DTSID="{0B52731D-2A10-4997-9D3C-9FEC72526135}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="MountainPeak"
-              DTS:DTSID="{AA5F667C-37EB-43E7-A038-4EA218EE8A7D}"
+              DTS:DTSID="{70806F59-1B27-41F0-A833-B166746FBE0B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -94,7 +94,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert into Date"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -464,7 +464,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert into Time"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -481,7 +481,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Inserting into Junk"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
