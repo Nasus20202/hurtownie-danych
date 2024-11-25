@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">WIN11</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcjmX6jsGZUe62wllKA6/aQAAAAACAAAAAAAQZgAAAAEAACAAAACeMqfG4pnt1E17jnwyvYG3gWz4L/CmTgPQmDEiqvxfKwAAAAAOgAAAAAIAACAAAAA+9B/ahhsvFyD93XnFr85ZNqfe58N/rC0LEC1bK9p8p5AAAADcZlSyXv/hH/y5SHPoH8Z+jmdsAYMw1GVXkk06nKEl87kCMmX3/AfUZgXmu1jDk4z+y5n2D6PmzSzFC478Wtrmuc6VFwxTtmhsTaz13R5z/Mtm7TdL/qv4js+Zu4seBH73vMOt/uJFoviC3pMHwEA22w81eLASOyi9Xhk71/qiu13dnRmJZwyhPR2ZVZaWv1BAAAAAGD74Z6yhIE+5A0qvYlm6E3rvDGGfRwD3wZEEKxfB2ZIfc+YPWhMFQ2RAUjH+bpOIRKqAc8ncpc4meIU0CtHofw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcjmX6jsGZUe62wllKA6/aQAAAAACAAAAAAAQZgAAAAEAACAAAABU9mmVUZXwKuZdk5S3XOlk7u2qpiVXdImRuRDCKXyhXwAAAAAOgAAAAAIAACAAAAAXBp3pBtag1FE/N05AXeAw/TsQT9Ik1m0cMDZdDQ3jtZAAAACRCic4+ct8VdrlCFeCUwoIB7pfOPf/ONyvWlT8Nj7zqCcSly+sxu9ccqmy68hQaa7YucbGoyhR4T5wRa8YcHfLoGH1fQl/nxSLOls1N/hQo1u2WlV1FUP0Ek0RPTJ3GezSKIAf7CKoOniWQMIMf20BFRLOiRMDWVNDNHBBVENQx9giBQpnIrl4ura16EZAMjhAAAAAo9932/LmGsR11uOgTZMOU4kwVj7hNtoXz5/NlqbXH2wEyFMprM8S8n9EaMfFYJyg4YgL1HFyb2OS+O1beZ26rA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -343,10 +343,10 @@
                 <SSIS:Property SSIS:Name="Name">Initial Data</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">20</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{57941FF2-D825-4B2E-90F6-8DC6DDA9AA0E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{525C8AA8-6F95-4077-91A5-3D0CCE9F8170}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -424,7 +424,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Y:\Studia\hurtownie-danych\data_generator\slopes.csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">X:\Studia\hurtownie-danych\data_generator\slopes.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -558,10 +558,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">94</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">95</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1BA84279-9583-403B-8FB4-57D42FCC2F76}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C45852E5-0CFF-464F-BF39-947BE731E79A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -741,7 +741,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Y:\Studia\hurtownie-danych\data_generator\output\rides_t2.csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">X:\Studia\hurtownie-danych\data_generator\output\rides_t1.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -938,7 +938,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Y:\Studia\hurtownie-danych\data_generator\output\rides_t2.csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">X:\Studia\hurtownie-danych\data_generator\output\rides_t2.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1135,7 +1135,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Y:\Studia\hurtownie-danych\data_generator\slopes.csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">X:\Studia\hurtownie-danych\data_generator\slopes.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

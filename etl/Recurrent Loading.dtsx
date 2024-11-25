@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="94"
-  DTS:VersionGUID="{1BA84279-9583-403B-8FB4-57D42FCC2F76}">
+  DTS:VersionBuild="104"
+  DTS:VersionGUID="{146A4413-D9F5-4F56-ABD0-03E475717DFB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,7 +43,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="Y:\Studia\hurtownie-danych\data_generator\output\rides_t2.csv">
+          DTS:ConnectionString="X:\Studia\hurtownie-danych\data_generator\output\rides_t1.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -52,7 +52,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SkipassID"
-              DTS:DTSID="{E9D1BEBE-05F8-4993-8A6A-5294DC2955B0}"
+              DTS:DTSID="{6F636111-6255-44AB-B45E-DE0BA03C8B8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -61,7 +61,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SlopeID"
-              DTS:DTSID="{E6BF3EEC-ADA3-49F0-9561-4A3055B351D8}"
+              DTS:DTSID="{740199B0-88B4-4406-B630-1862C5218C14}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -70,7 +70,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{6126C1B5-DA5F-4A62-9693-E5C3E475D808}"
+              DTS:DTSID="{98750FBB-927B-4157-9035-10B23B6C99F5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Success"
-              DTS:DTSID="{B73AA12E-1B6B-4281-B2E3-19FB2EF036CF}"
+              DTS:DTSID="{AF58EFFF-E806-4614-AB39-DD8F540FBDF7}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -100,7 +100,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="Y:\Studia\hurtownie-danych\data_generator\output\rides_t2.csv">
+          DTS:ConnectionString="X:\Studia\hurtownie-danych\data_generator\output\rides_t2.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -109,7 +109,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SkipassID"
-              DTS:DTSID="{141B6B82-0826-47F6-B62F-79BC38E17309}"
+              DTS:DTSID="{E4D84DD9-FED2-43F9-9B21-0B532A4878B4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -118,7 +118,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SlopeID"
-              DTS:DTSID="{DCEB05A3-312A-4CE8-9CDC-44071CA7276A}"
+              DTS:DTSID="{5953A6FF-4DCD-48FA-A500-E3D00E8FA81A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -127,7 +127,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{9B01D737-7A62-4A0C-9CF2-2BFC138F05F5}"
+              DTS:DTSID="{9628B903-A193-439B-AC55-33C7C0A7DE69}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -136,7 +136,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Success"
-              DTS:DTSID="{CDDF7332-6EE9-4735-AF3D-B9759BB92100}"
+              DTS:DTSID="{648AEA58-D22C-41C4-8E1A-1F9116A3A9CB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -157,7 +157,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="Y:\Studia\hurtownie-danych\data_generator\slopes.csv">
+          DTS:ConnectionString="X:\Studia\hurtownie-danych\data_generator\slopes.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{DB01443C-76A8-41FB-8C44-71F5DAF685AF}"
+              DTS:DTSID="{10554885-7C74-4B9C-8A4C-3BD426E18F09}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="SlopeName"
-              DTS:DTSID="{49F9CFA4-64CE-4952-B8C4-DB1FBDDC37BF}"
+              DTS:DTSID="{F6CA3083-802D-48E1-A2A9-10E765D151DE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{A0906E8E-AB91-4EE8-B188-B6DD5E4DF71D}"
+              DTS:DTSID="{8E21610B-16DA-4E9A-81B2-62129C254D9F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +193,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{81CCD195-0F9D-4FC6-80D3-C86C4AAECA64}"
+              DTS:DTSID="{B4850D20-CC94-4F94-9399-7F0DE52146A0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +202,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="MountainPeak"
-              DTS:DTSID="{B580E9FE-AEB3-4A49-8512-8EC494908B57}"
+              DTS:DTSID="{E2763DD3-A4E2-46DE-9AE4-192243947143}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -3591,7 +3591,7 @@ where [refTable].[CardCode] = ?</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PassCode], [UsedState] FROM [dbo].[Pass]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PassCode], [Price], [TotalRides], [UsedState], [ValidUntilDateID] FROM [dbo].[Pass]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -3654,6 +3654,34 @@ where [refTable].[CardCode] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].Columns[Price]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Price"
+                      externalMetadataColumnId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[Price]"
+                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output].Columns[Price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].Columns[TotalRides]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="TotalRides"
+                      externalMetadataColumnId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[TotalRides]"
+                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].Columns[UsedState]"
                       cachedDataType="wstr"
                       cachedLength="20"
@@ -3667,6 +3695,19 @@ where [refTable].[CardCode] = ?</property>
                           typeConverter="ColumnType">2</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].Columns[ValidUntilDateID]"
+                      cachedDataType="i4"
+                      cachedName="ValidUntilDateID"
+                      externalMetadataColumnId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[ValidUntilDateID]"
+                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3676,10 +3717,24 @@ where [refTable].[CardCode] = ?</property>
                       length="32"
                       name="PassCode" />
                     <externalMetadataColumn
+                      refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[Price]"
+                      dataType="wstr"
+                      length="20"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[TotalRides]"
+                      dataType="wstr"
+                      length="20"
+                      name="TotalRides" />
+                    <externalMetadataColumn
                       refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[UsedState]"
                       dataType="wstr"
                       length="20"
                       name="UsedState" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Add UsedState as SCD1.Inputs[Slowly Changing Dimension Input].ExternalColumns[ValidUntilDateID]"
+                      dataType="i4"
+                      name="ValidUntilDateID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3807,287 +3862,6 @@ where [refTable].[CardCode] = ?</property>
                       refId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Populate Pass table\Convert valid_until to Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate Pass table\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Pass] SET [UsedState] = ? WHERE [PassCode] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate Pass table\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input].Columns[PassCode]"
-                      cachedDataType="wstr"
-                      cachedLength="32"
-                      cachedName="PassCode"
-                      externalMetadataColumnId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]" />
-                    <inputColumn
-                      refId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input].Columns[UsedState]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="UsedState"
-                      externalMetadataColumnId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="wstr"
-                      length="20"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="wstr"
-                      length="32"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate Pass table\OLE DB Command.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Populate Pass table\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate Pass table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate Pass table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate Pass table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate Pass table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse)"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Pass (SkiCenterDataWarehouse)"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Pass]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Connections[OleDbConnection]"
-                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[PassCode]"
-                      cachedDataType="wstr"
-                      cachedLength="32"
-                      cachedName="PassCode"
-                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[PassCode]"
-                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]" />
-                    <inputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[TotalRides]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="TotalRides"
-                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[TotalRides]"
-                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]" />
-                    <inputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[UsedState]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="UsedState"
-                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[UsedState]"
-                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]" />
-                    <inputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[ValidUntilDateID]"
-                      cachedDataType="i4"
-                      cachedName="ValidUntilDateID"
-                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[ValidUntilDateID]"
-                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]" />
-                    <inputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].Columns[Price]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="Price"
-                      externalMetadataColumnId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output].Columns[Price]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[PassID]"
-                      dataType="i4"
-                      name="PassID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[PassCode]"
-                      dataType="wstr"
-                      length="32"
-                      name="PassCode" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[ValidUntilDateID]"
-                      dataType="i4"
-                      name="ValidUntilDateID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      dataType="wstr"
-                      length="20"
-                      name="Price" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[TotalRides]"
-                      dataType="wstr"
-                      length="20"
-                      name="TotalRides" />
-                    <externalMetadataColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input].ExternalColumns[UsedState]"
-                      dataType="wstr"
-                      length="20"
-                      name="UsedState" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -4467,11 +4241,292 @@ where [refTable].[Date] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SkiCenterDataWarehouse (Pass)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Pass]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].Columns[PassCode]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="PassCode"
+                      externalMetadataColumnId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[PassCode]"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].Columns[ValidUntilDateID]"
+                      cachedDataType="i4"
+                      cachedName="ValidUntilDateID"
+                      externalMetadataColumnId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[ValidUntilDateID]"
+                      lineageId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].Columns[Price]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Price"
+                      externalMetadataColumnId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\Populate Pass table\Add Price.Outputs[Derived Column Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].Columns[TotalRides]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="TotalRides"
+                      externalMetadataColumnId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[TotalRides]"
+                      lineageId="Package\Populate Pass table\Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].Columns[UsedState]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UsedState"
+                      externalMetadataColumnId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[UsedState]"
+                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[PassID]"
+                      dataType="i4"
+                      name="PassID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[PassCode]"
+                      dataType="wstr"
+                      length="32"
+                      name="PassCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[ValidUntilDateID]"
+                      dataType="i4"
+                      name="ValidUntilDateID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      dataType="wstr"
+                      length="20"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[TotalRides]"
+                      dataType="wstr"
+                      length="20"
+                      name="TotalRides" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input].ExternalColumns[UsedState]"
+                      dataType="wstr"
+                      length="20"
+                      name="UsedState" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Pass table\Update changed"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update changed"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Pass] SET [UsedState] = ? WHERE [PassCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Pass table\Update changed.Connections[OleDbConnection]"
+                  connectionManagerID="{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN11.SkiCenterDataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input].Columns[PassCode]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="PassCode"
+                      externalMetadataColumnId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Populate Pass table\Add PassCode.Outputs[Derived Column Output].Columns[PassCode]" />
+                    <inputColumn
+                      refId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input].Columns[UsedState]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="UsedState"
+                      externalMetadataColumnId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Populate Pass table\Add UsedState.Outputs[Derived Column Output].Columns[UsedState]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="32"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Pass table\Update changed.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Pass table\Update changed.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Pass table\Update changed.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Update changed.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Pass table\Update changed.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Pass table\Update changed.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Populate Pass table.Paths[Changing Attribute Updates Output]"
-              endId="Package\Populate Pass table\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Populate Pass table\Update changed.Inputs[OLE DB Command Input]"
               name="Changing Attribute Updates Output"
               startId="Package\Populate Pass table\Add UsedState as SCD1.Outputs[Changing Attribute Updates Output]" />
             <path
@@ -4506,7 +4561,7 @@ where [refTable].[Date] = ?</property>
               startId="Package\Populate Pass table\Retrieve ValidUntilDateID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Populate Pass table.Paths[New Output]"
-              endId="Package\Populate Pass table\Pass (SkiCenterDataWarehouse).Inputs[OLE DB Destination Input]"
+              endId="Package\Populate Pass table\SkiCenterDataWarehouse (Pass).Inputs[OLE DB Destination Input]"
               name="New Output"
               startId="Package\Populate Pass table\Add UsedState as SCD1.Outputs[New Output]" />
             <path
@@ -9482,29 +9537,29 @@ where [refTable].[CardID] = ? and [refTable].[PassPurchaseDateID] = ? and [refTa
               startId="Package\Populate PassPurchase Table\Transaction (SkiCenter).Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Populate PassPurchase Table.Paths[Sort Output4]"
-              endId="Package\Populate PassPurchase Table\Retrieve src_client_email.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Populate PassPurchase Table\Sort by ClientID B.Outputs[Sort Output]" />
-            <path
-              refId="Package\Populate PassPurchase Table.Paths[Sort Output]"
-              endId="Package\Populate PassPurchase Table\Retrieve CardCode.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Populate PassPurchase Table\Sort by CardID B.Outputs[Sort Output]" />
-            <path
-              refId="Package\Populate PassPurchase Table.Paths[Sort Output1]"
-              endId="Package\Populate PassPurchase Table\Retrieve CardCode.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Populate PassPurchase Table\Sort by CardID A.Outputs[Sort Output]" />
-            <path
-              refId="Package\Populate PassPurchase Table.Paths[Sort Output2]"
               endId="Package\Populate PassPurchase Table\Retrieve src_card_id.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Populate PassPurchase Table\Sort by TransactionID B.Outputs[Sort Output]" />
             <path
-              refId="Package\Populate PassPurchase Table.Paths[Sort Output3]"
+              refId="Package\Populate PassPurchase Table.Paths[Sort Output]"
               endId="Package\Populate PassPurchase Table\Retrieve src_card_id.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate PassPurchase Table\Sort by TransactionID A.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate PassPurchase Table.Paths[Sort Output1]"
+              endId="Package\Populate PassPurchase Table\Retrieve src_client_email.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Populate PassPurchase Table\Sort by ClientID B.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate PassPurchase Table.Paths[Sort Output2]"
+              endId="Package\Populate PassPurchase Table\Retrieve CardCode.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Populate PassPurchase Table\Sort by CardID B.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate PassPurchase Table.Paths[Sort Output3]"
+              endId="Package\Populate PassPurchase Table\Retrieve CardCode.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Populate PassPurchase Table\Sort by CardID A.Outputs[Sort Output]" />
             <path
               refId="Package\Populate PassPurchase Table.Paths[Sort Output5]"
               endId="Package\Populate PassPurchase Table\Retrieve src_client_email.Inputs[Merge Join Left Input]"
@@ -15877,14 +15932,14 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
               startId="Package\Populate Ride table\Card (SkiCenterDataWarehouse).Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Populate Ride table.Paths[Sort Output8]"
+              endId="Package\Populate Ride table\Add PassID A.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Populate Ride table\Sort by Pass Code B.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate Ride table.Paths[Sort Output7]"
               endId="Package\Populate Ride table\Add CardID.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Populate Ride table\Sort by CardCode A.Outputs[Sort Output]" />
-            <path
-              refId="Package\Populate Ride table.Paths[Sort Output7]"
-              endId="Package\Populate Ride table\Add PassID A.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Populate Ride table\Sort by Pass Code A.Outputs[Sort Output]" />
             <path
               refId="Package\Populate Ride table.Paths[Sort Output6]"
               endId="Package\Populate Ride table\Add SlopeName.Inputs[Merge Join Left Input]"
@@ -15897,9 +15952,9 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
               startId="Package\Populate Ride table\Sort by CardID A.Outputs[Sort Output]" />
             <path
               refId="Package\Populate Ride table.Paths[Sort Output1]"
-              endId="Package\Populate Ride table\Add SlopeName.Inputs[Merge Join Right Input]"
+              endId="Package\Populate Ride table\Add CardID.Inputs[Merge Join Right Input]"
               name="Sort Output"
-              startId="Package\Populate Ride table\Sort by SlopeID B.Outputs[Sort Output]" />
+              startId="Package\Populate Ride table\Sort by CardCode B.Outputs[Sort Output]" />
             <path
               refId="Package\Populate Ride table.Paths[Sort Output3]"
               endId="Package\Populate Ride table\Add CardCode.Inputs[Merge Join Right Input]"
@@ -15912,19 +15967,19 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
               startId="Package\Populate Ride table\Sort by TransactionID A.Outputs[Sort Output]" />
             <path
               refId="Package\Populate Ride table.Paths[Sort Output]"
-              endId="Package\Populate Ride table\Add CardID.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Populate Ride table\Sort by CardCode B.Outputs[Sort Output]" />
-            <path
-              refId="Package\Populate Ride table.Paths[Sort Output9]"
               endId="Package\Populate Ride table\Add TransactionDate.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Populate Ride table\Sort by TransactionID B.Outputs[Sort Output]" />
             <path
-              refId="Package\Populate Ride table.Paths[Sort Output4]"
-              endId="Package\Populate Ride table\Add PassID A.Inputs[Merge Join Right Input]"
+              refId="Package\Populate Ride table.Paths[Sort Output9]"
+              endId="Package\Populate Ride table\Add SlopeName.Inputs[Merge Join Right Input]"
               name="Sort Output"
-              startId="Package\Populate Ride table\Sort by Pass Code B.Outputs[Sort Output]" />
+              startId="Package\Populate Ride table\Sort by SlopeID B.Outputs[Sort Output]" />
+            <path
+              refId="Package\Populate Ride table.Paths[Sort Output4]"
+              endId="Package\Populate Ride table\Add PassID A.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Populate Ride table\Sort by Pass Code A.Outputs[Sort Output]" />
             <path
               refId="Package\Populate Ride table.Paths[Sort Output10]"
               endId="Package\Populate Ride table\Add PassID B.Inputs[Merge Join Left Input]"
@@ -15995,11 +16050,11 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{187BC93E-4DB8-443D-89EE-A9234C6D0351}"
+      DTS:DTSID="{051AC616-7C58-4A7E-9E6E-5FA0C80A65A6}"
       DTS:From="Package\Populate Ride table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Populate PassPurchase Table" />
+      DTS:To="Package\Process dimensions" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
@@ -16016,6 +16071,30 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Process cube" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{A51E9586-7888-43FA-A0B8-748ACA2D705E}"
+      DTS:From="Package\Populate Pass table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Populate PassPurchase Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{A8045727-E13E-4BDC-859A-ACF6263CF405}"
+      DTS:From="Package\Populate Card table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Populate PassPurchase Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{1B48F252-FD99-4445-BC30-D516641528AE}"
+      DTS:From="Package\Populate Client Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Populate PassPurchase Table" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -16030,51 +16109,59 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Populate Card table"
           TopLeft="258,130" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Populate Client Table"
           TopLeft="463,134" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Populate Pass table"
           TopLeft="49,126" />
         <NodeLayout
-          Size="216,42"
+          Size="216,41.6"
           Id="Package\Populate PassPurchase Table"
-          TopLeft="231,377" />
+          TopLeft="395.285714635436,294.411764778274" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Populate Ride table"
-          TopLeft="251,299" />
+          TopLeft="135.999999755195,295.176470591587" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Process cube"
+          TopLeft="260.857142841938,501.47058827082" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Process dimensions"
+          TopLeft="246.714285694519,407.529411808945" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="134.5,168">
+          TopLeft="107.4,167.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="161,131"
+              EndConnector="72.9999997551951,127.576470591587"
               Start="0,0"
-              End="161,123.5">
+              End="72.9999997551951,120.076470591587">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.984555984556" />
+                    End="0,68.1812400422402" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,81.984555984556"
-                    Point2="0,85.984555984556"
-                    Point3="4,85.984555984556" />
+                    Point1="0,68.1812400422402"
+                    Point2="0,72.1812400422402"
+                    Point3="4,72.1812400422402" />
                   <mssgle:LineSegment
-                    End="157,85.984555984556" />
+                    End="68.9999997551951,72.1812400422402" />
                   <mssgle:CubicBezierSegment
-                    Point1="157,85.984555984556"
-                    Point2="161,85.984555984556"
-                    Point3="161,89.984555984556" />
+                    Point1="68.9999997551951,72.1812400422402"
+                    Point2="72.9999997551951,72.1812400422402"
+                    Point3="72.9999997551951,76.1812400422402" />
                   <mssgle:LineSegment
-                    End="161,123.5" />
+                    End="72.9999997551951,120.076470591587" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16085,18 +16172,30 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="339.75,172">
+          TopLeft="316.4,171.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,127"
+              EndConnector="-95.6000002448049,123.576470591587"
               Start="0,0"
-              End="0,119.5">
+              End="-95.6000002448049,116.076470591587">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,119.5" />
+                    End="0,46.1171241843657" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.1171241843657"
+                    Point2="0,50.1171241843657"
+                    Point3="-4,50.1171241843657" />
+                  <mssgle:LineSegment
+                    End="-91.6000002448049,50.1171241843657" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-91.6000002448049,50.1171241843657"
+                    Point2="-95.6000002448049,50.1171241843657"
+                    Point3="-95.6000002448049,54.1171241843657" />
+                  <mssgle:LineSegment
+                    End="-95.6000002448049,116.076470591587" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16107,30 +16206,86 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="552.5,176">
+          TopLeft="524.066666666667,175.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-176,123"
+              EndConnector="-262.866666911472,119.576470591587"
               Start="0,0"
-              End="-176,115.5">
+              End="-262.866666911472,112.076470591587">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.7335907335907" />
+                    End="0,63.624976635296" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,76.7335907335907"
-                    Point2="0,80.7335907335907"
-                    Point3="-4,80.7335907335907" />
+                    Point1="0,63.624976635296"
+                    Point2="0,67.624976635296"
+                    Point3="-4,67.624976635296" />
                   <mssgle:LineSegment
-                    End="-172,80.7335907335907" />
+                    End="-258.866666911472,67.624976635296" />
                   <mssgle:CubicBezierSegment
-                    Point1="-172,80.7335907335907"
-                    Point2="-176,80.7335907335907"
-                    Point3="-176,84.7335907335907" />
+                    Point1="-258.866666911472,67.624976635296"
+                    Point2="-262.866666911472,67.624976635296"
+                    Point3="-262.866666911472,71.624976635296" />
                   <mssgle:LineSegment
-                    End="-176,115.5" />
+                    End="-262.866666911472,112.076470591587" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="503.285714635436,336.011764778274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.838095607583,71.5176470306712"
+              Start="0,0"
+              End="-144.838095607583,64.0176470306712">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5095546836513" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5095546836513"
+                    Point2="0,42.5095546836513"
+                    Point3="-4,42.5095546836513" />
+                  <mssgle:LineSegment
+                    End="-140.838095607583,42.5095546836513" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.838095607583,42.5095546836513"
+                    Point2="-144.838095607583,42.5095546836513"
+                    Point3="-144.838095607583,46.5095546836513" />
+                  <mssgle:LineSegment
+                    End="-144.838095607583,64.0176470306712" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="331.185714268228,449.129411808945">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3411764618743"
+              Start="0,0"
+              End="0,44.8411764618743">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8411764618743" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16141,18 +16296,30 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="337.5,341">
+          TopLeft="220.799999755195,336.776470591587">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="83.7809526059903,70.7529412173586"
               Start="0,0"
-              End="0,28.5">
+              End="83.7809526059903,63.2529412173586">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,38.0550192656449" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.0550192656449"
+                    Point2="0,42.0550192656449"
+                    Point3="4,42.0550192656449" />
+                  <mssgle:LineSegment
+                    End="79.7809526059903,42.0550192656449" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.7809526059903,42.0550192656449"
+                    Point2="83.7809526059903,42.0550192656449"
+                    Point3="83.7809526059903,46.0550192656449" />
+                  <mssgle:LineSegment
+                    End="83.7809526059903,63.2529412173586" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16161,24 +16328,32 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Process dimensions"
-          TopLeft="256,458" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="340,419">
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="161.8,167.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="289.485714635436,126.811764778274"
               Start="0,0"
-              End="0,31.5">
+              End="289.485714635436,119.311764778274">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,68.0513082669295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.0513082669295"
+                    Point2="0,72.0513082669295"
+                    Point3="4,72.0513082669295" />
+                  <mssgle:LineSegment
+                    End="285.485714635436,72.0513082669295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="285.485714635436,72.0513082669295"
+                    Point2="289.485714635436,72.0513082669295"
+                    Point3="289.485714635436,76.0513082669295" />
+                  <mssgle:LineSegment
+                    End="289.485714635436,119.311764778274" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16187,24 +16362,66 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Process cube"
-          TopLeft="268,542" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="339.5,500">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="370.8,171.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="132.485714635436,122.811764778274"
               Start="0,0"
-              End="0,34.5">
+              End="132.485714635436,115.311764778274">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,45.8069934934112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.8069934934112"
+                    Point2="0,49.8069934934112"
+                    Point3="4,49.8069934934112" />
+                  <mssgle:LineSegment
+                    End="128.485714635436,49.8069934934112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="128.485714635436,49.8069934934112"
+                    Point2="132.485714635436,49.8069934934112"
+                    Point3="132.485714635436,53.8069934934112" />
+                  <mssgle:LineSegment
+                    End="132.485714635436,115.311764778274" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="581.133333333333,175.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.8476186978978,118.811764778274"
+              Start="0,0"
+              End="-25.8476186978978,111.311764778274">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.4761772411196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.4761772411196"
+                    Point2="0,67.4761772411196"
+                    Point3="-4,67.4761772411196" />
+                  <mssgle:LineSegment
+                    End="-21.8476186978978,67.4761772411196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.8476186978978,67.4761772411196"
+                    Point2="-25.8476186978978,67.4761772411196"
+                    Point3="-25.8476186978978,71.4761772411196" />
+                  <mssgle:LineSegment
+                    End="-25.8476186978978,111.311764778274" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16216,21 +16433,25 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[localhost]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
   <TaskHost
     design-time-name="Package\Populate Card table">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Populate Card table\Card (SkiCenter)"
           TopLeft="165,72" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\Populate Card table\Card (SkiCenterDataWarehouse)"
           TopLeft="126,295" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Populate Card table\Drop old values"
           TopLeft="165,178" />
         <EdgeLayout
@@ -16252,9 +16473,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16339,71 +16558,71 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\Populate Client Table\Union All"
           TopLeft="216.5,1013.5" />
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Populate Client Table\Sort client's pass counts"
           TopLeft="239,413.5" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Populate Client Table\Clients (SkiCenter)"
           TopLeft="39.0000000000001,312.5" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Populate Client Table\OLE DB Command"
           TopLeft="51.0000000000001,950.5" />
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\Populate Client Table\Assign passes to clients"
           TopLeft="243,210.5" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Populate Client Table\Count clients' passes"
           TopLeft="248.5,313.5" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Populate Client Table\Derived Column 1"
           TopLeft="193.5,1123.5" />
         <NodeLayout
-          Size="188,42"
+          Size="188,41.6"
           Id="Package\Populate Client Table\Assign experience level"
           TopLeft="175,612.5" />
         <NodeLayout
-          Size="158,42"
+          Size="158.4,41.6"
           Id="Package\Populate Client Table\Sort transactions"
           TopLeft="119,117.5" />
         <NodeLayout
-          Size="195,42"
+          Size="195.2,41.6"
           Id="Package\Populate Client Table\Transactions (SkiCenter)"
           TopLeft="96.5,14.5" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Populate Client Table\Derived Column"
           TopLeft="61.0000000000001,842.5" />
         <NodeLayout
-          Size="131,42"
+          Size="131.2,41.6"
           Id="Package\Populate Client Table\Sort clients"
           TopLeft="57.5000000000001,413.5" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Populate Client Table\Passes (SkiCenter)"
           TopLeft="396.5,20.5" />
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Populate Client Table\Slowly Changing Dimension"
           TopLeft="163.5,712.5" />
         <NodeLayout
-          Size="236,42"
+          Size="236,41.6"
           Id="Package\Populate Client Table\Client (SkiCenterDataWarehouse)"
           TopLeft="153.5,1228.5" />
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Populate Client Table\Sort passes"
           TopLeft="408.5,116.5" />
         <NodeLayout
-          Size="249,42"
+          Size="248.8,41.6"
           Id="Package\Populate Client Table\Assign client's pass counts to clients"
           TopLeft="143.5,516.5" />
         <EdgeLayout
@@ -16425,9 +16644,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16461,9 +16678,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16497,9 +16712,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16533,9 +16746,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16569,9 +16780,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16593,9 +16802,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16617,9 +16824,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16641,9 +16846,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16671,9 +16874,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16719,9 +16920,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16743,9 +16942,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16803,9 +17000,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16827,9 +17022,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16851,9 +17044,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16875,9 +17066,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16974,96 +17163,152 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="198,42"
+          Size="198.4,41.6"
           Id="Package\Populate Pass table\Retrieve ValidUntilDateID"
-          TopLeft="284,629.5" />
+          TopLeft="502.9,615.1" />
         <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Populate Pass table\Add UsedState"
-          TopLeft="316,413.5" />
+          TopLeft="528.1,411.9" />
         <NodeLayout
-          Size="123,42"
+          Size="123.2,41.6"
           Id="Package\Populate Pass table\Add Price"
-          TopLeft="328.5,209.5" />
+          TopLeft="540.5,208.7" />
         <NodeLayout
-          Size="191,42"
+          Size="191.2,41.6"
           Id="Package\Populate Pass table\Add UsedState as SCD1"
-          TopLeft="289,715.5" />
+          TopLeft="506.5,716.7" />
         <NodeLayout
-          Size="231,42"
-          Id="Package\Populate Pass table\Pass (SkiCenterDataWarehouse)"
-          TopLeft="244.5,981.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Populate Pass table\OLE DB Command"
-          TopLeft="532,864.5" />
-        <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\Populate Pass table\Add TotalRides"
-          TopLeft="315.5,311.5" />
+          TopLeft="527.7,310.3" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Populate Pass table\Passes (SkiCenter)"
-          TopLeft="306.5,5.5" />
+          TopLeft="518.5,5.49999999999995" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Populate Pass table\Add PassCode"
-          TopLeft="317.5,107.5" />
+          TopLeft="529.7,107.1" />
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Populate Pass table\Convert valid_until to Date"
-          TopLeft="284.5,516.5" />
+          TopLeft="499.7,513.5" />
         <EdgeLayout
           Id="Package\Populate Pass table.Paths[Derived Column Output2]"
-          TopLeft="390,353.5">
+          TopLeft="602.1,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Pass table.Paths[Derived Column Output1]"
-          TopLeft="390,251.5">
+          TopLeft="602.1,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Derived Column Output]"
+          TopLeft="602.1,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[OLE DB Source Output]"
+          TopLeft="602.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Pass table.Paths[Lookup Match Output]"
+          TopLeft="602.1,656.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate Pass table.Paths[Derived Column Output]"
-          TopLeft="390,149.5">
+          Id="Package\Populate Pass table.Paths[Derived Column Output4]"
+          TopLeft="602.1,453.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17080,50 +17325,12 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate Pass table.Paths[Changing Attribute Updates Output]"
-          TopLeft="415,757.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="200,107"
-              Start="0,0"
-              End="200,99.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.3333333333333"
-                    Point2="0,43.3333333333333"
-                    Point3="4,43.3333333333333" />
-                  <mssgle:LineSegment
-                    End="196,43.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="196,43.3333333333333"
-                    Point2="200,43.3333333333333"
-                    Point3="200,47.3333333333333" />
-                  <mssgle:LineSegment
-                    End="200,99.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="21.46609375,48.3333333333333,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Pass table.Paths[OLE DB Source Output]"
-          TopLeft="390,47.5">
+          Id="Package\Populate Pass table.Paths[Derived Column Output3]"
+          TopLeft="602.1,555.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17140,104 +17347,86 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Populate Pass table\SkiCenterDataWarehouse (Pass)"
+          TopLeft="353.899999150634,822.299999940395" />
         <EdgeLayout
           Id="Package\Populate Pass table.Paths[New Output]"
-          TopLeft="357,757.5">
+          TopLeft="571.566666666667,758.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,224"
+              EndConnector="-102.466667516033,63.9999999403954"
               Start="0,0"
-              End="0,216.5">
+              End="-102.466667516033,56.4999999403954">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,216.5" />
+                    End="0,21.9186721750315" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9186721750315"
+                    Point2="0,25.9186721750315"
+                    Point3="-4,25.9186721750315" />
+                  <mssgle:LineSegment
+                    End="-98.4666675160327,25.9186721750315" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.4666675160327,25.9186721750315"
+                    Point2="-102.466667516033,25.9186721750315"
+                    Point3="-102.466667516033,29.9186721750315" />
+                  <mssgle:LineSegment
+                    End="-102.466667516033,56.4999999403954" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,102.533203125,54.1827734375,11.43359375"
+              BoundingBox="-78.3247204767664,30.9186721750315,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Populate Pass table\Update changed"
+          TopLeft="654.699997988343,820.299999970197" />
         <EdgeLayout
-          Id="Package\Populate Pass table.Paths[Lookup Match Output]"
-          TopLeft="383.75,671.5">
+          Id="Package\Populate Pass table.Paths[Changing Attribute Updates Output]"
+          TopLeft="632.633333333333,758.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.0000000000001"
+              EndConnector="99.6666646550101,61.9999999701978"
               Start="0,0"
-              End="0,36.5000000000001">
+              End="99.6666646550101,54.4999999701978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5000000000001" />
+                    End="0,21.1087136808768" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1087136808768"
+                    Point2="0,25.1087136808768"
+                    Point3="4,25.1087136808768" />
+                  <mssgle:LineSegment
+                    End="95.6666646550101,25.1087136808768" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.6666646550101,25.1087136808768"
+                    Point2="99.6666646550101,25.1087136808768"
+                    Point3="99.6666646550101,29.1087136808768" />
+                  <mssgle:LineSegment
+                    End="99.6666646550101,54.4999999701978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Pass table.Paths[Derived Column Output4]"
-          TopLeft="388.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.9999999999999"
-              Start="0,0"
-              End="0,53.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Pass table.Paths[Derived Column Output3]"
-          TopLeft="385,558.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-28.700573922495,30.1087136808768,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17274,7 +17463,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         <Name>SCDMetadata</Name>
         <Value
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;ConnectionID&gt;{92D36FC8-6386-4B9A-ABBF-FAC6ED1EEBBD}&lt;/ConnectionID&gt;
   &lt;TableName&gt;[dbo].[Pass]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
@@ -17288,19 +17477,25 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       &lt;IdentificationString&gt;Add Price.Outputs[Derived Column Output].Columns[Price]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Price&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Add TotalRides.Outputs[Derived Column Output].Columns[TotalRides]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;TotalRides&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Add UsedState.Outputs[Derived Column Output].Columns[UsedState]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;UsedState&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Retrieve ValidUntilDateID.Outputs[Lookup Match Output].Columns[ValidUntilDateID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ValidUntilDateID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
@@ -17323,19 +17518,6 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Populate Pass table\Pass (SkiCenterDataWarehouse)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Populate Pass table\Passes (SkiCenter)">
     <Properties>
       <Property>
@@ -17354,119 +17536,119 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="193,42"
+          Size="192.8,41.6"
           Id="Package\Populate PassPurchase Table\Add TransactionNumber"
           TopLeft="1076,1560" />
         <NodeLayout
-          Size="196,42"
+          Size="196,41.6"
           Id="Package\Populate PassPurchase Table\Retrieve src_client_email"
           TopLeft="1064,855" />
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\Populate PassPurchase Table\Transaction (SkiCenter)"
           TopLeft="766,67" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Populate PassPurchase Table\Sort by ClientID B"
           TopLeft="1243,762" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Populate PassPurchase Table\Add TotalTransactionPrice"
           TopLeft="1061,1340" />
         <NodeLayout
-          Size="134,42"
+          Size="134.4,41.6"
           Id="Package\Populate PassPurchase Table\Lookup fact"
           TopLeft="1101,1709" />
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Populate PassPurchase Table\Add JunkID"
           TopLeft="1094,1185" />
         <NodeLayout
-          Size="123,42"
+          Size="123.2,41.6"
           Id="Package\Populate PassPurchase Table\Add Price"
           TopLeft="1095,1270" />
         <NodeLayout
-          Size="255,42"
+          Size="255.2,41.6"
           Id="Package\Populate PassPurchase Table\Convert src_transaction_date to Date"
           TopLeft="729.5,167.5" />
         <NodeLayout
-          Size="273,42"
+          Size="272.8,41.6"
           Id="Package\Populate PassPurchase Table\PassPurchase (SkiCenterDataWarehouse)"
           TopLeft="1181.62442202606,1799.5" />
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Populate PassPurchase Table\Sort by TransactionID B"
           TopLeft="996,352" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Populate PassPurchase Table\Retrieve src_card_id"
           TopLeft="930.5,441.5" />
         <NodeLayout
-          Size="197,42"
+          Size="196.8,41.6"
           Id="Package\Populate PassPurchase Table\Add PassPurchaseDateID"
           TopLeft="753,262" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Populate PassPurchase Table\Clients (SkiCenter)"
           TopLeft="1242,683" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Populate PassPurchase Table\Add ClientEmail"
           TopLeft="1094,1631" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Populate PassPurchase Table\Sort by CardID A"
           TopLeft="934,513" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Populate PassPurchase Table\Update measures"
           TopLeft="956,1795" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Populate PassPurchase Table\Passes (SkiCenter)"
           TopLeft="1005,269" />
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Populate PassPurchase Table\Add PassID"
           TopLeft="1094,1092" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Populate PassPurchase Table\Sort by ClientID A"
           TopLeft="956,767" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Populate PassPurchase Table\Cards (SkiCenter)"
           TopLeft="1235,445" />
         <NodeLayout
-          Size="138,42"
+          Size="137.6,41.6"
           Id="Package\Populate PassPurchase Table\Add ClientID"
           TopLeft="1090,933" />
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Populate PassPurchase Table\Add CardID"
           TopLeft="971,684" />
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Populate PassPurchase Table\Sort by TransactionID A"
           TopLeft="756,356" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Populate PassPurchase Table\Add LeftPassRides"
           TopLeft="1088,1491" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Populate PassPurchase Table\Calculate PassCode"
           TopLeft="1081,1025" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Populate PassPurchase Table\Retrieve CardCode"
           TopLeft="951,610" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Populate PassPurchase Table\Add BoughtRides"
           TopLeft="1086,1415" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Populate PassPurchase Table\Sort by CardID B"
           TopLeft="1235,519" />
         <EdgeLayout
@@ -17505,74 +17687,6 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate PassPurchase Table.Paths[Sort Output4]"
-          TopLeft="1324.5,804">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-131.166666666667,51"
-              Start="0,0"
-              End="-131.166666666667,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.3522267206478" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.3522267206478"
-                    Point2="0,30.3522267206478"
-                    Point3="-4,30.3522267206478" />
-                  <mssgle:LineSegment
-                    End="-127.166666666667,30.3522267206478" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-127.166666666667,30.3522267206478"
-                    Point2="-131.166666666667,30.3522267206478"
-                    Point3="-131.166666666667,34.3522267206478" />
-                  <mssgle:LineSegment
-                    End="-131.166666666667,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate PassPurchase Table.Paths[Sort Output3]"
-          TopLeft="852,398">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="138.166666666667,43.5"
-              Start="0,0"
-              End="138.166666666667,36">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8635334088335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.8635334088335"
-                    Point2="0,25.8635334088335"
-                    Point3="4,25.8635334088335" />
-                  <mssgle:LineSegment
-                    End="134.166666666667,25.8635334088335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134.166666666667,25.8635334088335"
-                    Point2="138.166666666667,25.8635334088335"
-                    Point3="138.166666666667,29.8635334088335" />
-                  <mssgle:LineSegment
-                    End="138.166666666667,36" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate PassPurchase Table.Paths[Sort Output2]"
           TopLeft="1092,394">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17606,7 +17720,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate PassPurchase Table.Paths[Sort Output1]"
+          Id="Package\Populate PassPurchase Table.Paths[Sort Output3]"
           TopLeft="1010.58333333333,555">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17628,7 +17742,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Populate PassPurchase Table.Paths[Sort Output]"
+          Id="Package\Populate PassPurchase Table.Paths[Sort Output2]"
           TopLeft="1314.5,561">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17653,6 +17767,74 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
                     Point3="-254.166666666667,33.1193317422434" />
                   <mssgle:LineSegment
                     End="-254.166666666667,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate PassPurchase Table.Paths[Sort Output1]"
+          TopLeft="1324.5,804">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-131.166666666667,51"
+              Start="0,0"
+              End="-131.166666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3522267206478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3522267206478"
+                    Point2="0,30.3522267206478"
+                    Point3="-4,30.3522267206478" />
+                  <mssgle:LineSegment
+                    End="-127.166666666667,30.3522267206478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-127.166666666667,30.3522267206478"
+                    Point2="-131.166666666667,30.3522267206478"
+                    Point3="-131.166666666667,34.3522267206478" />
+                  <mssgle:LineSegment
+                    End="-131.166666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate PassPurchase Table.Paths[Sort Output]"
+          TopLeft="852,398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.166666666667,43.5"
+              Start="0,0"
+              End="138.166666666667,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8635334088335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8635334088335"
+                    Point2="0,25.8635334088335"
+                    Point3="4,25.8635334088335" />
+                  <mssgle:LineSegment
+                    End="134.166666666667,25.8635334088335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134.166666666667,25.8635334088335"
+                    Point2="138.166666666667,25.8635334088335"
+                    Point3="138.166666666667,29.8635334088335" />
+                  <mssgle:LineSegment
+                    End="138.166666666667,36" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18187,7 +18369,7 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
           Text="tr"
           ParentId="Package\Populate PassPurchase Table"
           FontInfo="{assembly:Null}"
-          Size="37,40"
+          Size="36.8,40"
           Id="0824d582-e079-4c7c-a2f3-56a0de6bfd1d"
           TopLeft="2341,1900" />
       </GraphLayout>
@@ -18402,139 +18584,139 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Populate Ride table\Sort by CardCode B"
           TopLeft="821,1204" />
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Populate Ride table\Sort by TransactionID A"
           TopLeft="654,1363" />
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Populate Ride table\Retrieve RideTimeID"
           TopLeft="121,373" />
         <NodeLayout
-          Size="212,42"
+          Size="212,41.6"
           Id="Package\Populate Ride table\Add DaysSincePassPurchase"
           TopLeft="775,1556" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Populate Ride table\Sort by SlopeID A"
           TopLeft="129,471" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Populate Ride table\Passes (SkiCenter)"
           TopLeft="441,585" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Populate Ride table\Rides (rides_csv)"
           TopLeft="129,56" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Populate Ride table\Slopes (slopes_csv)"
           TopLeft="351,373" />
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\Populate Ride table\Add date"
           TopLeft="149,131" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Populate Ride table\Sort by Pass Code A"
           TopLeft="444,769" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\Populate Ride table\Card (SkiCenterDataWarehouse)"
           TopLeft="795,1129" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Populate Ride table\Retrieve RideDateID"
           TopLeft="125,211" />
         <NodeLayout
-          Size="142,42"
+          Size="142.4,41.6"
           Id="Package\Populate Ride table\Add PassID B"
           TopLeft="414,962" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Populate Ride table\Sort by Pass Code C"
           TopLeft="249,859" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Populate Ride table\Sort by SlopeID B"
           TopLeft="355,472" />
         <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Populate Ride table\Lookup"
           TopLeft="275,667" />
         <NodeLayout
-          Size="241,42"
+          Size="240.8,41.6"
           Id="Package\Populate Ride table\Passes (SkiCenterDataWarehouse)"
           TopLeft="665,670" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Populate Ride table\Add hour and minute"
           TopLeft="121,297" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Populate Ride table\Sort by CardCode A"
           TopLeft="524,1204" />
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Populate Ride table\Sort by TransactionID B"
           TopLeft="919,1364" />
         <NodeLayout
-          Size="195,42"
+          Size="195.2,41.6"
           Id="Package\Populate Ride table\Transactions (SkiCenter)"
           TopLeft="916,1292" />
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Populate Ride table\Add CardID"
           TopLeft="678,1291" />
         <NodeLayout
-          Size="142,42"
+          Size="142.4,41.6"
           Id="Package\Populate Ride table\Add PassID A"
           TopLeft="574,858" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Populate Ride table\Add TransactionDate"
           TopLeft="791,1463" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Populate Ride table\Add PassCode B"
           TopLeft="452,670" />
         <NodeLayout
-          Size="230,42"
+          Size="230.4,41.6"
           Id="Package\Populate Ride table\Ride (SkiCenterDataWarehouse)"
           TopLeft="771,1723" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Populate Ride table\Drop old values"
           TopLeft="806,1639" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Populate Ride table\Sort by Card ID B"
           TopLeft="673,1048" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Populate Ride table\Add PassCode A"
           TopLeft="256,765" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Populate Ride table\Cards (SkiCenter)"
           TopLeft="677,964" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Populate Ride table\Sort by CardID A"
           TopLeft="400,1040" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Populate Ride table\Sort by Pass Code B"
           TopLeft="701,765" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Populate Ride table\Add SlopeName"
           TopLeft="257,584" />
         <NodeLayout
-          Size="146,42"
+          Size="145.6,41.6"
           Id="Package\Populate Ride table\Add CardCode"
           TopLeft="535,1132" />
         <EdgeLayout
@@ -18573,30 +18755,30 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Ride table.Paths[Sort Output9]"
-          TopLeft="1015,1406">
+          TopLeft="436.5,514">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-107.333333333333,57"
+              EndConnector="-78.8333333333334,70"
               Start="0,0"
-              End="-107.333333333333,49.5">
+              End="-78.8333333333334,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.8936170212766" />
+                    End="0,37.5653298835705" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.8936170212766"
-                    Point2="0,33.8936170212766"
-                    Point3="-4,33.8936170212766" />
+                    Point1="0,37.5653298835705"
+                    Point2="0,41.5653298835705"
+                    Point3="-4,41.5653298835705" />
                   <mssgle:LineSegment
-                    End="-103.333333333333,33.8936170212766" />
+                    End="-74.8333333333334,41.5653298835705" />
                   <mssgle:CubicBezierSegment
-                    Point1="-103.333333333333,33.8936170212766"
-                    Point2="-107.333333333333,33.8936170212766"
-                    Point3="-107.333333333333,37.8936170212766" />
+                    Point1="-74.8333333333334,41.5653298835705"
+                    Point2="-78.8333333333334,41.5653298835705"
+                    Point3="-78.8333333333334,45.5653298835705" />
                   <mssgle:LineSegment
-                    End="-107.333333333333,49.5" />
+                    End="-78.8333333333334,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18607,6 +18789,40 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Ride table.Paths[Sort Output8]"
+          TopLeft="788,807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.666666666667,51"
+              Start="0,0"
+              End="-120.666666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2590529247911" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2590529247911"
+                    Point2="0,30.2590529247911"
+                    Point3="-4,30.2590529247911" />
+                  <mssgle:LineSegment
+                    End="-116.666666666667,30.2590529247911" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.666666666667,30.2590529247911"
+                    Point2="-120.666666666667,30.2590529247911"
+                    Point3="-120.666666666667,34.2590529247911" />
+                  <mssgle:LineSegment
+                    End="-120.666666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Ride table.Paths[Sort Output7]"
           TopLeft="609.5,1246">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18631,40 +18847,6 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
                     Point3="135,26.5" />
                   <mssgle:LineSegment
                     End="135,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Ride table.Paths[Sort Output7]"
-          TopLeft="531,811">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91.6666666666666,47"
-              Start="0,0"
-              End="91.6666666666666,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.8857938718663" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.8857938718663"
-                    Point2="0,27.8857938718663"
-                    Point3="4,27.8857938718663" />
-                  <mssgle:LineSegment
-                    End="87.6666666666666,27.8857938718663" />
-                  <mssgle:CubicBezierSegment
-                    Point1="87.6666666666666,27.8857938718663"
-                    Point2="91.6666666666666,27.8857938718663"
-                    Point3="91.6666666666666,31.8857938718663" />
-                  <mssgle:LineSegment
-                    End="91.6666666666666,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18743,30 +18925,30 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Ride table.Paths[Sort Output4]"
-          TopLeft="788,807">
+          TopLeft="531,811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-120.666666666667,51"
+              EndConnector="91.6666666666666,47"
               Start="0,0"
-              End="-120.666666666667,43.5">
+              End="91.6666666666666,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.2590529247911" />
+                    End="0,23.8857938718663" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.2590529247911"
-                    Point2="0,30.2590529247911"
-                    Point3="-4,30.2590529247911" />
+                    Point1="0,23.8857938718663"
+                    Point2="0,27.8857938718663"
+                    Point3="4,27.8857938718663" />
                   <mssgle:LineSegment
-                    End="-116.666666666667,30.2590529247911" />
+                    End="87.6666666666666,27.8857938718663" />
                   <mssgle:CubicBezierSegment
-                    Point1="-116.666666666667,30.2590529247911"
-                    Point2="-120.666666666667,30.2590529247911"
-                    Point3="-120.666666666667,34.2590529247911" />
+                    Point1="87.6666666666666,27.8857938718663"
+                    Point2="91.6666666666666,27.8857938718663"
+                    Point3="91.6666666666666,31.8857938718663" />
                   <mssgle:LineSegment
-                    End="-120.666666666667,43.5" />
+                    End="91.6666666666666,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18845,40 +19027,6 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Ride table.Paths[Sort Output1]"
-          TopLeft="436.5,514">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-78.8333333333334,70"
-              Start="0,0"
-              End="-78.8333333333334,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5653298835705" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.5653298835705"
-                    Point2="0,41.5653298835705"
-                    Point3="-4,41.5653298835705" />
-                  <mssgle:LineSegment
-                    End="-74.8333333333334,41.5653298835705" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-74.8333333333334,41.5653298835705"
-                    Point2="-78.8333333333334,41.5653298835705"
-                    Point3="-78.8333333333334,45.5653298835705" />
-                  <mssgle:LineSegment
-                    End="-78.8333333333334,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate Ride table.Paths[Sort Output]"
           TopLeft="906.5,1246">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18903,6 +19051,40 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
                     Point3="-141.166666666667,30.6790490341753" />
                   <mssgle:LineSegment
                     End="-141.166666666667,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Ride table.Paths[Sort Output]"
+          TopLeft="1015,1406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-107.333333333333,57"
+              Start="0,0"
+              End="-107.333333333333,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8936170212766" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.8936170212766"
+                    Point2="0,33.8936170212766"
+                    Point3="-4,33.8936170212766" />
+                  <mssgle:LineSegment
+                    End="-103.333333333333,33.8936170212766" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-103.333333333333,33.8936170212766"
+                    Point2="-107.333333333333,33.8936170212766"
+                    Point3="-107.333333333333,37.8936170212766" />
+                  <mssgle:LineSegment
+                    End="-107.333333333333,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19588,9 +19770,5 @@ where [refTable].[Hour] = ? and [refTable].[Minute] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <ConnectionManager
-    design-time-name="Package.ConnectionManagers[localhost]">
-    <ProjectReferenceName></ProjectReferenceName>
-  </ConnectionManager>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
