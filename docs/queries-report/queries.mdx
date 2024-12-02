@@ -1,0 +1,59 @@
+// Oblicz średnią ilość zjazdów jednej osoby na każdym ze stoków w zależności od dnia tygodnia.
+SELECT
+    NON EMPTY {
+        [Measures].[AverageRideCountPerCard]
+    } * {
+        [Ride Date].[Day Of Week].[Day Of Week].ALLMEMBERS
+    } ON COLUMNS,
+    NON EMPTY {
+        [Slope].[Slope Name].[Slope Name].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
+// Ile średnio zjazdów wykonuje jedna osoba w ciągu dnia?
+SELECT
+    NON EMPTY {
+        [Measures].[AverageRideCountPerCard]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Ride Date].[Date].[Date]
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
+// Porównanie ilości sprzedanych karnetów w zależności od miesiąca.
+SELECT
+    NON EMPTY {
+        [Measures].[Pass Purchase Count]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass Purchase Date].[Month].[Month].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
+// Porównaj ilość karnetów zakupionych online i offline względem poprzedniego sezonu.
+SELECT
+    NON EMPTY {
+        [Measures].[Pass Purchase Count]
+    } * {
+        [Junk].[Transaction Type].[Transaction Type].ALLMEMBERS
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass Purchase Date].[Season].[Season].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
+// Porównaj popularność karnetów upoważniających do różnej ilości zjazdów.
+SELECT
+    NON EMPTY {
+        [Measures].[Pass Purchase Count]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass].[Total Rides].[Total Rides].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
