@@ -29,38 +29,6 @@
 
 = KPI
 
-== Zyski z sezonu narciarskiego
-
-Zyski z sezonu narciarskiego rosnąć będą co najmniej o 3% względem poprzedniego sezonu.
-
-- Value Expression
-```
-[Measures].[Income]
-```
-
-- Goal Expression
-```
-(
-  (
-    [Measures].[Income],
-    StrToMember("[Pass Purchase Date].[Season].&[Sezon " + CStr(CInt(StrConv(Right([Pass Purchase Date].[Season].CurrentMember.Name, 4), 8, 1041)) - 1) + "]")
-  )
-) * 1.03
-```
-
-- Status Expression
-```
-IIF (KPIVALUE("Zyski z sezonu narciarskiego") >= KPIGOAL("Zyski z sezonu narciarskiego"), 1, -1)
-```
-
-- Trend Expression
-```
-IIF (KPIVALUE("Zyski z sezonu narciarskiego") >= (KPIVALUE("Zyski z sezonu narciarskiego"),
-StrToMember(
-  "[Pass Purchase Date].[Season].&[Sezon " + CStr(CInt(StrConv(Right([Pass Purchase Date].[Season].CurrentMember.Name, 4), 8, 1041)) - 1) + "]")
-), 1, -1)
-```
-
 == Miesięczny przychód całego ośrodka
 
 Miesięczny przychód całego ośrodka będzie rosnąć o co najmniej 3% w stosunku do odpowiedniego miesiąca poprzedniego sezonu.
@@ -108,6 +76,38 @@ IIF (KPIVALUE("Ilość zjazdów w ciągu miesiąca") >= KPIGOAL("Ilość zjazdó
 - Trend Expression
 ```
 IIF (KPIVALUE("Ilość zjazdów w ciągu miesiąca") >= (KPIVALUE("Ilość zjazdów w ciągu miesiąca"), PARALLELPERIOD([Ride Date].[DateHierarchy].[Month], 12, [Ride Date].[DateHierarchy].CurrentMember)), 1, -1)
+```
+
+== Zyski z sezonu narciarskiego
+
+Zyski z sezonu narciarskiego rosnąć będą co najmniej o 3% względem poprzedniego sezonu.
+
+- Value Expression
+```
+[Measures].[Income]
+```
+
+- Goal Expression
+```
+(
+  (
+    [Measures].[Income],
+    StrToMember("[Pass Purchase Date].[Season].&[Sezon " + CStr(CInt(StrConv(Right([Pass Purchase Date].[Season].CurrentMember.Name, 4), 8, 1041)) - 1) + "]")
+  )
+) * 1.03
+```
+
+- Status Expression
+```
+IIF (KPIVALUE("Zyski z sezonu narciarskiego") >= KPIGOAL("Zyski z sezonu narciarskiego"), 1, -1)
+```
+
+- Trend Expression
+```
+IIF (KPIVALUE("Zyski z sezonu narciarskiego") >= (KPIVALUE("Zyski z sezonu narciarskiego"),
+StrToMember(
+  "[Pass Purchase Date].[Season].&[Sezon " + CStr(CInt(StrConv(Right([Pass Purchase Date].[Season].CurrentMember.Name, 4), 8, 1041)) - 1) + "]")
+), 1, -1)
 ```
 
 = Zapytania MDX
@@ -183,25 +183,88 @@ FROM
 
 == Ile zjazdów średnio wykonuje się w ciągu miesiąca korzystając z karnetów o różnej cenie?
 ```
-SELECT NON EMPTY { [Measures].[Ride Count] } ON COLUMNS, NON EMPTY { ([Ride Date].[Month].[Month].ALLMEMBERS * [Pass].[Price].[Price].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM [Ski Center Data Warehouse] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+WITH MEMBER [Measures].[Average Rides Per Month] AS
+    AVG(
+        [Ride Date].[Year].[Year].MEMBERS,
+        [Measures].[Ride Count]
+    )
+SELECT
+    NON EMPTY {
+        [Measures].[Average Rides Per Month]
+    } * {
+        [Ride Date].[Month].[Month].ALLMEMBERS
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass].[Price].[Price].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
 ```
 
 == Jak długo trwa korzystanie z karnetu w zależności od jego ceny?
 ```
-SELECT NON EMPTY { [Measures].[Days Since Pass Purchase Max] } ON COLUMNS, NON EMPTY { ([Pass].[Price].[Price].ALLMEMBERS * [Pass].[Pass Code].[Pass Code].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM [Ski Center Data Warehouse] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+WITH MEMBER [Measures].[Average Days Since Pass Purchase] AS
+    AVG(
+        [Pass].[Pass Code].[Pass Code].MEMBERS,
+        [Measures].[Days Since Pass Purchase Max]
+    )
+SELECT
+    NON EMPTY {
+        [Measures].[Average Days Since Pass Purchase]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass].[Price].[Price].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
 ```
 
 == Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
 ```
-SELECT NON EMPTY { [Measures].[Pass Purchase Count] } ON COLUMNS, NON EMPTY { ([Junk].[Transaction Type].[Transaction Type].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Pass].[Used State].&[wykorzystany] } ) ON COLUMNS FROM [Ski Center Data Warehouse]) WHERE ( [Pass].[Used State].&[wykorzystany] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+SELECT
+    NON EMPTY {
+        [Measures].[Pass Purchase Count]
+    } ON COLUMNS,
+    NON EMPTY {
+        ([Junk].[Transaction Type].[Transaction Type].ALLMEMBERS )
+    } ON ROWS
+FROM (
+    SELECT
+        {
+            [Pass].[Used State].&[wykorzystany]
+        } ON COLUMNS
+    FROM [Ski Center Data Warehouse])
+        WHERE ([Pass].[Used State].&[wykorzystany])
 ```
 
 == Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ich ceny?
 ```
-SELECT NON EMPTY { [Measures].[AverageLeftPassRidesPerPassPurchase] } ON COLUMNS, NON EMPTY { ([Pass].[Price].[Price].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM [Ski Center Data Warehouse] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+SELECT
+    NON EMPTY {
+        [Measures].[AverageLeftPassRidesPerPassPurchase]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass].[Price].[Price].ALLMEMBERS
+    } ON ROWS
+FROM [Ski Center Data Warehouse]
+    WHERE
+        EXCEPT(
+            [Pass].[Used State].[Used State].MEMBERS,
+            {
+                [Pass].[Used State].&[wykorzystany]
+            }
+        )
 ```
 
 == Jak zmienia się ilość wykupionych zjazdów w zależności od doświadczenia klienta (ilości kupionych wcześniej karnetów)?
 ```
-SELECT NON EMPTY { [Measures].[Pass Purchase Count] } ON COLUMNS, NON EMPTY { ([Client].[Experience].[Experience].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM [Ski Center Data Warehouse] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+SELECT
+    NON EMPTY {
+        [Measures].[Pass Purchase Count]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Client].[Experience].[Experience].ALLMEMBERS
+     }  ON ROWS
+FROM [Ski Center Data Warehouse]
 ```

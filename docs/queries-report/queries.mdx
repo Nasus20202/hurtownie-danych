@@ -57,3 +57,79 @@ SELECT
 FROM
     [Ski Center Data Warehouse]
 
+// Ile zjazdów średnio wykonuje się w ciągu miesiąca korzystając z karnetów o różnej cenie?
+WITH MEMBER [Measures].[Average Rides Per Month] AS
+    AVG(
+        [Ride Date].[Year].[Year].MEMBERS,
+        [Measures].[Ride Count]
+    )
+SELECT
+    NON EMPTY {
+        [Measures].[Average Rides Per Month]
+    } * {
+        [Ride Date].[Month].[Month].ALLMEMBERS
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass].[Price].[Price].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
+// Jak długo trwa korzystanie z karnetu w zależności od jego ceny?
+WITH MEMBER [Measures].[Average Days Since Pass Purchase] AS
+    AVG(
+        [Pass].[Pass Code].[Pass Code].MEMBERS,
+        [Measures].[Days Since Pass Purchase Max]
+    )
+SELECT 
+    NON EMPTY {
+        [Measures].[Average Days Since Pass Purchase]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Pass].[Price].[Price].ALLMEMBERS
+    } ON ROWS
+FROM
+    [Ski Center Data Warehouse]
+
+// Czy klienci kupujący karnety online częściej wykorzystują wszystkie zjazdy niż klienci kupujący karnety w punkcie sprzedaży?
+SELECT 
+    NON EMPTY { 
+        [Measures].[Pass Purchase Count] 
+    } ON COLUMNS, 
+    NON EMPTY { 
+        ([Junk].[Transaction Type].[Transaction Type].ALLMEMBERS ) 
+    } ON ROWS 
+FROM ( 
+    SELECT
+        { 
+            [Pass].[Used State].&[wykorzystany] 
+        } ON COLUMNS 
+    FROM [Ski Center Data Warehouse])
+        WHERE ([Pass].[Used State].&[wykorzystany])
+
+// Ile średnio zjazdów pozostaje niewykorzystanych na karnetach w zależności od ich ceny?
+SELECT 
+    NON EMPTY { 
+        [Measures].[AverageLeftPassRidesPerPassPurchase] 
+    } ON COLUMNS, 
+    NON EMPTY { 
+        [Pass].[Price].[Price].ALLMEMBERS 
+    } ON ROWS 
+FROM [Ski Center Data Warehouse] 
+    WHERE 
+        EXCEPT(
+            [Pass].[Used State].[Used State].MEMBERS,
+            {
+                [Pass].[Used State].&[wykorzystany]
+            }
+        )
+
+// Jak zmienia się ilość wykupionych zjazdów w zależności od doświadczenia klienta (ilości kupionych wcześniej karnetów)?
+SELECT
+    NON EMPTY { 
+        [Measures].[Pass Purchase Count] 
+    } ON COLUMNS, 
+    NON EMPTY { 
+        [Client].[Experience].[Experience].ALLMEMBERS
+     }  ON ROWS 
+FROM [Ski Center Data Warehouse]
