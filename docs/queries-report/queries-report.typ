@@ -31,8 +31,7 @@
 
 == Zyski z sezonu narciarskiego
 
-Zyski z sezonu narciarskiego rosnąć będą co najmniej o 3% względem poprzedniego
-sezonu
+Zyski z sezonu narciarskiego rosnąć będą co najmniej o 3% względem poprzedniego sezonu.
 
 - Value Expression
 ```
@@ -62,7 +61,51 @@ StrToMember(
 ), 1, -1)
 ```
 
-== Miesięczny przychód całego ośrodka oraz ilość zjazdów w ciągu miesiąca
+== Miesięczny przychód całego ośrodka
 
-Miesięczny przychód całego ośrodka oraz ilość zjazdów w ciągu miesiąca będą rosnąć
-o co najmniej 3% w stosunku do odpowiedniego miesiąca poprzedniego sezonu.
+Miesięczny przychód całego ośrodka będzie rosnąć o co najmniej 3% w stosunku do odpowiedniego miesiąca poprzedniego sezonu.
+
+- Value Expression
+```
+[Measures].[Price Sum]
+```
+
+- Goal Expression
+```
+(KPIVALUE("Miesięczny przychód całego ośrodka"), PARALLELPERIOD([Pass Purchase Date].[DateHierarchy].[Month], 12, [Pass Purchase Date].[DateHierarchy].CurrentMember)) * 1.03
+```
+
+- Status Expression
+```
+IIF (KPIVALUE("Zyski z sezonu narciarskiego") >= KPIGOAL("Zyski z sezonu narciarskiego"), 1, -1)
+```
+
+- Trend Expression
+```
+IIF (KPIVALUE("Miesięczny przychód całego ośrodka") >= (KPIVALUE("Miesięczny przychód całego ośrodka"), PARALLELPERIOD([Pass Purchase Date].
+[DateHierarchy].[Month], 12, [Pass Purchase Date].[DateHierarchy].CurrentMember)), 1, -1)
+```
+
+== Ilość zjazdów w ciągu miesiąca
+
+Ilość zjazdów w ciągu miesiąca będą rosnąć o co najmniej 3% w stosunku do odpowiedniego miesiąca poprzedniego sezonu.
+
+- Value Expression
+```
+[Measures].[Ride Count]
+```
+
+- Goal Expression
+```
+(KPIVALUE("Ilość zjazdów w ciągu miesiąca"), PARALLELPERIOD([Ride Date].[DateHierarchy].[Month], 12, [Ride Date].[DateHierarchy].CurrentMember)) * 1.03
+```
+
+- Status Expression
+```
+IIF (KPIVALUE("Ilość zjazdów w ciągu miesiąca") >= KPIGOAL("Ilość zjazdów w ciągu miesiąca"), 1, -1)
+```
+
+- Trend Expression
+```
+IIF (KPIVALUE("Ilość zjazdów w ciągu miesiąca") >= (KPIVALUE("Ilość zjazdów w ciągu miesiąca"), PARALLELPERIOD([Ride Date].[DateHierarchy].[Month], 12, [Ride Date].[DateHierarchy].CurrentMember)), 1, -1)
+```

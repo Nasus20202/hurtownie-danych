@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4264bec7-839c-457a-a248-73fdf6f4cd77" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5d349c93-680b-4be4-90c6-0a52e639113f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Ski Center Data Warehouse</ID>
   <Name>Ski Center Data Warehouse</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -375,270 +375,270 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="22275d18-bfe6-46c3-b93a-58ba8d397721">
+    <Dimension dwd:design-time-name="d9b8b20f-95d5-4a5e-83b9-bbe6bdbfbaa6">
       <ID>Pass</ID>
       <Name>Pass</Name>
       <DimensionID>Pass</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="94c86133-77b3-461a-8c63-024416c437ce">
+        <Attribute dwd:design-time-name="8d5c045c-e00f-4c8a-a0ed-535491ee9f47">
           <AttributeID>Pass ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7b686232-e5c7-47e0-a545-0770e80b9ce8">
+        <Attribute dwd:design-time-name="85dd5fe8-1998-4186-9a4d-228ddd0e8f90">
           <AttributeID>Valid Until Date ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="079ec22c-e840-4f22-a803-d88d88a37e12">
+        <Attribute dwd:design-time-name="6f42153a-14bd-4af7-a590-4cccf44fdb50">
           <AttributeID>Pass Code</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cb1537c8-599b-4169-b1cf-ba0ec6550b63">
+        <Attribute dwd:design-time-name="faf9937f-0d30-4cf6-938d-d3cebdc9d400">
           <AttributeID>Price</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="853038af-cf84-4135-840d-bb3998445a64">
+        <Attribute dwd:design-time-name="4c43b141-1bd9-45c3-a83d-140bf8e736af">
           <AttributeID>Used State</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="045f7b45-03a1-4900-9747-e59184d5a42d">
+        <Attribute dwd:design-time-name="f258288f-892c-401c-aa07-aa44f0e59bb5">
           <AttributeID>Total Rides</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="3eb8a445-d39c-47bc-9f8b-0250a281a032">
+    <Dimension dwd:design-time-name="c44f003b-6f43-4237-bfa5-8fbd8bcfb489">
       <ID>Junk</ID>
       <Name>Junk</Name>
       <DimensionID>Junk</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="24c2499a-640b-4266-ba3c-04ac3bf40b67">
+        <Attribute dwd:design-time-name="5832306e-0262-4302-95b2-ab3c6cf0f454">
           <AttributeID>Junk ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ab6accdd-b73a-4d34-8796-b427acc6b5d0">
+        <Attribute dwd:design-time-name="8c40f695-62b5-4445-85c5-f3c508bb2282">
           <AttributeID>Transaction Type</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="df726eca-230d-483c-920d-cf418b2ce4d4">
+    <Dimension dwd:design-time-name="03c4bb41-00a8-4291-89f4-ad01b51e839d">
       <ID>Client</ID>
       <Name>Client</Name>
       <DimensionID>Client</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="9ee97796-4478-44ca-b3be-40ab334cbce8">
+        <Attribute dwd:design-time-name="2def0479-1d28-4f8a-889a-02e85e3db70c">
           <AttributeID>Client ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="66f7f782-0c52-41c3-940e-405cb028c561">
+        <Attribute dwd:design-time-name="330b0813-4b67-4a2a-9e22-264dae12fdc4">
           <AttributeID>Email</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9a914c88-4f5f-48d0-b743-e9d44532606c">
+        <Attribute dwd:design-time-name="5c121805-bdd9-4f4a-a2d4-c2b02161ae4b">
           <AttributeID>Experience</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="c32ae55c-055c-421b-9a20-5db45b5be0b4">
+    <Dimension dwd:design-time-name="153667ef-cc3e-4200-bd02-06675debd933">
       <ID>Card</ID>
       <Name>Card</Name>
       <DimensionID>Card</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="08d267fb-c677-4b5d-896a-cb541415d127">
+        <Attribute dwd:design-time-name="1c46d8bb-563c-472b-9cb8-f615eb986c26">
           <AttributeID>Card ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="177eb045-cc7b-4bd9-a6d9-3464c6c6254f">
+        <Attribute dwd:design-time-name="f7237ff2-41a8-462c-8bc9-e53b23a45b04">
           <AttributeID>Card Code</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="f3600a7a-4c82-44c9-b964-1c5a5f4872ad">
+    <Dimension dwd:design-time-name="7b163644-ac01-4559-a7a2-4e4a82e4fc9c">
       <ID>Pass Purchase Date</ID>
       <Name>Pass Purchase Date</Name>
       <DimensionID>Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="b046316c-fd77-4d21-a57d-fd22ffd710a0">
+        <Attribute dwd:design-time-name="093652e1-3d65-4952-8217-ed9f8ee3478c">
           <AttributeID>Date ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="3b7e2952-6501-46b7-848a-7b20f755358e">
+        <Attribute dwd:design-time-name="2afe4c5f-94db-47e0-83b9-69b40caf2a33">
           <AttributeID>Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="81498c93-56ed-40e0-8782-8acad02d0ef0">
+        <Attribute dwd:design-time-name="b928494b-9784-49bd-826a-aeec747fa964">
           <AttributeID>Year</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="8a9baf1b-fbfc-4c85-8d57-8e55d73c02f8">
+        <Attribute dwd:design-time-name="06712a9e-9181-4e50-bf1f-5feb034eaf93">
           <AttributeID>Season</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0de5ba70-b01d-49d1-8a5e-f976ecb3f447">
+        <Attribute dwd:design-time-name="8e4eaa23-6a79-4738-bda5-ac1f687d2cc7">
           <AttributeID>Month</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="17880579-4b5d-4520-8fdd-735558637624">
+        <Attribute dwd:design-time-name="5a77e1ee-27a6-43f1-bdcc-4a139bc3b598">
           <AttributeID>Month Number</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
-        <Attribute dwd:design-time-name="8061cc50-402b-4431-b2c3-b98354c92ed3">
+        <Attribute dwd:design-time-name="43213ffc-9a90-40d3-9ea2-7501dd54e091">
           <AttributeID>Day</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="eba12914-3ee0-49d4-8973-b8e1f67c8484">
+        <Attribute dwd:design-time-name="b0c3f1a8-b6b1-46ca-876b-9fba1398d378">
           <AttributeID>Day Of Week</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="abd1af11-c79c-4283-911b-60342f3f86b8">
+        <Attribute dwd:design-time-name="b109862f-6586-4f5b-a2e0-df6313579d53">
           <AttributeID>Day Of Week Number</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="7cbe32dd-a287-4aac-88a4-041793f7c605">
+        <Hierarchy dwd:design-time-name="fae30267-1ec3-48c2-839b-89d6a5fc159c">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="90800b83-87e1-46bd-a206-0ac2ce0c580d">
+    <Dimension dwd:design-time-name="4eb91391-3af5-438f-b638-3f81289f1b23">
       <ID>Ride Date</ID>
       <Name>Ride Date</Name>
       <DimensionID>Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="9a55e862-d93e-4b6e-8b7a-3d52cd61a7f0">
+        <Attribute dwd:design-time-name="02dc5fc3-b8c6-4854-8508-8494ba88c571">
           <AttributeID>Date ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="90759a11-9fa9-4930-a244-34ac18518727">
+        <Attribute dwd:design-time-name="969b5793-ea25-495a-befe-f5bc2dc2a8dc">
           <AttributeID>Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="455d86bd-3ce5-4f08-bbe8-53151d691c98">
+        <Attribute dwd:design-time-name="ecc8b9c9-7323-405e-a6dd-743910564a1a">
           <AttributeID>Year</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b09caa50-bb1f-4814-ab15-72d8b1e20e91">
+        <Attribute dwd:design-time-name="4c775791-0e7a-4554-93c4-2ff491aacaf0">
           <AttributeID>Season</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="43b79f52-55df-4211-8dc6-eb0dc2d30819">
+        <Attribute dwd:design-time-name="7efa95c5-4e4d-4bcf-b3cf-a70ecd42b721">
           <AttributeID>Month</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0f6154a3-7cc9-419a-ad2c-a81ff66e1e97">
+        <Attribute dwd:design-time-name="f175520c-21ab-47c1-8b47-5ebb339259bd">
           <AttributeID>Month Number</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
-        <Attribute dwd:design-time-name="b17d0404-63c6-4c62-96d0-cfb1793574a6">
+        <Attribute dwd:design-time-name="5cd869ec-3913-4027-bf10-760deae02e17">
           <AttributeID>Day</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ce24e2cc-d618-4b23-9864-f83f4b5a9439">
+        <Attribute dwd:design-time-name="edcf8294-47ad-43a9-8e0a-9cfb0b59d6e9">
           <AttributeID>Day Of Week</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="3b2f7223-c2c9-45a7-89ad-9bbb90be2537">
+        <Attribute dwd:design-time-name="0db3d61c-1af3-4ed4-b1f9-b5c551c1e5e0">
           <AttributeID>Day Of Week Number</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="275b3491-3b39-4118-a6d7-79ef3ddd18c0">
+        <Hierarchy dwd:design-time-name="1f78198d-30bb-44fe-bcc5-6794c443e758">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="0923cff1-a32c-4f2f-b90c-40bf5931b374">
+    <Dimension dwd:design-time-name="c7f6e0c2-6885-41a0-93fa-ab96b4c2401d">
       <ID>Slope</ID>
       <Name>Slope</Name>
       <DimensionID>Slope</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="e292f9a7-6ebf-47dc-9ec9-3372bfb2ab91">
+        <Attribute dwd:design-time-name="9ede918f-d5e1-4f46-b0ca-e61a0bd78b75">
           <AttributeID>Slope ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cf460f21-58ae-4636-8639-2db5f2ff88e1">
+        <Attribute dwd:design-time-name="05a9fb04-72f1-4c46-8893-c94b5a178711">
           <AttributeID>Slope Name</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="df99220b-2496-418d-ba1a-6ae920a0566b">
+        <Attribute dwd:design-time-name="a68a5344-61b2-480c-9a8d-eff84cb81a37">
           <AttributeID>Country</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6aac1d84-4426-4ced-a062-d012db2ddda8">
+        <Attribute dwd:design-time-name="cb5c62fa-118b-40a7-895f-06bdd1340874">
           <AttributeID>Region</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="30eb11de-342b-4972-89aa-cb3a64d425c5">
+        <Attribute dwd:design-time-name="7dcc5004-7898-4168-a955-bc8e688b708b">
           <AttributeID>Mountain Peak</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="6e0d2d1c-ba7c-4a84-af17-a7243be25f9c">
+        <Hierarchy dwd:design-time-name="36fac717-e082-40fb-ab48-e46c8ed735e2">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="d4249f6f-7e8a-449a-abdd-0d00036fdeff">
+    <Dimension dwd:design-time-name="cbdaa4d1-05d3-4150-a31b-102567104c4b">
       <ID>Pass - Valid Until Date</ID>
       <Name>Pass - Valid Until Date</Name>
       <DimensionID>Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="a5ee95e8-b1e5-4ce9-8069-468a0498c45d">
+        <Attribute dwd:design-time-name="df8b5278-93db-45a0-925a-7336a592e03a">
           <AttributeID>Date ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2510950f-9b50-49a6-a225-1b8da37e9eb2">
+        <Attribute dwd:design-time-name="5e84a268-6a4f-4c33-839a-b9a18eff53a1">
           <AttributeID>Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="71c28a52-fdf8-4ff6-992f-f8529a69bf87">
+        <Attribute dwd:design-time-name="8f46c047-9f09-4e9a-85a1-0f770fb5685e">
           <AttributeID>Year</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b41211a3-3943-4e11-ab23-3682424acb56">
+        <Attribute dwd:design-time-name="532a29d9-334a-46a6-a364-f0a4f9e28d22">
           <AttributeID>Season</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2d21f581-07e7-409a-9841-72e2d90f583d">
+        <Attribute dwd:design-time-name="8b4e2ec9-ca5a-49ba-ae94-d235e5908167">
           <AttributeID>Month</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7d430c44-b1d5-4d96-8410-1370fcc212b3">
+        <Attribute dwd:design-time-name="57233654-f1a5-4d44-bbcc-117eb00ece41">
           <AttributeID>Month Number</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
-        <Attribute dwd:design-time-name="8f55f674-263d-4a01-8c1e-b33ae2cfb4a1">
+        <Attribute dwd:design-time-name="6ade4541-061a-47d1-af66-6f580abcc54c">
           <AttributeID>Day</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="fb5ccdaf-b625-4f94-9fa8-57d2464744d0">
+        <Attribute dwd:design-time-name="1a671eee-463a-4cea-8cea-77ae7b9b76ed">
           <AttributeID>Day Of Week</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cd8df0bd-488f-43c7-bd46-71f4dd77ea11">
+        <Attribute dwd:design-time-name="70c406da-4fcc-422b-b0d0-1e727dbf02ac">
           <AttributeID>Day Of Week Number</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="ba1986d8-d69c-4130-9382-cc3554ebd009">
+        <Hierarchy dwd:design-time-name="31d50199-e549-4b10-b42f-310da95551af">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="65273296-0a55-4b68-a026-93e898a76479">
+    <Dimension dwd:design-time-name="e0701502-b288-4f81-9912-c98f6bdf23ab">
       <ID>Time</ID>
       <Name>Time</Name>
       <DimensionID>Time</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="a84dc92f-a2ab-44b4-87d3-5a5569b867d0">
+        <Attribute dwd:design-time-name="d98594f5-59bf-491c-9d31-c1b74c85e58c">
           <AttributeID>Time ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d40347db-0ef8-4ec2-8d70-ce67444d702b">
+        <Attribute dwd:design-time-name="aba01573-f4aa-49d0-b756-afdd0b4265c7">
           <AttributeID>Hour</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="27da9b73-7faa-48ca-a2e5-cb187db9ba79">
+        <Attribute dwd:design-time-name="f7f9ca7e-f6c5-4ead-a773-cb61abb5a28f">
           <AttributeID>Minute</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b2c465d8-7bac-445d-a060-d30b31952c56">
+        <Attribute dwd:design-time-name="a2fea9e1-040f-4612-aad7-1a350f6b6e99">
           <AttributeID>Time Of Day</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="b765c218-577d-48cc-a069-4c14b1ee3135">
+        <Hierarchy dwd:design-time-name="a7bd9b89-9690-441e-9385-1697b1d427f5">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="fe25b1c8-7392-4d19-a979-118c4ea25a0e">
+    <Dimension dwd:design-time-name="71aec22b-fe3f-41f8-9ae9-f2ce33b31843">
       <ID>Transaction</ID>
       <Name>Transaction</Name>
       <DimensionID>Transaction</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="3df51eee-3bcb-498c-8198-e7588abd5ad6">
+        <Attribute dwd:design-time-name="6066803c-2dfc-4156-83e6-33df9d870cd8">
           <AttributeID>Transaction Number</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="2b7fd411-d2f8-4efe-995a-e76724df0d11">
+    <Dimension dwd:design-time-name="89c58593-8ff8-4589-96d1-88824f7de998">
       <ID>ClientEmail</ID>
       <Name>ClientEmail</Name>
       <DimensionID>ClientEmail</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="ab579fb4-bb00-4d37-a8d8-44eb495bdb3e">
+        <Attribute dwd:design-time-name="dc106a27-1498-46ba-9d6b-347eb22812f7">
           <AttributeID>Client Email</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="f0627afb-74a0-4dc5-a029-158ddfe9d452">
+    <MeasureGroup dwd:design-time-name="5c331d9e-fd7d-41db-afeb-edfbf4f8d4b5">
       <ID>Pass Purchase</ID>
       <Name>Pass Purchase</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -646,58 +646,58 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="2628dccd-4594-477d-88f2-05bc124133f0">
+        <Measure dwd:design-time-name="e0f4d47d-7380-429f-b19f-a0a103186b3b">
           <ID>Price</ID>
           <Name>Price Sum</Name>
-          <Source dwd:design-time-name="4eec793d-de9f-4eb4-bc66-22c1aa56b20c">
+          <Source dwd:design-time-name="06333d4d-5ee7-4b43-acc0-69a092880fe3">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="69baa855-30ab-4e56-a126-a1d8fc3ecb02">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="14ab36a6-7336-4368-999f-8328a1193dc0">
               <TableID>dbo_PassPurchase</TableID>
               <ColumnID>Price</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="570d63c1-ba33-4c34-a63d-32d0630f8022">
+        <Measure dwd:design-time-name="dd50a2e7-c1a5-4a66-9bf7-ab244af355e3">
           <ID>Total Transaction Price</ID>
           <Name>Total Transaction Price Sum</Name>
-          <Source dwd:design-time-name="148f73a2-a726-432a-8942-5b203bab20e4">
+          <Source dwd:design-time-name="1b67ee9a-f067-4d6b-a6e4-71a25dc45367">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="a3ae07c1-4ee5-4a45-b674-9ff145592058">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="330419b3-3bae-4828-a339-5bddd9fbc6a8">
               <TableID>dbo_PassPurchase</TableID>
               <ColumnID>TotalTransactionPrice</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="65b82241-66ca-4663-afa8-571303f85227">
+        <Measure dwd:design-time-name="cfd0d98f-d074-4bc3-9212-5687a629b61c">
           <ID>Bought Rides</ID>
           <Name>Bought Rides Sum</Name>
-          <Source dwd:design-time-name="95a7c79d-c3e6-421a-920d-661414d4318b">
+          <Source dwd:design-time-name="26492fdb-2cbe-4111-9f1d-370312180210">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="81c1d536-99fb-4418-ac36-fee1f66e48e2">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="24ba470b-faae-4c00-bf5d-3a4c0fb858f7">
               <TableID>dbo_PassPurchase</TableID>
               <ColumnID>BoughtRides</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="0d81ff95-db9a-4575-bd05-ceb9f433b3cb">
+        <Measure dwd:design-time-name="6be3d66e-5d5a-4539-bd3e-408f4697fe0e">
           <ID>Left Pass Rides</ID>
           <Name>Left Pass Rides Sum</Name>
-          <Source dwd:design-time-name="429335be-605c-4dba-b31e-ae6c1e091080">
+          <Source dwd:design-time-name="a92cb398-f626-47eb-8e22-2f041c44c3ef">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="2778f94b-67de-43ee-97a6-1574cf664c4a">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="aa408b72-37b1-4132-a103-3f1091868c79">
               <TableID>dbo_PassPurchase</TableID>
               <ColumnID>LeftPassRides</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="56f5260b-e585-49ba-b317-1bc556badf1e">
+        <Measure dwd:design-time-name="c2df32a6-7eb7-4137-ada8-671cd0536586">
           <ID>Pass Purchase Count</ID>
           <Name>Pass Purchase Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="8cb83101-5275-4743-bd81-1dee8e70f647">
+          <Source dwd:design-time-name="5a179ad3-e3ae-4c57-a035-f99cecba559c">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="be6285e5-c0d2-4529-9c4d-c093b9db16d8">
+            <Source xsi:type="RowBinding" dwd:design-time-name="a558d7f4-a151-4745-8167-ef5eabf32357">
               <TableID>dbo_PassPurchase</TableID>
             </Source>
           </Source>
@@ -706,15 +706,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c6d0e586-ee50-484b-ac4e-bc13326d49b4">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4da821f8-ec18-44df-944e-5cef6d8c06bb">
           <CubeDimensionID>Pass Purchase Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="084bf137-f5fb-40d4-8c46-e11d71c28021">
+            <Attribute dwd:design-time-name="e0df0dee-7177-46e1-b09f-e4229f5dcbd9">
               <AttributeID>Date ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="aaf679b6-a9de-4bda-9660-c268d963ee9f">
+                <KeyColumn dwd:design-time-name="872f7be1-0e7b-4a0d-87c5-6671f62bea88">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="00178b58-4c8f-422e-b160-b82414c84fab">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0a5b9875-fb54-4da6-8056-470bbe22fd12">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>PassPurchaseDateID</ColumnID>
                   </Source>
@@ -724,15 +724,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="273aac50-751b-4518-8105-9932640002b1">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7d67ae4a-e82a-442c-9178-a0728cbe1eb2">
           <CubeDimensionID>Card</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="158d02d7-fa66-4bbd-833e-e8c6ee0adb87">
+            <Attribute dwd:design-time-name="4983abd0-e1a4-4cdf-b0be-978fcb6170e3">
               <AttributeID>Card ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="c26b1f1e-3898-4657-a500-7869e07a553f">
+                <KeyColumn dwd:design-time-name="5bbe0b4c-66dd-407d-b1dd-87d6b35a0110">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0ddfdf2f-3dc1-4dea-afcd-e0ae40c74275">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8ceca026-5d7d-4a04-9eec-f7918df5495c">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>CardID</ColumnID>
                   </Source>
@@ -742,15 +742,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="76e4370c-4793-470e-a50d-ec38bbfec369">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="94a4fd45-5f15-4a67-9f28-eecb9c260c97">
           <CubeDimensionID>Client</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="329e5a9f-f334-44e3-87b0-46730b64b398">
+            <Attribute dwd:design-time-name="faff7318-9ded-4a06-a1be-e086ca5b552e">
               <AttributeID>Client ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="f3ca1c80-602a-49ed-9baa-7bafa9203a1c">
+                <KeyColumn dwd:design-time-name="e6c1cce7-764b-4d84-84d2-d8575aeffff5">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="53cb962c-041e-4c5a-b574-e2ff390197e2">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="304c64d0-dfa7-428b-9f16-d1efff4611d0">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>ClientID</ColumnID>
                   </Source>
@@ -760,15 +760,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="48a40294-ac64-48d5-bd0c-6dd3724715e1">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b34e90e8-d26a-49d5-bd93-90486369f69c">
           <CubeDimensionID>Junk</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ea821bd2-e001-452e-ac48-58b147163cb7">
+            <Attribute dwd:design-time-name="69eaa64e-5207-47ed-aae1-2fa9fe3705de">
               <AttributeID>Junk ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="840c6c73-09d0-410f-b6fc-b284bc7b54de">
+                <KeyColumn dwd:design-time-name="fd24d212-8ed8-4b39-beef-6a40e94fab75">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="31fcc72e-30f5-4f03-91f5-4ab18fc4d790">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2dc8715e-2bb1-49bb-a791-f0fa2b089cec">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>JunkID</ColumnID>
                   </Source>
@@ -778,15 +778,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8e08604e-9d24-4f22-bbd5-16f93af58782">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c0c199f2-7f51-47a0-b8a8-f5537b3dbd3e">
           <CubeDimensionID>Pass</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="89f4d4e3-ea6b-4002-b97c-32bdddd22c97">
+            <Attribute dwd:design-time-name="049498dd-2e25-4674-aef7-b16d9459dfb4">
               <AttributeID>Pass ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="48366f33-b81d-425e-9664-c53146a0229d">
+                <KeyColumn dwd:design-time-name="60171356-d32a-40f8-8468-6c57dc474514">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9bab4685-af06-4867-a938-0f762104ffe3">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a9c80ca9-17f6-4b1d-9505-7f687dcc9c12">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>PassID</ColumnID>
                   </Source>
@@ -796,10 +796,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="b3a67019-1418-4223-b5c3-b076319ce2a9">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="8511fce0-b74b-4bac-b321-8d573bca87f2">
           <CubeDimensionID>Pass - Valid Until Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="718a6b0a-2c2e-402b-8d8c-f2263734bcfa">
+            <Attribute dwd:design-time-name="b3466d11-810c-469a-829b-dc484e3c7b4d">
               <AttributeID>Date ID</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -809,15 +809,15 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="a5e12f15-b006-478b-9e9a-bb0e32a2def3">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="abe75215-25a8-4798-a79d-6b010ed1ccce">
           <CubeDimensionID>Transaction</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="3410f914-f97d-4bcf-b2ad-4bbde003f06e">
+            <Attribute dwd:design-time-name="20f62e94-7bc3-4085-bfac-83c96ecb5eac">
               <AttributeID>Transaction Number</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="f68e015a-1a76-4479-a563-0e9859045ea3">
+                <KeyColumn dwd:design-time-name="8297032c-b8b4-4594-8167-df7d681e8af9">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e880e0a9-e9d6-4745-82ea-c3904de0a6f7">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bca4342d-b9e1-411b-9cb7-44a3874a77ff">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>TransactionNumber</ColumnID>
                   </Source>
@@ -827,16 +827,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="211629bd-6081-429a-8b73-5f30b9e90ec8">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="501ff34a-76df-4cba-bf0a-4683492ebdb5">
           <CubeDimensionID>ClientEmail</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="75f7f4e7-c71e-4d70-a9d7-e62f2dda4041">
+            <Attribute dwd:design-time-name="deec6c6e-454b-482d-905b-26ba8bd2cdae">
               <AttributeID>Client Email</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="114f6850-e351-43b9-9fa0-6227387afffa">
+                <KeyColumn dwd:design-time-name="3533117f-1bfd-4d4f-9701-1ec6530e6954">
                   <DataType>WChar</DataType>
                   <DataSize>64</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cf53fd57-676e-40f2-ac65-c74738b7294d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d6ab2688-9ec8-4ae0-975b-6030d8014142">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>ClientEmail</ColumnID>
                   </Source>
@@ -849,7 +849,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="28744595-40e6-4598-8852-86d24b8b8ae7">
+    <MeasureGroup dwd:design-time-name="bcdc87c0-5225-47b4-9ebe-bc972c793d25">
       <ID>Pass Purchase 1</ID>
       <Name>Pass Purchase Transaction</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -857,14 +857,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="fbb11278-91a9-46bb-88a5-33e9a6cf66e2">
+        <Measure dwd:design-time-name="51d31dfe-03a7-483b-ac59-1743954cfb44">
           <ID>Transaction Number Distinct Count</ID>
           <Name>Transaction Number Distinct Count</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>Integer</DataType>
-          <Source dwd:design-time-name="3a7a207b-55ec-4cd3-b8f2-e5c1bde3a3b4">
+          <Source dwd:design-time-name="d0dc5f9c-d4c9-47bb-b074-0bc167f255dd">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="f2719aa0-00ff-467b-a407-637189c52a85">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9fb9bad9-32c6-4432-9275-e934759ce232">
               <TableID>dbo_PassPurchase</TableID>
               <ColumnID>TransactionNumber</ColumnID>
             </Source>
@@ -874,15 +874,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="eea85eeb-f2ce-4dbe-8e2a-e067a9ef0b45">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ce4dc08a-93dc-41f4-867f-7f1a938616da">
           <CubeDimensionID>Pass Purchase Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e13ddb88-e542-427b-9785-3ec933655eab">
+            <Attribute dwd:design-time-name="4df482f2-466c-4594-ad78-c719182139fb">
               <AttributeID>Date ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="b5074f72-7e73-450c-8e4e-e9be7a36afbb">
+                <KeyColumn dwd:design-time-name="bb42e4fc-3585-44a3-a024-871c7a265448">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e2eb0bcd-63f4-4840-b0a3-969e62f3f34f">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e8a0d858-aca9-4f26-aca6-67eb6672e1fe">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>PassPurchaseDateID</ColumnID>
                   </Source>
@@ -892,15 +892,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="95f1a175-c10e-42e9-a536-611e4ff3bbd3">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a42e9a2b-e03b-41d2-9643-8e60a4b0a89a">
           <CubeDimensionID>Card</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="6ebb8171-b06d-45a0-86a8-512c0af0cd82">
+            <Attribute dwd:design-time-name="55931d21-6c86-4f23-8de2-f2337a32ff3a">
               <AttributeID>Card ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0430c62d-f533-4db3-9f7f-e158cc86464d">
+                <KeyColumn dwd:design-time-name="94edeb0f-8f7f-4d2c-8646-f5f94c1452a9">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="01a28a88-7789-4c74-b316-f16f4c026fcb">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7822063a-d020-4bcb-b018-bc8f6b7870b8">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>CardID</ColumnID>
                   </Source>
@@ -910,15 +910,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2717c630-765e-4e41-9421-c1991ec7b85a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ef35a9b6-3f68-4e8e-b140-c6934eb60605">
           <CubeDimensionID>Client</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="69b28c66-d8d6-41f7-9cf2-b626decf30b7">
+            <Attribute dwd:design-time-name="34495d93-e0b1-4fa5-8e09-ebf68bd4279b">
               <AttributeID>Client ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="833ebe8a-ca86-45ca-afb1-7a22ca5093ec">
+                <KeyColumn dwd:design-time-name="efdf7076-b3ec-4d52-8187-432bdd7333f3">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d2f030b4-fd03-4f2b-92c2-a8ec55baffb8">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3d7145a9-f851-45b6-abd9-baf0f80f6bf7">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>ClientID</ColumnID>
                   </Source>
@@ -928,15 +928,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="592669a6-b91a-4571-b2f9-7e90ec8db20d">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a22c9fb5-85fd-4891-8fce-0c8e8baa7126">
           <CubeDimensionID>Junk</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7a8e2baf-c32c-4b7e-836c-9b69dc619b69">
+            <Attribute dwd:design-time-name="063737d7-8644-4594-838a-721664bd9a1d">
               <AttributeID>Junk ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="6c0869f1-44fe-41f8-aa69-3459624a27f7">
+                <KeyColumn dwd:design-time-name="768235bf-3bd8-4fee-bb73-3fcea3271740">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b717088b-fade-44f3-9430-f04f76d3de6c">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="64ba4400-f626-4298-89b6-217b570c36e9">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>JunkID</ColumnID>
                   </Source>
@@ -946,15 +946,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c88f7cc5-ceef-4106-90bf-1961f68c9a81">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0f1e6953-c480-4382-ac61-a0e77e6deadd">
           <CubeDimensionID>Pass</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="18f8b75d-3099-4016-9bd1-8d6ad7a82bce">
+            <Attribute dwd:design-time-name="50c40bf4-15a4-46d6-89bb-0cb802ee78c7">
               <AttributeID>Pass ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="5d4ab04b-1df8-4fbf-93fb-a372c343ebb6">
+                <KeyColumn dwd:design-time-name="08120380-58ac-45f1-bd1e-800be88e59be">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7fc6e54d-0bc9-4422-8922-74223c84e6f1">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="912f159c-fd13-4f21-ac71-a502a3ca7d08">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>PassID</ColumnID>
                   </Source>
@@ -964,10 +964,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="86208bff-37ed-4025-8838-12b0662c2bf7">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="c8172abd-7086-4611-ba16-008dfe748017">
           <CubeDimensionID>Pass - Valid Until Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="92097253-e4de-4be9-beb7-eafd3e74f4c1">
+            <Attribute dwd:design-time-name="1cd9d39a-7cca-42c0-a624-dc30ba469a07">
               <AttributeID>Date ID</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -977,15 +977,15 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="d6fdb452-1f02-441c-b37d-99d7bc106ab7">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b603745f-4a0e-45ee-bcea-f4b478fa0ef2">
           <CubeDimensionID>Transaction</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="08abdc94-7a32-4028-a1b3-3936c062e67c">
+            <Attribute dwd:design-time-name="6489a40b-519a-4c86-82e4-4eb5da4bb7e2">
               <AttributeID>Transaction Number</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="6788dcc0-87c9-479c-bfa0-e61f8fa5f1a2">
+                <KeyColumn dwd:design-time-name="d0c9a693-afa3-42e2-aebd-8fdaed2efc90">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c7d8aa65-ee0d-4d3c-815b-e3b205f3b180">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cce24294-1508-4b8a-ac18-a0e9ef65b5c6">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>TransactionNumber</ColumnID>
                   </Source>
@@ -995,16 +995,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="68115524-9dda-4a0e-aa0a-e24a3d970c36">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1f67c30a-2496-4bb1-ae29-83e0e3421b2f">
           <CubeDimensionID>ClientEmail</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a6033f5b-ba22-45dd-8ff1-c14cbc2eedd5">
+            <Attribute dwd:design-time-name="e11113a7-6ade-4ad6-af57-0cf43b77faf8">
               <AttributeID>Client Email</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="edcda69f-ecef-466e-8796-8ff42e4a1dde">
+                <KeyColumn dwd:design-time-name="c1f7464b-02ea-4fd4-bbec-af50756ef3e9">
                   <DataType>WChar</DataType>
                   <DataSize>64</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="07d2578e-f627-4640-857f-18a194b408e8">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d003f2de-c03c-4a23-8724-6599c97f5297">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>ClientEmail</ColumnID>
                   </Source>
@@ -1017,7 +1017,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="b52e3432-67d3-4b5c-b9a9-f7b8d50de449">
+    <MeasureGroup dwd:design-time-name="ade79807-717f-4229-a610-83a1d22bdc0c">
       <ID>Ride</ID>
       <Name>Ride</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1025,26 +1025,26 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="0631f1cd-b960-4346-a7e4-1c433bc10a23">
+        <Measure dwd:design-time-name="914e72ba-0de6-42c8-b9ec-56fbd05a9cd0">
           <ID>Maximum Days Since Pass Purchase</ID>
           <Name>Days Since Pass Purchase Max</Name>
           <AggregateFunction>Max</AggregateFunction>
-          <Source dwd:design-time-name="4bce9b6f-bdf9-4819-b056-8c0e8e2d9ecf">
+          <Source dwd:design-time-name="1bd22895-1b81-4377-8288-b0ebfdd76f9a">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="d64b4a52-cab9-41bc-b58a-604263aaff74">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="58e1ee66-1bd6-4593-8dc1-40ebff4765ec">
               <TableID>dbo_Ride</TableID>
               <ColumnID>DaysSincePassPurchase</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="f1666d27-39e0-4f24-ae68-b8273b8557f2">
+        <Measure dwd:design-time-name="e7c144b2-659a-4931-b5dd-6ce696424fae">
           <ID>Ride Count</ID>
           <Name>Ride Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="0e2b587f-a49b-40b9-b64f-5a89981e9669">
+          <Source dwd:design-time-name="83b1a5de-d06a-4f7c-a44b-c524d8da1c13">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="dc92b37a-203a-4368-8e8e-dd84200ae6df">
+            <Source xsi:type="RowBinding" dwd:design-time-name="7b4fb19b-4842-4725-ad69-ed131e93aef8">
               <TableID>dbo_Ride</TableID>
             </Source>
           </Source>
@@ -1053,15 +1053,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a058ac48-abb8-4c68-bec4-eb6130b680f5">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="64aa1054-0a8c-43b2-9626-27c8239c5365">
           <CubeDimensionID>Slope</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="21574619-e29b-4e4b-a369-634a71ca368b">
+            <Attribute dwd:design-time-name="bd4f5a48-227d-48d9-a497-3ef411406360">
               <AttributeID>Slope ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="c8590c90-2ca2-4c76-b846-4b934d057d0c">
+                <KeyColumn dwd:design-time-name="b639a2fb-82fc-4e09-bc06-3e27cfb9db75">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="40278fcb-2ea7-4cc0-a7ff-0f9347171172">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7702d8ef-d427-43a1-86d8-101bd7241fd7">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>SlopeID</ColumnID>
                   </Source>
@@ -1071,15 +1071,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a778b010-f6e0-4154-8f4e-c8428cfff0bb">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ef48c7c8-6606-4fba-833e-4a04409384a9">
           <CubeDimensionID>Time</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0817277b-a891-4f0c-9268-d8e07b10eae8">
+            <Attribute dwd:design-time-name="b4be3b58-37f9-4f83-914d-6742074b2faf">
               <AttributeID>Time ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="c8f9af04-56fe-459b-832e-bef1219acb99">
+                <KeyColumn dwd:design-time-name="ec535f1e-b3ff-4c68-9274-60e3c6207f81">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cef70aa3-3650-4697-b5c6-5d452a02582e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1b99a732-e2b5-4853-9b23-6b6484ac8513">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>RideTimeID</ColumnID>
                   </Source>
@@ -1089,15 +1089,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7fe5b4c5-e277-40c7-adc2-b083c03d21ad">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4c48f78d-08d7-4d35-b2f5-2a3d616cc223">
           <CubeDimensionID>Pass</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="5912827b-060d-43bd-a428-03446c9326b2">
+            <Attribute dwd:design-time-name="e63218f6-1f34-4fd4-9e9c-5081907bfb89">
               <AttributeID>Pass ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="750540f3-b46e-43d7-8e03-70d9fb44d425">
+                <KeyColumn dwd:design-time-name="af556322-bd50-4eb1-9c28-919d5ca53a67">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e7ab4175-01d9-474e-ae5c-3caf9b966240">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ad53d9bc-999e-4435-878a-8f947b06a0a2">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>PassID</ColumnID>
                   </Source>
@@ -1107,15 +1107,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4814ef1a-cfc1-4475-9b2a-1d1d82cb8822">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ac040b02-c890-48f9-a31a-8b175e9a9a37">
           <CubeDimensionID>Ride Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ab529f93-9ff6-4299-bdee-163cf793971f">
+            <Attribute dwd:design-time-name="566155fd-26f9-4862-9b9f-da010bbcd0dd">
               <AttributeID>Date ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e885bd72-bde9-47b6-819f-3fdc8daba943">
+                <KeyColumn dwd:design-time-name="4ce368a3-c9af-4852-b85e-b3775753f602">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cd646eea-b54c-4e93-affc-1e413c3ec071">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d5389400-d774-46bc-8258-ad6f0db1ee94">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>RideDateID</ColumnID>
                   </Source>
@@ -1125,15 +1125,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f77ba7dc-49af-449c-9007-615833894660">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d1992e82-1e75-45b1-89a8-7be4694e58e8">
           <CubeDimensionID>Card</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="b8509246-2d8b-45bc-acdc-04e2791b89c8">
+            <Attribute dwd:design-time-name="459825ba-d273-4780-9ac6-5f8c2c191245">
               <AttributeID>Card ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="8a2f3c22-546c-477d-b32f-cc4d1d8df278">
+                <KeyColumn dwd:design-time-name="bda06233-d2b5-4020-8557-4cfe70f1619d">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c0e2ce78-a7d0-40b8-af67-8807a274d6ad">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d4547ca7-ddfc-4818-874a-1e2e4907c624">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>CardID</ColumnID>
                   </Source>
@@ -1143,10 +1143,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="551e48d3-3cde-4461-aba8-ccb2f18b7b6b">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="12e2a69a-ff4f-41a8-b42a-dd6cd4b120b7">
           <CubeDimensionID>Pass - Valid Until Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="070ac183-b62f-4a9f-b682-e700ce89b051">
+            <Attribute dwd:design-time-name="056f2811-bf90-430b-b0d0-76273ea2db39">
               <AttributeID>Date ID</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1159,7 +1159,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="9365362c-e70b-407e-afe2-7f7f65fff705">
+    <MeasureGroup dwd:design-time-name="733dcca2-54e3-4c74-800f-28c39dbdec88">
       <ID>Ride 1</ID>
       <Name>Ride Card</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1167,14 +1167,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="0d202632-0266-4f36-a311-fbf8a169989e">
+        <Measure dwd:design-time-name="8d198c00-dca5-489f-9fbb-383a9f437165">
           <ID>Card ID Distinct Count</ID>
           <Name>Card Distinct Count</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>Integer</DataType>
-          <Source dwd:design-time-name="feeddcf8-41c2-4843-8fc6-cd9ec5117064">
+          <Source dwd:design-time-name="d8bf1f6d-5ffe-4692-8b5d-0fce3847accd">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="30a9ecdc-f3f5-4750-aa26-f89b528deb0b">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8d5298a6-4227-42d9-bd57-e21ded22ca05">
               <TableID>dbo_Ride</TableID>
               <ColumnID>CardID</ColumnID>
             </Source>
@@ -1184,15 +1184,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7872de33-f1cb-4d71-af81-f45100dec5eb">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5eea0524-86c0-4af2-91be-9faf9fc6fe60">
           <CubeDimensionID>Slope</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="03e33501-e142-4b6a-9214-3c353f5f2d52">
+            <Attribute dwd:design-time-name="d58ebed0-19c9-4e5c-872b-95b391474a91">
               <AttributeID>Slope ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="6a764bd6-2b3f-424e-a2c0-5deec07a5ff6">
+                <KeyColumn dwd:design-time-name="ebb3836a-5552-4163-9ba4-fe0452e08e51">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="df96d1db-b8aa-4d6f-9ed1-2bc74eb3a0ae">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8a8354fe-dab8-44e5-b982-d0f387cf1621">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>SlopeID</ColumnID>
                   </Source>
@@ -1202,15 +1202,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="24bbde47-2a85-493d-908d-a91893035756">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f628f8fb-8e53-42a3-a2ba-5adff8fa747b">
           <CubeDimensionID>Time</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0bdeac52-c10d-439a-bbd0-8e4ec6565f3e">
+            <Attribute dwd:design-time-name="02bce2fb-c982-4499-9fe6-303207af4bbb">
               <AttributeID>Time ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="3a9e8090-52df-43fd-b21f-a369b2367070">
+                <KeyColumn dwd:design-time-name="12dc445d-a44b-4c13-a039-b241dc80455c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bc1222c0-da2d-4fcb-a276-25226d9ff65d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="575b5768-097e-4b06-9217-eccc2bee4892">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>RideTimeID</ColumnID>
                   </Source>
@@ -1220,15 +1220,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b3d60a87-efbf-44cb-9bbd-292d0ee564fb">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e2226dc6-9383-4449-8451-12122358a647">
           <CubeDimensionID>Pass</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="b3c9b636-53cf-4779-bbb4-ef4483adbdcc">
+            <Attribute dwd:design-time-name="ce6db0e6-e786-4834-8539-34055d15151d">
               <AttributeID>Pass ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="ef4cb8ff-cfc9-4b4c-9dcf-5bd2c506d677">
+                <KeyColumn dwd:design-time-name="2ebfe2fc-16c5-4bbe-83bf-34e72f6788f6">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cbe1a773-ba33-4955-9216-6a21233a3dc9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3f50c3d7-3ec5-437e-8fcf-0cf06e37d6e1">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>PassID</ColumnID>
                   </Source>
@@ -1238,15 +1238,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0e100432-e934-4277-a4d3-88b4bf22466f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ccd07e38-9997-4371-afcf-e547afdae5e3">
           <CubeDimensionID>Ride Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="42a7d7d9-5c1c-4f00-9b52-e8f344b66781">
+            <Attribute dwd:design-time-name="328ed482-6915-4002-ab84-d2f274a20958">
               <AttributeID>Date ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="26d8bd41-07c4-4617-8b5f-fd910c39bd07">
+                <KeyColumn dwd:design-time-name="f5a05529-b351-4937-ab26-9b8d84d8a0d6">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4bba29b1-3fd7-4cd2-b922-d717a2d40508">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="708c1af5-a97b-4500-8b95-ee3fed5ca1c9">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>RideDateID</ColumnID>
                   </Source>
@@ -1256,15 +1256,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2a7d9bb6-2392-4bcf-901b-b76bd82ad49c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="70ab11b2-6ff9-4e3a-ba0e-ed63c4546f62">
           <CubeDimensionID>Card</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e346a1c1-6f45-412e-be31-e72dc21a3d6e">
+            <Attribute dwd:design-time-name="775c00b6-155f-4fa2-b12f-99e8839edd4a">
               <AttributeID>Card ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4d1ce247-b34f-45b1-817f-9bc9beba8f41">
+                <KeyColumn dwd:design-time-name="43a57a2e-f555-4a89-83af-fe580e2c4b86">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="15246ea9-5fb5-43cd-804d-8629fdebd9e9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a4031582-baf6-4826-821d-38b57cceb46e">
                     <TableID>dbo_Ride</TableID>
                     <ColumnID>CardID</ColumnID>
                   </Source>
@@ -1274,10 +1274,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="6f6e3b49-5ff7-418a-bdde-f43d35f1d5fe">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="183cb71f-9f0d-44cb-b254-d8093ff19f67">
           <CubeDimensionID>Pass - Valid Until Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a1a05796-979d-4601-a834-ffb915b96ac2">
+            <Attribute dwd:design-time-name="6cc81280-6ff0-429c-ba97-86c6397cdfc5">
               <AttributeID>Date ID</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1290,7 +1290,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="89ca3615-bb75-4cbe-b08c-8ed79b55e4a3">
+    <MeasureGroup dwd:design-time-name="17a04239-7dc5-43a4-b233-48b0f2a96d2e">
       <ID>Pass Purchase 2</ID>
       <Name>Pass Purchase Client</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1298,14 +1298,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="e22ccfa5-b865-4f9f-a964-8158d065f99d">
+        <Measure dwd:design-time-name="15007356-14f0-4a76-ad7c-a02ead679201">
           <ID>Client Email Distinct Count</ID>
           <Name>Client Distinct Count</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>Integer</DataType>
-          <Source dwd:design-time-name="7a79eddf-c8d3-4081-bf0d-eb6a10d3ee7c">
+          <Source dwd:design-time-name="f379db2e-9182-426b-96f7-4e447c45da91">
             <DataType>WChar</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="72174bc7-1173-4c3c-9712-f360cacef3e2">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8f2797ab-d89c-4043-b13a-6a46038d708e">
               <TableID>dbo_PassPurchase</TableID>
               <ColumnID>ClientEmail</ColumnID>
             </Source>
@@ -1315,15 +1315,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="37997336-8aaa-4729-a3f3-6592cee06fbc">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="515fd2b1-5be6-4d3b-978a-90c641d6a448">
           <CubeDimensionID>Pass Purchase Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="cab11f08-e775-4b4f-abcc-2fcdfc5770d4">
+            <Attribute dwd:design-time-name="46861f99-5b6a-45ff-b9bb-4b50b9b419ba">
               <AttributeID>Date ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="087cbba0-0be4-49df-b337-3ebe843c0bde">
+                <KeyColumn dwd:design-time-name="9050b801-01f2-413d-bb5a-bef4e8a511d2">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1dd1a457-0751-4fb0-ae11-f7a35d173a01">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="87503ef8-80a4-4afe-9efc-dbc0bd6cb5d1">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>PassPurchaseDateID</ColumnID>
                   </Source>
@@ -1333,15 +1333,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8faeab23-e31c-4504-a1f2-6a366b7fa724">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5b48e1e7-b082-4842-b2ff-b5d7fff2a3cb">
           <CubeDimensionID>Card</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0c843799-d8c2-482f-9102-cf4e813f2773">
+            <Attribute dwd:design-time-name="35ae533e-4700-423e-b3a8-4852cae4199b">
               <AttributeID>Card ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="6c6dd59f-f96b-4a82-9560-1336b433576e">
+                <KeyColumn dwd:design-time-name="98b83a22-ca7d-45c5-8f9d-05b30ab5d3f9">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="41ebdff7-1ee7-48be-9cfe-9237b5354eea">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="10913e04-0bd5-4e43-b4dd-03079a57b330">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>CardID</ColumnID>
                   </Source>
@@ -1351,15 +1351,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5d331b8d-4477-4e0a-84ee-ba0ef2c60ad2">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0d11cf1f-e8e2-4cd2-b4cd-5d08142d9bd6">
           <CubeDimensionID>Client</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="07b531e6-1f3e-4e42-b451-1dffbfcb408f">
+            <Attribute dwd:design-time-name="46126c00-4bb2-4864-ad5f-724d70c36d4d">
               <AttributeID>Client ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="463b29ed-3c49-4353-93d0-d276c8863756">
+                <KeyColumn dwd:design-time-name="04ad3c05-db22-4661-b6ae-ec9f4cf54647">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3743e3b8-0596-4d43-a2a3-c87261399bac">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0f3356ed-e440-4a49-a4a0-30a4bda378be">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>ClientID</ColumnID>
                   </Source>
@@ -1369,15 +1369,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f8d0677c-0435-4cdf-8c59-bf0dda73a752">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0a47207d-a4a5-4024-a111-9416fbd6a0c8">
           <CubeDimensionID>Junk</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="211db808-eb6a-4f83-9c42-dcbb9795ce33">
+            <Attribute dwd:design-time-name="d126f35a-7a43-40a7-a5c9-24f8a4a974fc">
               <AttributeID>Junk ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="309f268e-ba47-4b5c-a0c3-787321312e6a">
+                <KeyColumn dwd:design-time-name="47e2476a-c1e5-4fe0-8ede-35ea2009d63b">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="734e29f1-9e47-4b57-984f-3ff83e8cb41d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2898d13c-95bd-4828-8287-dca7251c1d6f">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>JunkID</ColumnID>
                   </Source>
@@ -1387,15 +1387,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="220e8ebd-53a6-40d4-a5ec-c644610d8481">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5be504cb-80b9-4041-9c5b-41f1d42555a4">
           <CubeDimensionID>Pass</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="92f26b06-a507-4dbd-8ce8-ec974a4980ab">
+            <Attribute dwd:design-time-name="1df1e52c-dfcc-466e-b592-41572332cbed">
               <AttributeID>Pass ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="5d0348a2-d696-456d-b3ec-a562df99d469">
+                <KeyColumn dwd:design-time-name="102cf71a-87f2-4092-9574-79fed8478a85">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fdf0af13-1893-45e5-a1f8-578e991761a9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c023e4b2-00a7-443f-84e9-1c6c49da5902">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>PassID</ColumnID>
                   </Source>
@@ -1405,10 +1405,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="ddaef0af-3890-4464-bc99-0b6ce2208b95">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="b6782e6b-a325-44e5-8e87-75b3fe4fd1c9">
           <CubeDimensionID>Pass - Valid Until Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="85e22020-6d70-40cb-a5c7-0640371c8f73">
+            <Attribute dwd:design-time-name="e3266f50-24b8-42c4-a762-5759f03d03a7">
               <AttributeID>Date ID</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1418,15 +1418,15 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="a811acf5-da44-49bd-86c9-abf4922eb198">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="3edd239d-8177-456c-89df-480d65e4e6f2">
           <CubeDimensionID>Transaction</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="dd2aed90-2342-4484-adf0-44b2a4b501a2">
+            <Attribute dwd:design-time-name="6b225061-026a-46e5-954c-b03f1e3de098">
               <AttributeID>Transaction Number</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0514c772-ac3a-4de0-b734-86da8135238c">
+                <KeyColumn dwd:design-time-name="a019ac76-cbea-4801-beaa-d873a8dc3282">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="da3e5c44-82de-4ad1-b1fd-c5b32e71ce6b">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f1871560-90c3-480b-b4ee-82c40f1ea427">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>TransactionNumber</ColumnID>
                   </Source>
@@ -1436,16 +1436,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8d8ad70a-072d-465c-9a37-56864518a590">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b6e68d7a-3dfc-46d1-abfa-f9b346ab49b1">
           <CubeDimensionID>ClientEmail</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="2000ab0c-3b26-4ca9-915d-ee9aee609d61">
+            <Attribute dwd:design-time-name="56d0666a-1af5-44d9-899d-b5cdce13a681">
               <AttributeID>Client Email</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="01a72d10-6c29-4840-af54-cd7990d38c24">
+                <KeyColumn dwd:design-time-name="0f2bca46-b96e-490d-acae-f9b048d6936e">
                   <DataType>WChar</DataType>
                   <DataSize>64</DataSize>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="488b017a-502a-4252-a02d-971fe6c33577">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cb58c733-174d-4b8c-a099-e87e7181a3c2">
                     <TableID>dbo_PassPurchase</TableID>
                     <ColumnID>ClientEmail</ColumnID>
                   </Source>
@@ -1459,11 +1459,11 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="fc6791a7-900d-431e-9e49-0b5d2b6c3d45">
+  <Source dwd:design-time-name="28a68172-4165-492c-9881-15fd4f3dd52d">
     <DataSourceViewID>Ski Center Data Warehouse</DataSourceViewID>
   </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="3757b2db-7667-488a-8973-8d180808972c">
+    <MdxScript dwd:design-time-name="952e0bda-9842-40c1-a9d8-daf4e30cb708">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1496,7 +1496,7 @@ VISIBLE = 1; </Text>
     </MdxScript>
   </MdxScripts>
   <Kpis>
-    <Kpi dwd:design-time-name="c6c7fa5e-1f87-4e7c-b394-6c7466d568a1">
+    <Kpi dwd:design-time-name="e8eb0dc4-d263-4411-9967-1b97d18caf68">
       <ID>KPI</ID>
       <Name>Zyski z sezonu narciarskiego</Name>
       <AssociatedMeasureGroupID>Pass Purchase</AssociatedMeasureGroupID>
@@ -1509,6 +1509,29 @@ VISIBLE = 1; </Text>
 ) * 1.03</Goal>
       <Status>IIF (KPIVALUE("Zyski z sezonu narciarskiego") &gt;= KPIGOAL("Zyski z sezonu narciarskiego"), 1, -1)</Status>
       <Trend>IIF (KPIVALUE("Zyski z sezonu narciarskiego") &gt;= (KPIVALUE("Zyski z sezonu narciarskiego"), StrToMember("[Pass Purchase Date].[Season].&amp;[Sezon " + CStr(CInt(StrConv(Right([Pass Purchase Date].[Season].CurrentMember.Name, 4), 8, 1041)) - 1) + "]")), 1, -1)</Trend>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Gauge - Ascending</StatusGraphic>
+    </Kpi>
+    <Kpi dwd:design-time-name="2862775d-c9ba-4010-9174-af355ba685c3">
+      <ID>KPI 1</ID>
+      <Name>Miesięczny przychód całego ośrodka</Name>
+      <AssociatedMeasureGroupID>Pass Purchase</AssociatedMeasureGroupID>
+      <Value>[Measures].[Price Sum]</Value>
+      <Goal>(KPIVALUE("Miesięczny przychód całego ośrodka"), PARALLELPERIOD([Pass Purchase Date].[DateHierarchy].[Month], 12, [Pass Purchase Date].[DateHierarchy].CurrentMember)) * 1.03</Goal>
+      <Status>IIF (KPIVALUE("Miesięczny przychód całego ośrodka") &gt;= KPIGOAL("Miesięczny przychód całego ośrodka"), 1, -1)</Status>
+      <Trend>IIF (KPIVALUE("Miesięczny przychód całego ośrodka") &gt;= (KPIVALUE("Miesięczny przychód całego ośrodka"), PARALLELPERIOD([Pass Purchase Date].
+[DateHierarchy].[Month], 12, [Pass Purchase Date].[DateHierarchy].CurrentMember)), 1, -1)</Trend>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Gauge - Ascending</StatusGraphic>
+    </Kpi>
+    <Kpi dwd:design-time-name="c038412f-eee3-41a4-8191-b087db9fd73b">
+      <ID>KPI 2</ID>
+      <Name>Ilość zjazdów w ciągu miesiąca</Name>
+      <AssociatedMeasureGroupID>Ride</AssociatedMeasureGroupID>
+      <Value>[Measures].[Ride Count]</Value>
+      <Goal>(KPIVALUE("Ilość zjazdów w ciągu miesiąca"), PARALLELPERIOD([Ride Date].[DateHierarchy].[Month], 12, [Ride Date].[DateHierarchy].CurrentMember)) * 1.03</Goal>
+      <Status>IIF (KPIVALUE("Ilość zjazdów w ciągu miesiąca") &gt;= KPIGOAL("Ilość zjazdów w ciągu miesiąca"), 1, -1)</Status>
+      <Trend>IIF (KPIVALUE("Ilość zjazdów w ciągu miesiąca") &gt;= (KPIVALUE("Ilość zjazdów w ciągu miesiąca"), PARALLELPERIOD([Ride Date].[DateHierarchy].[Month], 12, [Ride Date].[DateHierarchy].CurrentMember)), 1, -1)</Trend>
       <TrendGraphic>Standard Arrow</TrendGraphic>
       <StatusGraphic>Gauge - Ascending</StatusGraphic>
     </Kpi>
