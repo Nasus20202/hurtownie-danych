@@ -268,3 +268,27 @@ SELECT
      }  ON ROWS
 FROM [Ski Center Data Warehouse]
 ```
+
+== Podaj 3 najczęściej wybierane stoki.
+```
+SELECT
+    NON EMPTY {
+        [Measures].[Ride Count]
+    } ON COLUMNS,
+    NON EMPTY {
+        TopCount([Slope].[Slope Name].[Slope Name].ALLMEMBERS, 3, [Measures].[Ride Count])
+    } ON ROWS
+FROM [Ski Center Data Warehouse]
+```
+
+== Podaj liczbę zjazdów w każdym roku.
+```
+SELECT
+    NON EMPTY {
+        [Measures].[Ride Count]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Ride Date].[DateHierarchy].[Year].ALLMEMBERS
+    } ON ROWS
+FROM [Ski Center Data Warehouse]
+```
