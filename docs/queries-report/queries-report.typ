@@ -45,7 +45,7 @@ Miesięczny przychód całego ośrodka będzie rosnąć o co najmniej 3% w stosu
 
 - Status Expression
 ```
-IIF (KPIVALUE("Zyski z sezonu narciarskiego") >= KPIGOAL("Zyski z sezonu narciarskiego"), 1, -1)
+IIF (KPIVALUE("Miesięczny przychód całego ośrodka") >= KPIGOAL("Miesięczny przychód całego ośrodka"), 1, -1)
 ```
 
 - Trend Expression
