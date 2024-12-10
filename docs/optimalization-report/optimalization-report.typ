@@ -94,18 +94,23 @@ FROM
 
 #table(
   columns: (2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-  table.cell(rowspan: 2)[], table.cell(colspan: 2)[MOLAP], table.cell(colspan: 2)[ROLAP], table.cell(colspan: 2)[HOLAP],
+  table.cell(rowspan: 2)[], table.cell(colspan: 2)[MOLAP], table.cell(colspan: 2)[HOLAP], table.cell(colspan: 2)[ROLAP],
   [Agregacja], [Bez agr.], [Agregacja], [Bez agr.], [Agregacja], [Bez agr.],
   //[Opóźnienie],
   //[], [], [], [], [], [],
   table.cell(rowspan: 3)[Czas zapytania (3 zapytania)],
-  [192.67], [], [], [], [], [],
-  [198.33], [], [], [], [], [],
-  [31], [], [], [], [], [],
+
+  [], [192.67],       [], [362.4],       [], [350.6],
+
+  [], [198.33],         [], [169.33],        [], [159.75],
+
+  [], [31],               [], [100.75],              [], [89.33],
+
   [Czas procesowania],
-  [6534,25], [], [], [], [], [],
+  [], [6534,25],          [], [2303.25],        [], [2346.67],
+
   [Łączny rozmiar],
-  [16,46 MB], [], [], [], [], [],
+  [], [39,23 MB],         [], [14,77 MB],        [], [14,77 MB],
 )
 
 = Wnioski
