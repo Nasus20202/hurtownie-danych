@@ -100,17 +100,18 @@ FROM
   //[], [], [], [], [], [],
   table.cell(rowspan: 3)[Czas zapytania (3 zapytania)],
 
-  [], [192.67],       [], [362.4],       [], [350.6],
+  [106.5], [192.67],             [101.375], [362.4],             [353.71], [350.6],
 
-  [], [198.33],         [], [169.33],        [], [159.75],
+  [123.375], [198.33],             [170.33], [169.33],            [164.5], [159.75],
 
-  [], [31],               [], [100.75],              [], [89.33],
+  [23.75], [31],                  [89.67], [100.75],             [101.56], [89.33],
 
   [Czas procesowania],
-  [], [6534,25],          [], [2303.25],        [], [2346.67],
+  [6652.25], [6534,25],           [2715.33], [2303.25],          [2450.83], [2346.67],
 
   [Łączny rozmiar],
-  [], [39,23 MB],         [], [14,77 MB],        [], [14,77 MB],
+  [16,75 MB], [16,46 MB],         [15,06 MB], [14,77 MB],        [14,76 MB], [14,77 MB],
 )
 
 = Wnioski
+Dla testowanej hurtowni danych najlepsze wyniki czasowe dla zapytań osiągnięto generalnie dla modelu MOLAP. Model ROLAP okazał się najwolniejszy, co jest zgodne z oczekiwaniami, ponieważ dane pobierane są z relacyjnej bazy danych. Zastosowanie agregacji przyspieszyło czas zapytań - szczególnie w przypadku modelu MOLAP, dla ROLAP agregacje zwiększyły czas zapytań. Czas procesowania kostki jest wysoki dla MOLAP i niższy dla HOLAP i ROLAP, co jest zgodne z oczekiwaniami. Łączny rozmiar kostki jest największy dla MOLAP i najmniejszy dla ROLAP, co potwierdza teorię modeli fizycznych kostki. Agregacje nie wpłynęły znacząco na rozmiar kostki.
