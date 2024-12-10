@@ -35,7 +35,8 @@ Celem raportu jest pokazanie wpływu różnych fizyczny modeli kostki oraz sposo
 
 == Środowisko testowe
 
-Maszyna wirtualna QEMU z systemem Windows 11, 16GB RAM, 8 vCPU (4 rdzenie, 8 wątków), procesor AMD Ryzen 5 3600, dysk SSD.
+- Maszyna wirtualna QEMU z systemem Windows 11, 16 GB RAM, 8 vCPU (4 rdzenie, 8 wątków)
+- Komputer stacjonarny z systemem Linux, 32 GB RAM, AMD Ryzen 5 3600 (6 rdzeni, 12 wątków)
 
 = Testowanie
 
@@ -99,9 +100,9 @@ FROM
 #table(
   columns: (2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
   table.cell(rowspan: 2)[], table.cell(colspan: 2)[MOLAP], table.cell(colspan: 2)[HOLAP], table.cell(colspan: 2)[ROLAP],
-  [Agregacja], [Bez agr.], [Agregacja], [Bez agr.], [Agregacja], [Bez agr.],
-  //[Opóźnienie],
-  //[], [], [], [], [], [],
+  [Agregacja], [Bez agregacji], [Agregacja], [Bez agregacji], [Agregacja], [Bez agregacji],
+  // [Opóźnienie],
+  // [], [], [], [], [], [],
   table.cell(rowspan: 3)[Czas zapytania (3 zapytania)],
 
   [106.5], [192.67],            [101.375], [362.4],         [353.71], [350.6],
@@ -111,10 +112,10 @@ FROM
   [23.75], [31],                [89.67], [100.75],          [101.56], [89.33],
 
   [Czas procesowania],
-  [6652.25], [6534,25],         [2715.33], [2303.25],       [2450.83], [2346.67],
+  [6652.25], [6534.25],         [2715.33], [2303.25],       [2450.83], [2346.67],
 
   [Łączny rozmiar],
-  [41,4 MB], [41,1 MB],         [15,5 MB], [15,2 MB],       [15,2 MB], [15,2 MB],
+  [41.4 MB], [41.1 MB],         [15.5 MB], [15.2 MB],       [15.2 MB], [15.2 MB],
 )
 
 = Wnioski
@@ -122,4 +123,4 @@ Model MOLAP - wszystkie dane przechowywane są w hurtowni - zawiera kopię tabel
 Model ROLAP - dane z tabeli faktów oraz agregacje są pobierane z relacyjnej bazy danych co powoduje, że zapytania są wolniejsze. \
 Model HOLAP - jest hybrydą modeli MOLAP i ROLAP, agregacje są przetrzymywane w bazie hurtowni, natomiast dane z tabeli faktów są pobierane z relacyjnej bazy danych. W związku z tym czas wykonania zapytań jest pośredni, a czas procesowania kostki zbliżony do modelu ROLAP (nieznacznie dłuższy z powodu tworzenia agregacji na serwerze OLAP). \
 
-Dla testowanej hurtowni danych najlepsze wyniki czasowe dla zapytań osiągnięto generalnie dla modelu MOLAP. Model ROLAP okazał się najwolniejszy, co jest zgodne z oczekiwaniami, ponieważ dane pobierane są z relacyjnej bazy danych. Zastosowanie agregacji przyspieszyło czas zapytań - szczególnie w przypadku modelu MOLAP, natomiast dla ROLAP agregacje zwiększyły czas zapytań (jest to spowodowane przetwarzaniem agregacji przez serwer relacyjny). HOLAP jako hybryda modeli MOLAP i ROLAP zgodnie z teorią osiągnął we wszystkich operacjach wyniki pośrednie. Czas procesowania kostki jest wysoki dla MOLAP i niższy dla HOLAP i ROLAP, co jest zgodne z oczekiwaniami. Łączny rozmiar kostki jest największy dla MOLAP i najmniejszy dla ROLAP, co potwierdza teorię modeli fizycznych kostki. Agregacje nie wpłynęły znacząco na rozmiar kostki, który zwiększył się o stały rozmiar dla MOLAP oraz HOLAP. W ROLAP rozmiar nie uległ zmianie, gdyż agregacje nie są przechowywane w OLAP. Przyspieszenie przy zastosowaniu agregacji mogłoby być większe, gdyby zastosowano bardziej zaawansowane techniki agregacji, które byłyby bardziej optymalne dla konkretnych zapytań. Zwiększyłoby to natomiast rozmiar kostki.
+Dla testowanej hurtowni danych najlepsze wyniki czasowe dla zapytań osiągnięto generalnie dla modelu MOLAP. Model ROLAP okazał się najwolniejszy, co jest zgodne z oczekiwaniami, ponieważ dane pobierane są z relacyjnej bazy danych. Zastosowanie agregacji przyspieszyło czas zapytań - szczególnie w przypadku modelu MOLAP, natomiast dla ROLAP agregacje zwiększyły czas zapytań (jest to spowodowane dodatkowymi kosztami przetwarzania agregacji na serwerze relacyjnym). HOLAP jako hybryda modeli MOLAP i ROLAP zgodnie z teorią osiągnął we wszystkich operacjach wyniki pośrednie. Czas procesowania kostki jest wysoki dla MOLAP i niższy dla HOLAP i ROLAP, co jest zgodne z oczekiwaniami. Łączny rozmiar kostki jest największy dla MOLAP i najmniejszy dla ROLAP, co potwierdza teorię modeli fizycznych kostki. Agregacje nie wpłynęły znacząco na rozmiar kostki, który zwiększył się o stały rozmiar dla MOLAP oraz HOLAP. W ROLAP rozmiar nie uległ zmianie, gdyż agregacje nie są przechowywane w OLAP. Przyspieszenie przy zastosowaniu agregacji mogłoby być większe, gdyby zastosowano bardziej zaawansowane techniki agregacji, które byłyby bardziej optymalne dla konkretnych zapytań. Zwiększyłoby to natomiast rozmiar kostki.
