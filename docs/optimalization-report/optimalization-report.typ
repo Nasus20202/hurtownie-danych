@@ -31,6 +31,7 @@ Celem raportu jest pokazanie wpływu różnych fizyczny modeli kostki oraz sposo
 
 - Rozmiar bazy danych: 136MB (+264MB log)
 - Ilość wierszy w tabeli faktu zjazdu: 1 599 884
+- Ilość wierszy w tabeli faktu sprzedaży karnetu: 40 000
 
 == Środowisko testowe
 
@@ -90,7 +91,10 @@ FROM
 
 == Wyniki
 
-#text(size: 9pt)[Czas podany w milisekundach, średnia z 10 pomiarów]
+#text(size: 9pt)[
+  Czas podany w milisekundach, średnia z 10 pomiarów \
+  Agregacje utworzone z domyślnymi parametrami
+]
 
 #table(
   columns: (2fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
@@ -100,18 +104,22 @@ FROM
   //[], [], [], [], [], [],
   table.cell(rowspan: 3)[Czas zapytania (3 zapytania)],
 
-  [106.5], [192.67],             [101.375], [362.4],             [353.71], [350.6],
+  [106.5], [192.67],            [101.375], [362.4],         [353.71], [350.6],
 
-  [123.375], [198.33],             [170.33], [169.33],            [164.5], [159.75],
+  [123.375], [198.33],          [170.33], [172.75],         [164.5], [159.75],
 
-  [23.75], [31],                  [89.67], [100.75],             [101.56], [89.33],
+  [23.75], [31],                [89.67], [100.75],          [101.56], [89.33],
 
   [Czas procesowania],
-  [6652.25], [6534,25],           [2715.33], [2303.25],          [2450.83], [2346.67],
+  [6652.25], [6534,25],         [2715.33], [2303.25],       [2450.83], [2346.67],
 
   [Łączny rozmiar],
-  [16,75 MB], [16,46 MB],         [15,06 MB], [14,77 MB],        [14,76 MB], [14,77 MB],
+  [41,4 MB], [41,1 MB],         [15,5 MB], [15,2 MB],       [15,2 MB], [15,2 MB],
 )
 
 = Wnioski
-Dla testowanej hurtowni danych najlepsze wyniki czasowe dla zapytań osiągnięto generalnie dla modelu MOLAP. Model ROLAP okazał się najwolniejszy, co jest zgodne z oczekiwaniami, ponieważ dane pobierane są z relacyjnej bazy danych. Zastosowanie agregacji przyspieszyło czas zapytań - szczególnie w przypadku modelu MOLAP, dla ROLAP agregacje zwiększyły czas zapytań. Czas procesowania kostki jest wysoki dla MOLAP i niższy dla HOLAP i ROLAP, co jest zgodne z oczekiwaniami. Łączny rozmiar kostki jest największy dla MOLAP i najmniejszy dla ROLAP, co potwierdza teorię modeli fizycznych kostki. Agregacje nie wpłynęły znacząco na rozmiar kostki.
+Model MOLAP - wszystkie dane przechowywane są w hurtowni - zawiera kopię tabeli faktów i wszystkich agregacji obliczonych podczas procesowania kostki. Pozwala to na szybkie wykonywanie zapytań. \
+Model ROLAP - dane z tabeli faktów oraz agregacje są pobierane z relacyjnej bazy danych co powoduje, że zapytania są wolniejsze. \
+Model HOLAP - jest hybrydą modeli MOLAP i ROLAP, agregacje są przetrzymywane w bazie hurtowni, natomiast dane z tabeli faktów są pobierane z relacyjnej bazy danych. W związku z tym czas wykonania zapytań jest pośredni, a czas procesowania kostki zbliżony do modelu ROLAP (nieznacznie dłuższy z powodu tworzenia agregacji na serwerze OLAP). \
+
+Dla testowanej hurtowni danych najlepsze wyniki czasowe dla zapytań osiągnięto generalnie dla modelu MOLAP. Model ROLAP okazał się najwolniejszy, co jest zgodne z oczekiwaniami, ponieważ dane pobierane są z relacyjnej bazy danych. Zastosowanie agregacji przyspieszyło czas zapytań - szczególnie w przypadku modelu MOLAP, natomiast dla ROLAP agregacje zwiększyły czas zapytań (jest to spowodowane przetwarzaniem agregacji przez serwer relacyjny). HOLAP jako hybryda modeli MOLAP i ROLAP zgodnie z teorią osiągnął we wszystkich operacjach wyniki pośrednie. Czas procesowania kostki jest wysoki dla MOLAP i niższy dla HOLAP i ROLAP, co jest zgodne z oczekiwaniami. Łączny rozmiar kostki jest największy dla MOLAP i najmniejszy dla ROLAP, co potwierdza teorię modeli fizycznych kostki. Agregacje nie wpłynęły znacząco na rozmiar kostki, który zwiększył się o stały rozmiar dla MOLAP oraz HOLAP. W ROLAP rozmiar nie uległ zmianie, gdyż agregacje nie są przechowywane w OLAP. Przyspieszenie przy zastosowaniu agregacji mogłoby być większe, gdyby zastosowano bardziej zaawansowane techniki agregacji, które byłyby bardziej optymalne dla konkretnych zapytań. Zwiększyłoby to natomiast rozmiar kostki.
